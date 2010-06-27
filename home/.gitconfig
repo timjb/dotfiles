@@ -1,0 +1,7 @@
+[user]
+	name = Tim Baumann
+	email = tim@timbaumann.info
+[core]
+	editor = /usr/bin/vim
+[ui]
+	color = auto
