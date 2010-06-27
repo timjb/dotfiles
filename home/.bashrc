@@ -94,3 +94,7 @@ alias up4='up3; up'
 
 # Rubygems
 PATH=$PATH:/var/lib/gems/1.8/bin
+
+# Dotfiles
+DOTFILES=$HOME/.homesick/repos/timjb/dotfiles/home/
+DF=$DOTFILES
