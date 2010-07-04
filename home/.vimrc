@@ -18,6 +18,7 @@ set list
 set number
 
 " Buffers
+" Don't warn when switching from an unsaved buffer
 set hidden
 
 
@@ -76,6 +77,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set autoindent
+
 
 
 """""""""""""""""""""""""""
@@ -120,6 +123,15 @@ endif
 "Horizontal Ellipsis
 abbr ... …
 "n-Dash
-abbr --  –
+abbr ---  –
 "My name
 abbr tjb Tim Baumann
+
+
+
+"""""""""
+" Mouse "
+"""""""""
+
+:map <MiddleMouse> <Nop>
+:imap <MiddleMouse> <Nop>
