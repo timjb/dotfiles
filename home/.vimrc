@@ -135,3 +135,12 @@ abbr tjb Tim Baumann
 
 :map <MiddleMouse> <Nop>
 :imap <MiddleMouse> <Nop>
+
+
+
+"""""""""""""""""""
+" Custom Commands "
+"""""""""""""""""""
+
+" http://vimcasts.org/episodes/soft-wrapping-text/
+command! -nargs=* Wrap set  wrap linebreak nolist
