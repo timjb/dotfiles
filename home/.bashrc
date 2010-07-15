@@ -98,3 +98,6 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 # Dotfiles
 DOTFILES=$HOME/.homesick/repos/timjb/dotfiles/home/
 DF=$DOTFILES
+
+# Start a simple webserver with python
+alias web='python -m SimpleHTTPServer 8000'
