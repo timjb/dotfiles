@@ -38,6 +38,7 @@ endif
 " Windows "
 """""""""""
 
+" Switch between windows using Ctrl and hjkl
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -155,3 +156,14 @@ abbr tjb Tim Baumann
 
 " http://vimcasts.org/episodes/soft-wrapping-text/
 command! -nargs=* Wrap set  wrap linebreak nolist
+
+
+
+"""""""""""
+" On Save "
+"""""""""""
+
+" Source the vimrc file after saving it (http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/)
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
