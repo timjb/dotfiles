@@ -110,10 +110,6 @@ imap <c-x> <c-o><c-x>
 "Paste from System's pasteboard with ^V
 map <c-v> "+p
 imap <c-v> <c-o><c-v>
-"Select all with ^A
-map <c-a> ggVG
-imap <c-a> <Esc><c-a>
-
 
 
 """"""""""""""
