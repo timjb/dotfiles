@@ -103,3 +103,9 @@ DF=$DOTFILES
 
 # Start a simple webserver with python
 alias web='python -m SimpleHTTPServer 8000'
+
+# Notify that a command has finished with "command -t hat --takes=longtime; alert"
+# source: http://linuxundich.de/de/ubuntu/benachrichtigungen-beim-beenden-langwieriger-prozesse/
+if [ -x /usr/bin/notify-send ]; then
+  alias alert='notify-send -i gnome-terminal "[$?] $(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/;\s*alert$//'\'')"'
+fi
