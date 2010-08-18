@@ -120,6 +120,7 @@ if has("autocmd")
 	"autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 	autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
 	autocmd BufNewFile,BufRead *.json       setfiletype json
+	autocmd BufNewFile,BufRead *.less       setfiletype less
 endif
 
 
