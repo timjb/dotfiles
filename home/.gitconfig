@@ -3,5 +3,6 @@
 	email = tim@timbaumann.info
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /home/tim/.gitexcludes
 [ui]
 	color = auto
