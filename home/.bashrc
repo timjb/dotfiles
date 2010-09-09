@@ -83,3 +83,8 @@ alias web='python -m SimpleHTTPServer 8000'
 if [ -x /usr/bin/notify-send ]; then
   alias alert='notify-send -i gnome-terminal "[$?] $(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/;\s*alert$//'\'')"'
 fi
+
+# Shortcuts for searching, installing and removing packages (http://www.omgubuntu.co.uk/2010/09/use-command-aliases-for-lazy-terminal-installing-purging-searching/)
+alias install='sudo apt-get -y install'
+alias search='apt-cache search'
+alias purge='sudo apt-get purge'
