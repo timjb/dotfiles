@@ -107,6 +107,8 @@ imap <c-x> <c-o><c-x>
 map <c-v> "+p
 imap <c-v> <c-o><c-v>
 
+map <F2> :NERDTreeToggle<CR>
+
 
 """"""""""""""
 " File Types "
