@@ -97,10 +97,6 @@ set autoindent
 " Common Key Combinations "
 """""""""""""""""""""""""""
 
-"Save with ^S
-map <c-s> :w<CR>
-"… without leaving insert mode
-imap <c-s> <c-o><c-s>
 "Copy to System's pasteboard with ^C
 map <c-c> "+y
 imap <c-c> <c-o><c-c>
