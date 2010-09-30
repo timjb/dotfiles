@@ -5,6 +5,8 @@
 " Syntax Highlighting
 syntax on
 color blackboard
+command! -nargs=* HexHighlight call HexHighlight()
+
 
 " Enable File Type Detection & ftplugin
 filetype on
