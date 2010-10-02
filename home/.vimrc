@@ -54,6 +54,24 @@ map <C-l> <C-w>l
 
 
 
+""""""""
+" Tags "
+""""""""
+
+" http://peterodding.com/code/vim/easytags/
+let g:easytags_always_enabled = 1
+
+
+
+""""""""
+" Make "
+""""""""
+
+set makeprg=rake
+nmap M :make<Enter>
+
+
+
 """""""""""""
 " Indenting "
 """""""""""""
