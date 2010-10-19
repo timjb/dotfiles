@@ -2,16 +2,25 @@ snippet class
 	public class ${1:`Filename("", "untitled")`} {
 		${2}
 		
-		public $1(${3}) {
-			${4}
+		public $1() {
 		}
 	}
-snippet attr
-	private ${1};
+#snippet attr
+#	private ${1};
 snippet main
 	public static void main(String[] args) {
 		${1:/* code */}
 	}
+
+# accessors
+snippet get
+	public ${2} get${1}() {
+		return this.$1;
+	}
+snippet set
+	public void set${1}(${2} ${3}) {
+	   this.$3 = $3;
+	}${4}
 
 # access
 snippet pu
