@@ -31,3 +31,6 @@
 [submodule "home/.vim/bundle/vim-surround"]
 	path = home/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "home/.vim/bundle/vim-mac-classic-theme"]
+	path = home/.vim/bundle/vim-mac-classic-theme
+	url = https://github.com/nelstrom/vim-mac-classic-theme.git
