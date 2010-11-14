@@ -6,3 +6,9 @@
 	excludesfile = /home/tim/.gitexcludes
 [ui]
 	color = auto
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 823x615+247+107
+	file-view-vpane-position = 422
+	history-view-vpane-position = 446
+	main-window-view = FileView
