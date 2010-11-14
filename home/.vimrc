@@ -2,6 +2,10 @@
 " Basic Settings "
 """"""""""""""""""
 
+" Use pathogen to bundle plugins
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Syntax Highlighting
 syntax on
 color blackboard
