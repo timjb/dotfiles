@@ -61,10 +61,6 @@ PS1="\[\033[1;34m\]\w\[\033[0m\] \$ "
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias up='cd ..'
-alias up2='up; up'
-alias up3='up2; up'
-alias up4='up3; up'
 
 # Rubygems
 PATH=$PATH:/var/lib/gems/1.8/bin
