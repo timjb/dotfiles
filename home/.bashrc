@@ -87,3 +87,9 @@ alias purge='sudo apt-get purge'
 
 # tmux with 256 colors
 alias tmux='tmux -2'
+
+# Vi mode
+set -o vi
+
+# Exit with q
+alias q='exit'
