@@ -84,3 +84,6 @@ fi
 alias install='sudo apt-get -y install'
 alias search='apt-cache search'
 alias purge='sudo apt-get purge'
+
+# tmux with 256 colors
+alias tmux='tmux -2'
