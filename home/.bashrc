@@ -93,3 +93,6 @@ set -o vi
 
 # Exit with q
 alias q='exit'
+
+# 256 colors
+export TERM='xterm-256color'

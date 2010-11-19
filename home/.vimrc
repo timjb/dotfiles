@@ -9,7 +9,6 @@ call pathogen#helptags()
 " Syntax Highlighting
 syntax on
 if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
   colorscheme railscasts
 else 
   colorscheme default 
@@ -170,8 +169,10 @@ abbr tjb Tim Baumann
 " Mouse "
 """""""""
 
-:map <MiddleMouse> <Nop>
-:imap <MiddleMouse> <Nop>
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+set mouse=a
+
 
 
 
