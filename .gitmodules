@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/vim-mac-classic-theme"]
 	path = home/.vim/bundle/vim-mac-classic-theme
 	url = https://github.com/nelstrom/vim-mac-classic-theme.git
+[submodule "home/.vim/bundle/vim-rails"]
+	path = home/.vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
