@@ -33,17 +33,6 @@ set hidden
 
 
 
-""""""""
-" gVim "
-""""""""
-
-if has("gui_running")
-  " No toolbar
-  set guioptions-=T
-endif
-
-
-
 """""""""""
 " Windows "
 """""""""""
