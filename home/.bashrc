@@ -91,8 +91,11 @@ alias tmux='tmux -2'
 # Vi mode
 set -o vi
 
-# Exit with q
+# One letter aliases
 alias q='exit'
+alias v='vim'
+alias l='less'
+alias ..='cd ..'
 
 # 256 colors
 export TERM='xterm-256color'
