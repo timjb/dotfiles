@@ -1,0 +1,23 @@
+update_interval 1
+update_interval_on_battery 3
+
+# Font
+use_xft yes
+xftfont Andale Mono
+
+# Position
+alignment top_middle
+gap_y 6
+
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+# own_window_hints undecorated,below,skip_taskbar,pin
+
+# Performance
+double_buffer yes
+
+pad_percents 2
+
+TEXT
+IP: ${addr eth1} | $battery_short | FREE: ${fs_free /home/} | MEM: $memperc% | CPU: ${cpu cpu0}% |${if_mixer_mute} -- $else VOL: $mixer% $endif| ${time %F %R }
