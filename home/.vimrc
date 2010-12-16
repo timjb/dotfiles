@@ -13,8 +13,11 @@ if $COLORTERM == 'gnome-terminal'
 else 
   colorscheme default 
 endif
+" Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
+" Leader key
+let mapleader=","
 
 " Enable File Type Detection & ftplugin
 filetype on
@@ -30,6 +33,20 @@ set number
 " Buffers
 " Don't warn when switching from an unsaved buffer
 set hidden
+
+" Searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+nmap <silent> ,/ :nohlsearch<CR>
+
+" Paths
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" All those .swp files are annoying
+set nobackup
+set noswapfile
 
 
 
@@ -107,6 +124,7 @@ set shiftwidth=2
 set softtabstop=2
 
 set autoindent
+set copyindent
 
 
 
@@ -174,11 +192,10 @@ command! -nargs=* Wrap set  wrap linebreak nolist
 
 
 
-"""""""""""
-" On Save "
-"""""""""""
+""""""""""
+" .vimrc "
+""""""""""
 
-" Source the vimrc file after saving it (http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/)
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
