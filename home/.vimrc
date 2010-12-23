@@ -132,16 +132,12 @@ set copyindent
 " Common Key Combinations "
 """""""""""""""""""""""""""
 
-"Copy to System's pasteboard with ^C
-map <c-c> "+y
-imap <c-c> <c-o><c-c>
-"Cut to System's pasteboard with ^X
-map <c-x> "+d
-imap <c-x> <c-o><c-x>
-"Paste from System's pasteboard with ^V
-map <c-v> "+p
-imap <c-v> <c-o><c-v>
-
+"Copy to System's pasteboard
+map <leader>c "+y
+"Cut to System's pasteboard
+map <leader>x "+d
+"Paste from System's pasteboard
+map <leader>v "+p
 map <F2> :NERDTreeToggle<CR>
 
 
