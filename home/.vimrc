@@ -133,11 +133,11 @@ set copyindent
 """""""""""""""""""""""""""
 
 "Copy to System's pasteboard
-map <leader>c "+y
+map <leader>y "+y
 "Cut to System's pasteboard
-map <leader>x "+d
+map <leader>d "+d
 "Paste from System's pasteboard
-map <leader>v "+p
+map <leader>p "+p
 map <F2> :NERDTreeToggle<CR>
 
 
