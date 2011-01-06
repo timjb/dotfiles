@@ -195,3 +195,14 @@ command! -nargs=* Wrap set  wrap linebreak nolist
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+
+
+"""""""""
+" Rails "
+"""""""""
+
+" Goto related model/view/controller
+nmap <leader>m :Rmodel<CR>
+nmap <leader>v :Rview<CR>
+nmap <leader>c :Rcontroller<CR>
