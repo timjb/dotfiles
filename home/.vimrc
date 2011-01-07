@@ -48,6 +48,11 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set nobackup
 set noswapfile
 
+" Movement: jk move one line on the display
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 
 """""""""""
@@ -86,9 +91,9 @@ nmap M :make<Enter>
 
 
 
-"""""""""""""
-" Indenting "
-"""""""""""""
+"""""""""""""""
+" Indentation "
+"""""""""""""""
 
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
