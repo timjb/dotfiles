@@ -39,7 +39,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Paths
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -207,7 +207,17 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Rails "
 """""""""
 
-" Goto related model/view/controller
+" Goto related model/view/controller (using tpope/vim-rails)
 nmap <leader>m :Rmodel<CR>
 nmap <leader>v :Rview<CR>
 nmap <leader>c :Rcontroller<CR>
+
+
+
+"""""""
+" CSS "
+"""""""
+
+" Insert vendor prefixes -moz- and -webkit-
+" This assumes a coding style with one line for each CSS property
+nmap <leader>p ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearch<CR><C-o>"pY"ppI-moz-<Esc>"ppI-webkit-<Esc>kk
