@@ -55,3 +55,6 @@
 [submodule "home/.vim/bundle/vim-textobj-rubyblock"]
 	path = home/.vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "home/.vim/bundle/scss-syntax.vim"]
+	path = home/.vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
