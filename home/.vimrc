@@ -207,9 +207,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 """""""""
 
 " Goto related model/view/controller (using tpope/vim-rails)
-nmap <leader>m :Rmodel<CR>
-nmap <leader>v :Rview<CR>
-nmap <leader>c :Rcontroller<CR>
+nmap <leader>rm :Rmodel<CR>
+nmap <leader>rv :Rview<CR>
+nmap <leader>rc :Rcontroller<CR>
 
 
 
@@ -218,9 +218,9 @@ nmap <leader>c :Rcontroller<CR>
 """"""""
 
 " Config ZenCoding
-let g:user_zen_settings = {
-\ 'indentation': '  '
-}
+let g:user_zen_settings={
+\  'indentation' : '  '
+\}
 
 
 
@@ -230,4 +230,4 @@ let g:user_zen_settings = {
 
 " Insert vendor prefixes -moz- and -webkit-
 " This assumes a coding style with one line for each CSS property
-nmap <leader>p ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearch<CR><C-o>"pY"ppI-moz-<Esc>"ppI-webkit-<Esc>kk
+nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearch<CR><C-o>"pY"ppI-moz-<Esc>"ppI-webkit-<Esc>kk
