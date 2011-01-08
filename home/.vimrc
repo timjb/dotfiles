@@ -183,7 +183,6 @@ set mouse=a
 
 
 
-
 """""""""""""""""""
 " Custom Commands "
 """""""""""""""""""
@@ -211,6 +210,17 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <leader>m :Rmodel<CR>
 nmap <leader>v :Rview<CR>
 nmap <leader>c :Rcontroller<CR>
+
+
+
+""""""""
+" HTML "
+""""""""
+
+" Config ZenCoding
+let g:user_zen_settings = {
+\ 'indentation': '  '
+}
 
 
 
