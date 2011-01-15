@@ -19,9 +19,6 @@
 [submodule "home/.vim/bundle/zencoding-vim"]
 	path = home/.vim/bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
-[submodule "home/.vim/bundle/googlereader-vim"]
-	path = home/.vim/bundle/googlereader-vim
-	url = https://github.com/xmlblog/googlereader-vim.git
 [submodule "home/.vim/bundle/snipmate"]
 	path = home/.vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
