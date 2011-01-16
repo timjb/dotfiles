@@ -5,7 +5,7 @@ Installation
 
 Clone the repository:
 
-	git clone https://github.com/nelstrom/dotfiles.git
+	git clone https://github.com/timjb/dotfiles.git
 
 Init submodules:
 
