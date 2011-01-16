@@ -59,7 +59,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Rubygems
-PATH=$PATH:/var/lib/gems/1.8/bin
+#PATH=$PATH:/var/lib/gems/1.8/bin
 
 # Start a simple webserver with python
 alias web='python -m SimpleHTTPServer 8000'
@@ -89,3 +89,6 @@ alias ..='cd ..'
 
 # 256 colors
 export TERM='xterm-256color'
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
