@@ -59,7 +59,10 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Rubygems
-#PATH=$PATH:/var/lib/gems/1.8/bin
+PATH=$PATH:/var/lib/gems/1.8/bin
+
+# Use $HOME/bin
+PATH=$PATH:$HOME/bin
 
 # Start a simple webserver with python
 alias web='python -m SimpleHTTPServer 8000'
