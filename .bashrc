@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -64,12 +60,6 @@ alias l='ls -CF'
 
 # Rubygems
 PATH=$PATH:/var/lib/gems/1.8/bin
-# Narwhal (JS for the terminal)
-PATH=$PATH:/opt/narwhal/bin
-
-# Dotfiles
-DOTFILES=$HOME/.homesick/repos/timjb/dotfiles/home/
-DF=$DOTFILES
 
 # Start a simple webserver with python
 alias web='python -m SimpleHTTPServer 8000'
