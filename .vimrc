@@ -54,6 +54,11 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
+" Autostart NERDTree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+
 
 """""""""""
 " Windows "
