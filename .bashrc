@@ -64,6 +64,9 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 # Use $HOME/bin
 PATH=$PATH:$HOME/bin
 
+# Use $HOME/dotfiles/bin
+[[ -d "$HOME/dotfiles/bin" ]] && PATH=$PATH:$HOME/dotfiles/bin
+
 # Start a simple webserver with python
 alias web='python -m SimpleHTTPServer 8000'
 
