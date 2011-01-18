@@ -67,9 +67,6 @@ PATH=$PATH:$HOME/bin
 # Use $HOME/dotfiles/bin
 [[ -d "$HOME/dotfiles/bin" ]] && PATH=$PATH:$HOME/dotfiles/bin
 
-# Start a simple webserver with python
-alias web='python -m SimpleHTTPServer 8000'
-
 # Notify that a command has finished with "command -t hat --takes=longtime; alert"
 # source: http://linuxundich.de/de/ubuntu/benachrichtigungen-beim-beenden-langwieriger-prozesse/
 if [ -x /usr/bin/notify-send ]; then

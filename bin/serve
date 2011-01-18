@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# A simple web server
+# Usage:
+# $ serve # Serves on port 8000 per default
+# OR:
+# $ serve 3000
+
+python -m SimpleHTTPServer ${1-8000}
