@@ -25,3 +25,11 @@ Create symlinks:
 	ln -s ~/dotfiles/.bashrc ~/.bashrc
 	ln -s ~/dotfiles/.vim ~/.vim
 	ln -s ~/dotfiles/.vimrc ~/.vimrc
+
+To use my nautilus templates, change the following line in `~/.config/user-dirs.dirs`:
+
+	XDG_TEMPLATES_DIR="$HOME/"
+
+to look like this:
+
+	XDG_TEMPLATES_DIR="$HOME/dotfiles/Templates"
