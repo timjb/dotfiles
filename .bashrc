@@ -78,9 +78,6 @@ alias install='sudo apt-get -y install'
 alias search='apt-cache search'
 alias purge='sudo apt-get purge'
 
-# tmux with 256 colors
-alias tmux='tmux -2'
-
 # Vi mode
 set -o vi
 
@@ -89,6 +86,12 @@ alias q='exit'
 alias v='vim'
 alias l='less'
 alias ..='cd ..'
+
+# tmux with 256 colors
+alias tmux='tmux -2'
+
+# Open vim and NERDTree
+alias vimt='vim -c "NERDTree"'
 
 # 256 colors
 export TERM='xterm-256color'
