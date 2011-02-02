@@ -29,6 +29,7 @@ set list
 
 " Line numbers
 set number
+set relativenumber
 
 " Buffers
 " Don't warn when switching from an unsaved buffer
