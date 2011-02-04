@@ -28,7 +28,6 @@ set listchars=tab:‣\ ,eol:¬
 set list
 
 " Line numbers
-set number
 set relativenumber
 
 " Buffers
@@ -45,7 +44,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " Paths
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-" All those .swp files are annoying
+" Those .swp files are annoying
 set nobackup
 set noswapfile
 
@@ -54,6 +53,12 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+
+" vim-indent-guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
+let g:indent_guides_enable_on_vim_startup = 1
 
 
 
