@@ -20,8 +20,8 @@ command! -nargs=* HexHighlight call HexHighlight()
 let mapleader=","
 
 " Enable File Type Detection & ftplugin
-filetype on
-filetype plugin on
+filetype off " Force reload of filetypes
+filetype plugin indent on
 
 " Show hidden characters
 set listchars=tab:‣\ ,eol:¬
@@ -158,11 +158,9 @@ map <F2> :NERDTreeToggle<CR>
 """"""""""""""
 
 if has("autocmd")
-	"autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-	autocmd BufNewFile,BufRead *.rss,*.atom    setfiletype xml
-	autocmd BufNewFile,BufRead *.json          setfiletype json
-	autocmd BufNewFile,BufRead *.less          setfiletype less
-	autocmd BufNewFile,BufRead *.md,*.markdown setfiletype markdown
+	autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
+	autocmd BufNewFile,BufRead *.json       setfiletype json
+	autocmd BufNewFile,BufRead *.less       setfiletype less
 endif
 
 
