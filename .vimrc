@@ -11,7 +11,7 @@ syntax on
 if $COLORTERM == 'gnome-terminal'
   colorscheme railscasts
 else 
-  colorscheme default 
+  colorscheme default
 endif
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
@@ -231,6 +231,10 @@ map <leader>d "+d
 "Paste from System's pasteboard
 map <leader>p "+p
 
+" Tabular
+nmap <leader>= :Tabularize /=<CR>
+nmap <leader>: :Tabularize /:\zs<CR>
+
 " CSS: Insert vendor prefixes -moz- and -webkit-
 " This assumes a coding style with one line for each CSS property
 nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearch<CR><C-o>"pY"ppI-moz-<Esc>"ppI-webkit-<Esc>kk
@@ -242,4 +246,4 @@ nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearc
 
 map <F2> :NERDTreeToggle<CR>
 set pastetoggle=<F3>
-map <F3> :call ToggleMouse()<CR>
+map <F4> :call ToggleMouse()<CR>
