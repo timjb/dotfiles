@@ -1,8 +1,4 @@
-""""""""""""""""""
-" Basic Settings "
-""""""""""""""""""
-
-" Use pathogen to bundle plugins
+" Plugin: pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -20,7 +16,7 @@ command! -nargs=* HexHighlight call HexHighlight()
 let mapleader=","
 
 " Enable File Type Detection & ftplugin
-filetype off " Force reload of filetypes
+filetype off " Force reloading of filetypes
 filetype plugin indent on
 
 " Show hidden characters
@@ -60,6 +56,11 @@ set title
 " write with root privileges
 cmap w!! w !sudo tee % >/dev/null
 
+" Plugin: haskellmode-vim
+let g:haddock_browser = "/usr/bin/google-chrome"
+let g:ghc = "/usr/bin/ghc"
+let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html/"
+
 
 
 """""""""""
@@ -84,7 +85,7 @@ map <C-l> <C-w>l
 " Tags "
 """"""""
 
-" http://peterodding.com/code/vim/easytags/
+" Plugin: easytags (http://peterodding.com/code/vim/easytags/)
 let g:easytags_always_enabled = 1
 
 
@@ -138,13 +139,13 @@ set softtabstop=2
 set autoindent
 set copyindent
 
-" vim-indent-guides
+" Plugin: vim-indent-guides
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
 let g:indent_guides_enable_on_vim_startup = 1
 
-" Config ZenCoding
+" Plugin: ZenCoding
 let g:user_zen_settings={
 \  'indentation' : '  '
 \}
@@ -159,6 +160,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
   autocmd BufNewFile,BufRead *.json       setfiletype json
   autocmd BufNewFile,BufRead *.less       setfiletype less
+  autocmd BufEnter *.hs compiler ghc
 endif
 
 
@@ -219,7 +221,8 @@ command! -nargs=* Wrap set  wrap linebreak nolist
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Ruby on Rails: goto related model/view/controller (using tpope/vim-rails)
+" Plugin: vim-rails (http://github.com/tpope/vim-rails)
+" goto related model/view/controller
 nmap <leader>rm :Rmodel<CR>
 nmap <leader>rv :Rview<CR>
 nmap <leader>rc :Rcontroller<CR>
@@ -231,7 +234,7 @@ map <leader>d "+d
 "Paste from System's pasteboard
 map <leader>p "+p
 
-" Tabular
+" Plugin: Tabular (http://github.com/godlygeek/tabular)
 nmap <leader>= :Tabularize /=<CR>
 nmap <leader>: :Tabularize /:\zs<CR>
 
@@ -244,6 +247,8 @@ nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearc
 " F keys "
 """"""""""
 
+" Plugin: NERDTree
 map <F2> :NERDTreeToggle<CR>
+
 set pastetoggle=<F3>
 map <F4> :call ToggleMouse()<CR>
