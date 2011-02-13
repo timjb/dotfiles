@@ -54,11 +54,11 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" vim-indent-guides
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
-let g:indent_guides_enable_on_vim_startup = 1
+" change the terminal's title
+set title
+
+" write with root privileges
+cmap w!! w !sudo tee % >/dev/null
 
 
 
@@ -138,19 +138,17 @@ set softtabstop=2
 set autoindent
 set copyindent
 
+" vim-indent-guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
+let g:indent_guides_enable_on_vim_startup = 1
 
+" Config ZenCoding
+let g:user_zen_settings={
+\  'indentation' : '  '
+\}
 
-"""""""""""""""""""""""""""
-" Common Key Combinations "
-"""""""""""""""""""""""""""
-
-"Copy to System's pasteboard
-map <leader>y "+y
-"Cut to System's pasteboard
-map <leader>d "+d
-"Paste from System's pasteboard
-map <leader>p "+p
-map <F2> :NERDTreeToggle<CR>
 
 
 """"""""""""""
@@ -158,9 +156,9 @@ map <F2> :NERDTreeToggle<CR>
 """"""""""""""
 
 if has("autocmd")
-	autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
-	autocmd BufNewFile,BufRead *.json       setfiletype json
-	autocmd BufNewFile,BufRead *.less       setfiletype less
+  autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
+  autocmd BufNewFile,BufRead *.json       setfiletype json
+  autocmd BufNewFile,BufRead *.less       setfiletype less
 endif
 
 
@@ -186,6 +184,22 @@ map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
 set mouse=a
 
+" http://nvie.com/posts/how-i-boosted-my-vim/
+function! ToggleMouse()
+  if !exists("s:old_mouse")
+    let s:old_mouse = "a"
+  endif
+  
+  if &mouse == ""
+    let &mouse = s:old_mouse
+    echo "Mouse is for Vim (" . &mouse . ")"
+  else
+    let s:old_mouse = &mouse
+    let &mouse=""
+    echo "Mouse is for terminal"
+  endif
+endfunction
+
 
 
 """""""""""""""""""
@@ -197,42 +211,35 @@ command! -nargs=* Wrap set  wrap linebreak nolist
 
 
 
-""""""""""
-" .vimrc "
-""""""""""
+""""""""""""""
+" Leader key "
+""""""""""""""
 
-" Quickly edit/reload the vimrc file
+" Quickly edit/reload the .vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-
-
-"""""""""
-" Rails "
-"""""""""
-
-" Goto related model/view/controller (using tpope/vim-rails)
+" Ruby on Rails: goto related model/view/controller (using tpope/vim-rails)
 nmap <leader>rm :Rmodel<CR>
 nmap <leader>rv :Rview<CR>
 nmap <leader>rc :Rcontroller<CR>
 
+"Copy to System's pasteboard
+map <leader>y "+y
+"Cut to System's pasteboard
+map <leader>d "+d
+"Paste from System's pasteboard
+map <leader>p "+p
 
-
-""""""""
-" HTML "
-""""""""
-
-" Config ZenCoding
-let g:user_zen_settings={
-\  'indentation' : '  '
-\}
-
-
-
-"""""""
-" CSS "
-"""""""
-
-" Insert vendor prefixes -moz- and -webkit-
+" CSS: Insert vendor prefixes -moz- and -webkit-
 " This assumes a coding style with one line for each CSS property
 nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearch<CR><C-o>"pY"ppI-moz-<Esc>"ppI-webkit-<Esc>kk
+
+
+""""""""""
+" F keys "
+""""""""""
+
+map <F2> :NERDTreeToggle<CR>
+set pastetoggle=<F3>
+map <F3> :call ToggleMouse()<CR>
