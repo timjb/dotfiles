@@ -93,6 +93,9 @@ alias tmux='tmux -2'
 # Open vim and NERDTree
 alias vimt='vim -c "NERDTree"'
 
+# Move files to trash instead of deleting them (uses trash-cli)
+alias rm='trash-put'
+
 # 256 colors
 export TERM='xterm-256color'
 
