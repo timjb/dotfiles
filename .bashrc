@@ -98,3 +98,4 @@ export TERM='xterm-256color'
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+fortune | cowsay
