@@ -205,9 +205,11 @@ endfunction
 
 
 """""""""""""""""""
-" Custom Commands "
+" Wrapping        "
 """""""""""""""""""
 
+set colorcolumn=80
+set formatoptions+=at
 " http://vimcasts.org/episodes/soft-wrapping-text/
 command! -nargs=* Wrap set  wrap linebreak nolist
 
