@@ -11,5 +11,10 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; Viper (Vim bindings)
 (setq viper-mode t)
 (require 'viper)
+
+;; Indentation
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
