@@ -7,3 +7,6 @@ ln -s ~/dotfiles/.hgrc ~/.hgrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.emacs ~/.emacs
+ln -s ~/dotfiles/.viper ~/.viper
+ln -s ~/dotfiles/bin ~/bin
