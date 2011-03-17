@@ -87,6 +87,9 @@ alias v='vim'
 alias l='less'
 alias ..='cd ..'
 
+# Load env in sudo
+alias sudo='sudo -i'
+
 # tmux with 256 colors
 alias tmux='tmux -2'
 
@@ -101,4 +104,6 @@ export TERM='xterm-256color'
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-fortune | cowsay
+
+fortune -s | cowsay
+echo "" # empty line
