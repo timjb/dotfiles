@@ -51,6 +51,9 @@ fi
 # Personalized #
 ################
 
+# Don't show these commands in the history
+export HISTIGNORE=ls:fg:q
+
 PS1="\[\033[1;34m\]\w\[\033[0m\] \$ "
 
 # Navigation
@@ -86,9 +89,6 @@ alias q='exit'
 alias v='vim'
 alias l='less'
 alias ..='cd ..'
-
-# Load env in sudo
-alias sudo='sudo -i'
 
 # tmux with 256 colors
 alias tmux='tmux -2'
