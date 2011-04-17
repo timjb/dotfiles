@@ -14,6 +14,7 @@ main = xmonad gnomeConfig
   { workspaces = myWorkspaces
   , manageHook = manageDocks <+> myManageHook
   , layoutHook = onWorkspace "9:gimp" gimp $ layoutHook gnomeConfig
+  , terminal = "xterm"
   }
   where
     gimp = withIM (0.18) (Role "gimp-toolbox") $

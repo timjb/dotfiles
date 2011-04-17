@@ -4,11 +4,8 @@ call pathogen#helptags()
 
 " Syntax Highlighting
 syntax on
-if $COLORTERM == 'gnome-terminal'
-  colorscheme railscasts
-else 
-  colorscheme default
-endif
+set background=dark
+colorscheme solarized
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
@@ -143,7 +140,7 @@ set copyindent
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
-let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_enable_on_vim_startup = 1
 
 " Plugin: ZenCoding
 let g:user_zen_settings={

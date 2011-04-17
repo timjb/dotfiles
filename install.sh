@@ -10,3 +10,4 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.emacs ~/.emacs
 ln -s ~/dotfiles/.viper ~/.viper
 ln -s ~/dotfiles/bin ~/bin
+ln -s ~/dotfiles/.xmonad ~/.xmonad
