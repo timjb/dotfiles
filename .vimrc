@@ -83,7 +83,7 @@ map <C-l> <C-w>l
 """"""""
 
 " Plugin: easytags (http://peterodding.com/code/vim/easytags/)
-let g:easytags_always_enabled = 1
+"let g:easytags_always_enabled = 1
 
 
 
