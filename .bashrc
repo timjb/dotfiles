@@ -61,8 +61,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Rubygems, Cabal (Haskell packet manager)
-PATH=$PATH:/var/lib/gems/1.8/bin:$HOME/.cabal/bin
+# Rubygems, npm (node package manager), Cabal (Haskell packet manager)
+PATH=$PATH:/var/lib/gems/1.8/bin:$HOME/node_modules/.bin:$HOME/.cabal/bin
 
 # Use $HOME/bin
 PATH=$PATH:$HOME/bin

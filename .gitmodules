@@ -43,9 +43,6 @@
 [submodule ".vim/bundle/vim-yankring"]
 	path = .vim/bundle/vim-yankring
 	url = http://github.com/chrismetcalf/vim-yankring.git
-[submodule ".vim/bundle/easytags.vim"]
-	path = .vim/bundle/easytags.vim
-	url = http://github.com/vim-scripts/easytags.vim.git
 [submodule ".vim/bundle/vim-textobj-user"]
 	path = .vim/bundle/vim-textobj-user
 	url = http://github.com/kana/vim-textobj-user.git
