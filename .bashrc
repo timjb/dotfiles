@@ -102,3 +102,9 @@ export TERM='xterm-256color'
 
 fortune -s | cowsay
 echo "" # empty line
+
+# High Level Assembler needs this
+# http://homepage.mac.com/randyhyde/webster.cs.ucr.edu/HighLevelAsm/HLADoc/HLARef/HLARef_pdf/03_InstallingHLA.pdf
+export hlalib=/usr/hla/hlalib
+export hlainc=/usr/hla/include
+export hlatemp=/tmp
