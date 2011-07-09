@@ -108,3 +108,9 @@ echo "" # empty line
 export hlalib=/usr/hla/hlalib
 export hlainc=/usr/hla/include
 export hlatemp=/tmp
+
+# Git Aliases
+alias gst='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
