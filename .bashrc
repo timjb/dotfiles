@@ -92,7 +92,7 @@ alias tmux='tmux -2'
 alias vimt='vim -c "NERDTree"'
 
 # Move files to trash instead of deleting them (uses trash-cli)
-alias rm='trash-put'
+alias rm='trash'
 
 # 256 colors
 export TERM='xterm-256color'
