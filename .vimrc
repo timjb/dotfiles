@@ -4,6 +4,7 @@ call pathogen#helptags()
 
 " Syntax Highlighting
 syntax on
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 " Highlights CSS Colors (e.g. #ff8800)
