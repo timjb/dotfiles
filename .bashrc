@@ -56,11 +56,6 @@ export HISTIGNORE=ls:fg:q
 
 PS1="\[\033[1;34m\]\w\[\033[0m\] \$ "
 
-# Navigation
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Rubygems, npm (node package manager), Cabal (Haskell packet manager)
 PATH=$PATH:/var/lib/gems/1.8/bin:$HOME/node_modules/.bin:$HOME/.cabal/bin
 
@@ -78,9 +73,12 @@ fi
 
 # One letter aliases
 alias q='exit'
+alias g='git'
 alias v='vim'
 alias l='less'
 alias ..='cd ..'
+
+alias untargz='tar xvf'
 
 # tmux with 256 colors
 alias tmux='tmux -2'
