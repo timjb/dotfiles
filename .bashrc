@@ -80,6 +80,9 @@ alias ..='cd ..'
 
 alias untargz='tar xvf'
 
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 # tmux with 256 colors
 alias tmux='tmux -2'
 
