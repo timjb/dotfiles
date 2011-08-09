@@ -8,7 +8,7 @@
 	color = auto
 [giggle]
 	main-window-maximized = false
-	main-window-geometry = 823x615+247+107
+	main-window-geometry = 823x615+91+24
 	file-view-vpane-position = 422
-	history-view-vpane-position = 446
-	main-window-view = FileView
+	history-view-vpane-position = 332
+	main-window-view = HistoryView

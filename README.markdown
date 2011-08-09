@@ -13,8 +13,9 @@ Init submodules:
 	git submodule init
 	git submodule update
 
-1. Create symlinks. `install.sh` does that for you.
-2. To use my nautilus templates, change the following line in
+1. Create symlinks. `./install.sh` does that for you.
+2. You may need to run `xrdb ~/.Xresources` to get the solarized colorscheme working.
+3. To use my nautilus templates, change the following line in
    `~/.config/user-dirs.dirs`:
 
 	XDG_TEMPLATES_DIR="$HOME/"
