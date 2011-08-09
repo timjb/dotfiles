@@ -16,9 +16,6 @@
 [submodule ".vim/bundle/vim-json"]
 	path = .vim/bundle/vim-json
 	url = http://github.com/leshill/vim-json.git
-[submodule ".vim/bundle/zencoding-vim"]
-	path = .vim/bundle/zencoding-vim
-	url = http://github.com/mattn/zencoding-vim.git
 [submodule ".vim/bundle/snipmate.vim"]
 	path = .vim/bundle/snipmate.vim
 	url = http://github.com/msanders/snipmate.vim.git
@@ -28,27 +25,12 @@
 [submodule ".vim/bundle/vim-mac-classic-theme"]
 	path = .vim/bundle/vim-mac-classic-theme
 	url = http://github.com/nelstrom/vim-mac-classic-theme.git
-[submodule ".vim/bundle/vim-rails"]
-	path = .vim/bundle/vim-rails
-	url = http://github.com/tpope/vim-rails.git
-[submodule ".vim/bundle/vim-endwise"]
-	path = .vim/bundle/vim-endwise
-	url = http://github.com/tpope/vim-endwise.git
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = http://github.com/nuclearsandwich/vim-latex.git
-[submodule ".vim/bundle/vim-yankring"]
-	path = .vim/bundle/vim-yankring
-	url = http://github.com/chrismetcalf/vim-yankring.git
-[submodule ".vim/bundle/vim-textobj-user"]
-	path = .vim/bundle/vim-textobj-user
-	url = http://github.com/kana/vim-textobj-user.git
-[submodule ".vim/bundle/vim-textobj-rubyblock"]
-	path = .vim/bundle/vim-textobj-rubyblock
-	url = http://github.com/nelstrom/vim-textobj-rubyblock.git
 [submodule ".vim/bundle/scss-syntax.vim"]
 	path = .vim/bundle/scss-syntax.vim
 	url = http://github.com/cakebaker/scss-syntax.vim.git
