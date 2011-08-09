@@ -4,7 +4,9 @@ call pathogen#helptags()
 
 " Syntax Highlighting
 syntax on
-let g:solarized_termcolors=256
+" Comment out the following line and solarized will work in xterm
+" Remove the quote and solarized will work in Gnome Terminal
+"let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 " Highlights CSS Colors (e.g. #ff8800)
@@ -164,11 +166,11 @@ endif
 " Abbreviations "
 """""""""""""""""
 
-"Horizontal Ellipsis
+" Horizontal Ellipsis
 abbr ... …
-"n-Dash
+" n-Dash
 abbr ---  –
-"My name
+" My name
 abbr tjb Tim Baumann
 
 
