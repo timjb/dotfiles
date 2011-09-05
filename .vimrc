@@ -91,7 +91,7 @@ map <C-l> <C-w>l
 " Make "
 """"""""
 
-set makeprg=rake
+set makeprg=make
 nmap M :make<Enter>
 
 
