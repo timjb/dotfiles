@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bin/YPasswordCLI"]
+	path = bin/YPasswordCLI
+	url = git://github.com/yogsototh/YPasswordCLI.git
