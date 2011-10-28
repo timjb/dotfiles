@@ -55,3 +55,6 @@
 [submodule "bin/YPasswordCLI"]
 	path = bin/YPasswordCLI
 	url = git://github.com/yogsototh/YPasswordCLI.git
+[submodule ".vim/bundle/vim-clojure"]
+	path = .vim/bundle/vim-clojure
+	url = https://github.com/vim-scripts/VimClojure.git
