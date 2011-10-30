@@ -3,3 +3,7 @@
 /.xmonad/xmonad.hi
 /.xmonad/xmonad.o
 /.xmonad/xmonad-i386-linux
+/.emacs.d/backups
+/.emacs.d/auto-save-list
+/.emacs.d/elpa
+/.emacs.d/.smex-items
