@@ -8,7 +8,14 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-js starter-kit-ruby starter-kit-bindings)
+(defvar my-packages '(starter-kit
+                      starter-kit-lisp
+                      starter-kit-js
+                      starter-kit-ruby
+                      starter-kit-bindings
+                      clojure-mode
+                      markdown-mode
+                      haskell-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
