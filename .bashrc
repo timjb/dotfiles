@@ -13,7 +13,7 @@ PS1='[\u@\h \W]\$ '
 # Environment
 #
 
-PATH=$PATH:$HOME/.cabal/bin:$HOME/bin
+PATH=$PATH:$HOME/.cabal/bin:$HOME/bin:$HOME/.gem/ruby/1.9.1/bin
 # Use $HOME/dotfiles/bin
 [[ -d "$HOME/dotfiles/bin" ]] && PATH=$PATH:$HOME/dotfiles/bin
 
