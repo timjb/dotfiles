@@ -22,39 +22,12 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-mac-classic-theme"]
-	path = .vim/bundle/vim-mac-classic-theme
-	url = http://github.com/nelstrom/vim-mac-classic-theme.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = http://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-latex"]
-	path = .vim/bundle/vim-latex
-	url = http://github.com/nuclearsandwich/vim-latex.git
-[submodule ".vim/bundle/scss-syntax.vim"]
-	path = .vim/bundle/scss-syntax.vim
-	url = http://github.com/cakebaker/scss-syntax.vim.git
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/bundle/vim-matchit
 	url = https://github.com/tsaleh/vim-matchit.git
-[submodule ".vim/bundle/vim-indent-guides"]
-	path = .vim/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/haskellmode-vim"]
 	path = .vim/bundle/haskellmode-vim
 	url = https://github.com/ehamberg/haskellmode-vim.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bin/YPasswordCLI"]
 	path = bin/YPasswordCLI
 	url = git://github.com/yogsototh/YPasswordCLI.git
-[submodule ".vim/bundle/vim-clojure"]
-	path = .vim/bundle/vim-clojure
-	url = https://github.com/vim-scripts/VimClojure.git
