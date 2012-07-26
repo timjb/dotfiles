@@ -1,6 +1,0 @@
-#!/bin/sh
-# http://hubpages.com/hub/Youtube-to-MP3-on-Ubuntu-Linux
-x=~/youtube-dl-tmp.flv
-youtube-dl --output=$x --format=18 "$1"
-ffmpeg -i $x -acodec libmp3lame -ac 2 -ab 128k -vn -y "$2"
-rm $x
