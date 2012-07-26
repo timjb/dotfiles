@@ -13,5 +13,4 @@ Init submodules:
 	git submodule init
 	git submodule update
 
-1. Create symlinks. `./install.sh` does that for you.
-2. You may need to run `xrdb ~/.Xresources` to get the solarized colorscheme working.
+Create symlinks. `./install.sh` does that for you.
