@@ -4,11 +4,8 @@ call pathogen#helptags()
 
 " Syntax Highlighting
 syntax on
-" Comment out the following line and solarized will work in xterm
-" Remove the quote and solarized will work in Gnome Terminal
-"let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme blackboard
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
@@ -136,18 +133,6 @@ set softtabstop=2
 set autoindent
 set copyindent
 
-" Plugin: vim-indent-guides
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3A3A3A ctermbg=237
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
-"let g:indent_guides_enable_on_vim_startup = 1
-
-" Plugin: ZenCoding
-let g:user_zen_settings={
-\  'indentation' : '  '
-\}
-
-
 
 """"""""""""""
 " File Types "
@@ -220,22 +205,12 @@ command! -nargs=* Wrap set  wrap linebreak nolist
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Plugin: vim-rails (http://github.com/tpope/vim-rails)
-" goto related model/view/controller
-nmap <leader>rm :Rmodel<CR>
-nmap <leader>rv :Rview<CR>
-nmap <leader>rc :Rcontroller<CR>
-
 "Copy to System's pasteboard
 map <leader>y "+y
 "Cut to System's pasteboard
 map <leader>d "+d
 "Paste from System's pasteboard
 map <leader>p "+p
-
-" Plugin: Tabular (http://github.com/godlygeek/tabular)
-nmap <leader>= :Tabularize /=<CR>
-nmap <leader>: :Tabularize /:\zs<CR>
 
 " CSS: Insert vendor prefixes -moz- and -webkit-
 " This assumes a coding style with one line for each CSS property
