@@ -21,6 +21,7 @@ addToPath $HOME/.cabal/bin
 addToPath $HOME/bin
 addToPath $HOME/.gem/ruby/1.9.1/bin
 addToPath $HOME/dotfiles/bin
+addToPath $HOME/Library/Haskell/bin
 
 PS1="\[\033[1;34m\]\w\[\033[0m\] \$ "
 
