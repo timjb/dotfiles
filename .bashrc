@@ -13,9 +13,14 @@ PS1='[\u@\h \W]\$ '
 # Environment
 #
 
-PATH=$PATH:$HOME/.cabal/bin:$HOME/bin:$HOME/.gem/ruby/1.9.1/bin
-# Use $HOME/dotfiles/bin
-[[ -d "$HOME/dotfiles/bin" ]] && PATH=$PATH:$HOME/dotfiles/bin
+function addToPath {
+  [[ -d $1 ]] && PATH=$PATH:$1
+}
+
+addToPath $HOME/.cabal/bin
+addToPath $HOME/bin
+addToPath $HOME/.gem/ruby/1.9.1/bin
+addToPath $HOME/dotfiles/bin
 
 PS1="\[\033[1;34m\]\w\[\033[0m\] \$ "
 
