@@ -8,3 +8,5 @@ ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/bin ~/bin
 ln -s ~/dotfiles/.xmonad ~/.xmonad
+mkdir -p ~/.config/fish
+ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
