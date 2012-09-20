@@ -10,3 +10,4 @@ ln -s ~/dotfiles/bin ~/bin
 ln -s ~/dotfiles/.xmonad ~/.xmonad
 mkdir -p ~/.config/fish
 ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/dotfiles/.stylish-haskell.yaml ~/.stylish-haskell.yaml
