@@ -4,7 +4,7 @@
 
 function fish_greeting -d "A cow greets you with eternal wisdom"
   set_color red
-  fortune | cowsay
+  fortune | cowsay
   set_color normal
   echo "" # empty line
 end
