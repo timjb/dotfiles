@@ -8,6 +8,7 @@ ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/bin ~/bin
 ln -s ~/dotfiles/.xmonad ~/.xmonad
-mkdir -p ~/.config/fish
+mkdir -p ~/.config/fish/completions
 ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/dotfiles/.config/fish/completions/ypassword.fish ~/.config/fish/completions/ypassword.fish
 ln -s ~/dotfiles/.stylish-haskell.yaml ~/.stylish-haskell.yaml
