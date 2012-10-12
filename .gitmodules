@@ -25,6 +25,7 @@
 [submodule ".vim/bundle/haskellmode-vim"]
 	path = .vim/bundle/haskellmode-vim
 	url = https://github.com/ehamberg/haskellmode-vim.git
+	ignore = dirty
 [submodule "bin/YPasswordCLI"]
 	path = bin/YPasswordCLI
 	url = git://github.com/yogsototh/YPasswordCLI.git
