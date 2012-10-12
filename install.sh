@@ -14,3 +14,4 @@ mkdir -p ~/.config/fish/completions
 ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/.config/fish/completions/ypassword.fish ~/.config/fish/completions/ypassword.fish
 ln -s ~/dotfiles/.stylish-haskell.yaml ~/.stylish-haskell.yaml
+ln -s ~/dotfiles/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
