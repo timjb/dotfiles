@@ -25,6 +25,7 @@ function add-to-path -d "Add directories to \$PATH"
 end
 
 add-to-path ~/.cabal/bin ~/bin ~/dotfiles/bin
+add-to-path /usr/local/share/npm/bin # npm installed by homebrew
 add-to-path /usr/local/heroku/bin
 add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
 add-to-path ~/.gem/ruby/*/bin
