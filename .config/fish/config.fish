@@ -19,13 +19,14 @@ function add-to-path -d "Add directories to \$PATH"
         test -d $dir
         and not contains $dir $PATH
       end
-      set PATH $PATH $dir
+      set -x PATH $PATH $dir
     end
   end
 end
 
-add-to-path ~/.cabal/bin ~/bin ~/.gem/ruby/*/bin ~/dotfiles/bin
+add-to-path ~/.cabal/bin ~/bin ~/dotfiles/bin
 add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
+add-to-path ~/.gem/ruby/*/bin
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
