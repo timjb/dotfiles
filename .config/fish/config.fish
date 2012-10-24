@@ -52,3 +52,6 @@ alias untargz "tar xvf"
 
 # Open vim and NERDTree
 function vimt; vim -c "NERDTree"; end
+
+# Environment
+set -x LC_ALL "en_US.UTF-8"
