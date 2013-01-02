@@ -29,6 +29,7 @@ add-to-path /usr/local/share/npm/bin # npm installed by homebrew
 add-to-path /usr/local/heroku/bin
 add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
 add-to-path ~/.gem/ruby/*/bin
+add-to-path /usr/local/mysql/bin
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
