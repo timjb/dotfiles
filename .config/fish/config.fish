@@ -30,6 +30,9 @@ add-to-path /usr/local/heroku/bin
 add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
 add-to-path ~/.gem/ruby/*/bin
 add-to-path /usr/local/mysql/bin
+add-to-path /usr/texbin
+
+set -x DYLD_LIBRARY_PATH /usr/local/mysql/lib
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
