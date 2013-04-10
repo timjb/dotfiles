@@ -4,8 +4,11 @@ call pathogen#helptags()
 
 " Syntax Highlighting
 syntax on
-set background=dark
-colorscheme blackboard
+if has("gui_running")
+  colorscheme blackboard
+else
+  colorscheme default
+endif
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
