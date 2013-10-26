@@ -31,6 +31,7 @@ add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
 add-to-path ~/.gem/ruby/*/bin
 add-to-path /usr/local/mysql/bin
 add-to-path /usr/texbin
+add-to-path ~/anaconda/bin
 
 set -x DYLD_LIBRARY_PATH /usr/local/mysql/lib
 
