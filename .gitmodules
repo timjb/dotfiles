@@ -25,3 +25,9 @@
 [submodule "bin/YPasswordCLI"]
 	path = bin/YPasswordCLI
 	url = git://github.com/yogsototh/YPasswordCLI.git
+[submodule ".vim/bundle/vim2hs"]
+	path = .vim/bundle/vim2hs
+	url = https://github.com/dag/vim2hs.git
+[submodule ".vim/bundle/idris-vim"]
+	path = .vim/bundle/idris-vim
+	url = https://github.com/idris-hackers/idris-vim.git
