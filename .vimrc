@@ -16,6 +16,7 @@ set shell=/bin/bash
 
 " Leader key
 let mapleader=","
+let maplocalleader=","
 
 " Enable File Type Detection & ftplugin
 filetype off " Force reloading of filetypes
