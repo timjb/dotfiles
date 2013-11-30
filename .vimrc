@@ -12,6 +12,9 @@ endif
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
+" Shell (syntastic doesn't work with fish)
+set shell=/bin/bash
+
 " Leader key
 let mapleader=","
 
