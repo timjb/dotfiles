@@ -56,11 +56,6 @@ set title
 " write with root privileges
 cmap w!! w !sudo tee % >/dev/null
 
-" Plugin: haskellmode-vim
-let g:haddock_browser = "/usr/bin/google-chrome"
-let g:ghc = "/usr/bin/ghc"
-let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html/"
-
 
 
 """""""""""
@@ -145,7 +140,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
   autocmd BufNewFile,BufRead *.json       setfiletype json
   autocmd BufNewFile,BufRead *.less       setfiletype less
-  autocmd BufEnter *.hs compiler ghc
 endif
 
 
