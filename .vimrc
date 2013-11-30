@@ -1,6 +1,5 @@
 " Plugin: pathogen
-call pathogen#incubate()
-call pathogen#helptags()
+call pathogen#infect()
 
 " Syntax Highlighting
 syntax on
