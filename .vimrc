@@ -1,5 +1,5 @@
 " Plugin: pathogen
-call pathogen#infect()
+execute pathogen#infect()
 
 " Syntax Highlighting
 syntax on
@@ -31,6 +31,12 @@ set relativenumber
 " Don't warn when switching from an unsaved buffer
 set hidden
 
+" Statusline
+set laststatus=2 " always display status line
+" Airlinee
+let g:airline_powerline_fonts=1
+set noshowmode " turn off default mode indicator
+
 " Searching
 set ignorecase
 set smartcase
@@ -53,6 +59,8 @@ nnoremap gk k
 
 " change the terminal's title
 set title
+
+set ttimeoutlen=20
 
 " write with root privileges
 cmap w!! w !sudo tee % >/dev/null
@@ -171,7 +179,7 @@ function! ToggleMouse()
   if !exists("s:old_mouse")
     let s:old_mouse = "a"
   endif
-  
+
   if &mouse == ""
     let &mouse = s:old_mouse
     echo "Mouse is for Vim (" . &mouse . ")"
