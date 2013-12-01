@@ -37,6 +37,9 @@ set laststatus=2 " always display status line
 let g:airline_powerline_fonts=1
 set noshowmode " turn off default mode indicator
 
+" Editing
+set backspace=indent,eol,start " unrestrained backspacing
+
 " Searching
 set ignorecase
 set smartcase
