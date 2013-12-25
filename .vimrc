@@ -232,6 +232,7 @@ nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearc
 
 " Plugin: NERDTree
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.ibc']
 
 set pastetoggle=<F3>
 map <F4> :call ToggleMouse()<CR>
