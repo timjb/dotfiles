@@ -1,19 +1,20 @@
 " Plugin: pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 " Syntax Highlighting
 syntax on
-if has("gui_running")
-  colorscheme blackboard
-else
-  colorscheme default
-endif
+set background=dark
+colorscheme Tomorrow-Night
+
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
 
+" Shell (syntastic doesn't work with fish)
+set shell=/bin/bash
+
 " Leader key
 let mapleader=","
+let maplocalleader=","
 
 " Enable File Type Detection & ftplugin
 filetype off " Force reloading of filetypes
@@ -29,6 +30,15 @@ set relativenumber
 " Buffers
 " Don't warn when switching from an unsaved buffer
 set hidden
+
+" Statusline
+set laststatus=2 " always display status line
+" Airlinee
+let g:airline_powerline_fonts=1
+set noshowmode " turn off default mode indicator
+
+" Editing
+set backspace=indent,eol,start " unrestrained backspacing
 
 " Searching
 set ignorecase
@@ -53,13 +63,10 @@ nnoremap gk k
 " change the terminal's title
 set title
 
+set ttimeoutlen=20
+
 " write with root privileges
 cmap w!! w !sudo tee % >/dev/null
-
-" Plugin: haskellmode-vim
-let g:haddock_browser = "/usr/bin/google-chrome"
-let g:ghc = "/usr/bin/ghc"
-let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html/"
 
 
 
@@ -145,7 +152,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
   autocmd BufNewFile,BufRead *.json       setfiletype json
   autocmd BufNewFile,BufRead *.less       setfiletype less
-  autocmd BufEnter *.hs compiler ghc
 endif
 
 
@@ -176,7 +182,7 @@ function! ToggleMouse()
   if !exists("s:old_mouse")
     let s:old_mouse = "a"
   endif
-  
+
   if &mouse == ""
     let &mouse = s:old_mouse
     echo "Mouse is for Vim (" . &mouse . ")"
@@ -226,6 +232,7 @@ nmap <leader>vp ^vf:h"pyviB:s/\v\s*\-(moz\|webkit)\-<C-r>p:.*\n//g<CR>:nohlsearc
 
 " Plugin: NERDTree
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.ibc']
 
 set pastetoggle=<F3>
 map <F4> :call ToggleMouse()<CR>
