@@ -33,7 +33,7 @@ add-to-path /usr/local/mysql/bin
 add-to-path /usr/texbin
 add-to-path ~/anaconda/bin
 
-set -x DYLD_LIBRARY_PATH /usr/local/mysql/lib
+set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
