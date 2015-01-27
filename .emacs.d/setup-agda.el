@@ -1,11 +1,11 @@
-;; Load Agda mode
-(load-file (let ((coding-system-for-read 'utf-8))
-                (shell-command-to-string "agda-mode locate")))
 ;; Set Agda path
-(custom-set-variables '(agda2-include-dirs
-  (quote ("."
-          (expand-file-name "~/Library/Agda/lib-0.8.1/src")
-          (expand-file-name "~/Projects/categories")))))
+(setq agda2-include-dirs (list (expand-file-name "~/Projects/categories")))
+
+;; Set Agda path
+(setq agda2-include-dirs
+  (list "."
+        (expand-file-name "~/Library/Agda/lib-0.8.1/src")
+        (expand-file-name "~/Projects/categories")))
 
 ;; Custom Agda keybindings
 (add-hook 'evil-insert-state-entry-hook (lambda () (set-input-method "Agda")))
