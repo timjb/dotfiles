@@ -38,6 +38,8 @@ set -x GHC_DOT_APP "/Applications/ghc-7.8.3.app"
 add-to-path "$HOME/.cabal/bin" "$GHC_DOT_APP/Contents/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
+set -x DOCKER_HOST tcp://127.0.0.1:4243
+
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
