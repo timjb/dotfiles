@@ -1,20 +1,38 @@
 #!/bin/bash
 
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitexcludes ~/.gitexcludes
-ln -s ~/dotfiles/.gvimrc ~/.gvimrc
-ln -s ~/dotfiles/.hgrc ~/.hgrc
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/.emacs ~/.emacs
-ln -s ~/dotfiles/.emacs.d ~/.emacs.d
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/bin ~/bin
-ln -s ~/dotfiles/.xmonad ~/.xmonad
+function createLink {
+  if [ -e "$2" ]; then
+    if [ "$(readlink "$2")" != "$1" ]; then
+      echo "Could not create link $2: File already exists"
+    fi
+  else
+    ln -s "$1" "$2"
+    echo "Created link $2"
+  fi
+}
+
+function linkDotfile {
+  createLink "$HOME/dotfiles/$1" "$HOME/$1"
+}
+
+linkDotfile ".bashrc"
+linkDotfile ".gitconfig"
+linkDotfile ".gitexcludes"
+linkDotfile ".gvimrc"
+linkDotfile ".hgrc"
+linkDotfile ".tmux.conf"
+linkDotfile ".emacs"
+linkDotfile ".emacs.d"
+linkDotfile ".vim"
+linkDotfile ".vimrc"
+linkDotfile "bin"
+linkDotfile ".xmonad"
 mkdir -p ~/.config/fish/completions
-ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
-ln -s ~/dotfiles/.config/fish/nix.fish ~/.config/fish/nix.fish
-ln -s ~/dotfiles/.config/fish/completions/ypassword.fish ~/.config/fish/completions/ypassword.fish
-ln -s ~/dotfiles/.stylish-haskell.yaml ~/.stylish-haskell.yaml
-ln -s ~/dotfiles/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+linkDotfile ".config/fish/config.fish"
+linkDotfile ".config/fish/nix.fish"
+linkDotfile ".config/fish/completions/ypassword.fish"
+linkDotfile ".stylish-haskell.yaml"
+
+if [ -d "~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/" ]; then
+  createLink ~/dotfiles/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+fi
