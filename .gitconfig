@@ -2,7 +2,7 @@
 	name = Tim Baumann
 	email = tim@timbaumann.info
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 	excludesfile = /home/tim/.gitexcludes
 [giggle]
 	main-window-maximized = false
