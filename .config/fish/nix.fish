@@ -1,4 +1,4 @@
-if test -n "$HOME"
+if test -n "$HOME" -a -z "$NIX_PATH"
   set -x NIX_LINK "$HOME/.nix-profile"
 
   # Set the default profile.
