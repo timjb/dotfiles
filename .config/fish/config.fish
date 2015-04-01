@@ -34,7 +34,7 @@ add-to-path /usr/texbin
 add-to-path /sbin /usr/sbin
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
-set -x GHC_DOT_APP "/Applications/ghc-7.8.3.app"
+set -x GHC_DOT_APP "/Applications/ghc-7.10.1.app"
 add-to-path "$HOME/.cabal/bin" "$GHC_DOT_APP/Contents/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
