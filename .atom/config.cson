@@ -1,0 +1,34 @@
+"*":
+  "exception-reporting":
+    userId: "950f7b1c-2f7a-f58e-8485-d23059240acf"
+  "release-notes":
+    viewedVersion: "0.94.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "f08d842aac4565cc60475dd721e2ee5fec902cc7"
+  editor:
+    fontSize: 14
+    invisibles: {}
+    showInvisibles: true
+    softWrap: true
+  core:
+    themes: [
+      "atom-dark-ui"
+      "blackboard"
+    ]
+    audioBeep: false
+    destroyEmptyPanes: false
+    projectHome: "/Users/tim/Projects"
+    ignoredNames: [
+      ".git"
+      ".DS_Store"
+      ".log"
+      ".aux"
+      ".cabal-sandbox"
+    ]
+  "tree-view": {}
+  autosave:
+    enabled: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
