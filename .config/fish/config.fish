@@ -32,6 +32,8 @@ add-to-path ~/.gem/ruby/*/bin
 add-to-path /usr/local/mysql/bin
 add-to-path /usr/texbin
 add-to-path /sbin /usr/sbin
+add-to-path ~/Software/emsdk_portable/{,clang/e1.29.0_64bit,node/0.10.18_64bit/bin,emscripten/1.29.0} 
+add-to-path ~/.local/bin # stack
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 set -x GHC_DOT_APP "/Applications/ghc-7.10.1.app"
