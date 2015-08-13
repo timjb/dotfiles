@@ -32,12 +32,11 @@ add-to-path ~/.gem/ruby/*/bin
 add-to-path /usr/local/mysql/bin
 add-to-path /usr/texbin
 add-to-path /sbin /usr/sbin
-add-to-path ~/Software/emsdk_portable/{,clang/e1.29.0_64bit,node/0.10.18_64bit/bin,emscripten/1.29.0} 
-add-to-path ~/.local/bin # stack
+add-to-path ~/Software/emsdk_portable/{,clang/e1.29.0_64bit,node/0.10.18_64bit/bin,emscripten/1.29.0}
 
-# Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
-set -x GHC_DOT_APP "/Applications/ghc-7.10.1.app"
-add-to-path "$HOME/.cabal/bin" "$GHC_DOT_APP/Contents/bin"
+# Haskell
+add-to-path ~/.local/bin # stack
+add-to-path "$HOME/.cabal/bin" "~/.stack/programs/x86_64-osx/ghc-7.10.2/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
 set -x DOCKER_HOST tcp://127.0.0.1:4243
