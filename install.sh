@@ -11,8 +11,12 @@ function createLink {
   fi
 }
 
+function linkDotfilePrime {
+  createLink "$HOME/dotfiles/$1" "$HOME/$2"
+}
+
 function linkDotfile {
-  createLink "$HOME/dotfiles/$1" "$HOME/$1"
+  linkDotfilePrime "$1" "$1"
 }
 
 linkDotfile ".bashrc"
@@ -25,6 +29,8 @@ linkDotfile ".emacs"
 linkDotfile ".emacs.d"
 linkDotfile ".vim"
 linkDotfile ".vimrc"
+linkDotfilePrime ".vim" ".nvim" # Neovim
+linkDotfilePrime ".vimrc" ".nvimrc" # Neovim
 linkDotfile "bin"
 linkDotfile ".xmonad"
 mkdir -p ~/.config/fish/completions
