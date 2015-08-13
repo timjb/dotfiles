@@ -1,5 +1,7 @@
 .DS_Store
 
+/bin/stack
+
 /.vim/.netrwhist
 
 /.xmonad/xmonad.errors
