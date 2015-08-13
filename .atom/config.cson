@@ -8,10 +8,10 @@
   metrics:
     userId: "f08d842aac4565cc60475dd721e2ee5fec902cc7"
   editor:
-    fontSize: 14
     invisibles: {}
     showInvisibles: true
     softWrap: true
+    fontSize: 15
   core:
     themes: [
       "atom-dark-ui"
@@ -23,12 +23,19 @@
     ignoredNames: [
       ".git"
       ".DS_Store"
-      ".log"
-      ".aux"
+      "*.log"
+      "*.aux"
+      "*.out"
       ".cabal-sandbox"
     ]
-  "tree-view": {}
+    disabledPackages: [
+      "relative-numbers"
+      "relative-line-numbers"
+    ]
+  "tree-view":
+    hideVcsIgnoredFiles: true
   autosave:
     enabled: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
+  cabal: {}

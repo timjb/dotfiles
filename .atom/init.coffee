@@ -12,3 +12,17 @@
 #   editor = editorView.getEditor()
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrap(true)
+
+# in Atom's init.coffee
+
+###
+atom.packages.onDidActivatePackage (pack) ->
+  if pack.name == 'ex-mode'
+    Ex = pack.mainModule.provideEx()
+    # Save and Build
+    Ex.registerCommand 'sb', ->
+      # next line doesn't work
+      @write().then ->
+        Build = atom.packages.getActivePackage('atom-build').mainModule
+        Build.build()
+###
