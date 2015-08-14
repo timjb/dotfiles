@@ -36,8 +36,7 @@ add-to-path ~/Software/emsdk_portable/{,clang/e1.29.0_64bit,node/0.10.18_64bit/b
 
 # Haskell
 add-to-path ~/.local/bin # stack
-add-to-path "$HOME/.cabal/bin" "~/.stack/programs/x86_64-osx/ghc-7.10.2/bin"
-add-to-path ~/.cabal/bin
+add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-7.10.2/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
 set -x DOCKER_HOST tcp://127.0.0.1:4243
