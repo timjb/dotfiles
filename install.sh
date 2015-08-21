@@ -39,6 +39,7 @@ linkDotfile ".config/fish/nix.fish"
 linkDotfile ".config/fish/completions/ypassword.fish"
 linkDotfile ".stylish-haskell.yaml"
 linkDotfile ".atom"
+linkDotfile "Templates"
 
 if [ -d "~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/" ]; then
   createLink ~/dotfiles/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
