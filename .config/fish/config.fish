@@ -32,7 +32,7 @@ add-to-path ~/.gem/ruby/*/bin
 add-to-path /usr/local/mysql/bin
 add-to-path /usr/texbin
 add-to-path /sbin /usr/sbin
-add-to-path ~/Software/emsdk_portable/{,clang/e1.29.0_64bit,node/0.10.18_64bit/bin,emscripten/1.29.0}
+add-to-path ~/Software/emsdk_portable/{,clang/e1.35.0_64bit,node/4.1.1_64bit/bin,emscripten/1.35.0}
 
 # Haskell
 add-to-path ~/.local/bin # stack
