@@ -1,0 +1,12 @@
+# This file contains default non-project-specific settings for 'stack', used
+# in all projects.  For more information about stack's configuration, see
+# https://github.com/commercialhaskell/stack/blob/release/doc/yaml_configuration.md
+#
+
+templates:
+  params:
+    author-email: tim@timbaumann.info
+    author-name: Tim Baumann
+    copyright: MIT License
+    github-username: timjb
+
