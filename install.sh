@@ -20,6 +20,7 @@ function linkDotfile {
 }
 
 linkDotfile ".bashrc"
+linkDotfile "bitbar-plugins"
 linkDotfile ".gitconfig"
 linkDotfile ".gitexcludes"
 linkDotfile ".gvimrc"
@@ -40,6 +41,7 @@ linkDotfile ".config/fish/completions/ypassword.fish"
 linkDotfile ".stylish-haskell.yaml"
 linkDotfile ".atom"
 linkDotfile "Templates"
+linkDotfile ".stack/config.yaml"
 
 if [ -d "~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/" ]; then
   createLink ~/dotfiles/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
