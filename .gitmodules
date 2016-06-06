@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/syl20bnr/spacemacs
