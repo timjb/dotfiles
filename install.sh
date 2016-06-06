@@ -26,8 +26,6 @@ linkDotfile ".gitexcludes"
 linkDotfile ".gvimrc"
 linkDotfile ".hgrc"
 linkDotfile ".tmux.conf"
-linkDotfile ".emacs"
-linkDotfile ".emacs.d"
 linkDotfile ".vim"
 linkDotfile ".vimrc"
 linkDotfilePrime ".vim" ".nvim" # Neovim
