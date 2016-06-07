@@ -27,6 +27,11 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     (haskell :variables
+              haskell-enable-ghc-mod-support nil
+              ;; haskell-process-type 'stack-ghci
+              ;; haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero")
+              )
      markdown
      org
      ranger
@@ -41,7 +46,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(intero)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -251,6 +256,15 @@ you should place your code here."
               (interactive)
               (when (and (buffer-file-name) (buffer-modified-p))
                 (save-buffer))))
+  ;; HASKELL
+  (add-hook 'haskell-mode-hook
+            (lambda ()
+              (intero-mode)))
+  (spacemacs/set-leader-keys-for-major-mode 'haskell-mode
+    "t" 'intero-type-at
+    "i" 'intero-info
+    "g" 'intero-goto-definition
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
