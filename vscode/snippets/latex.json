@@ -1,0 +1,146 @@
+{
+"Emphasis": {
+  "prefix": "em",
+  "body": "\\\\emph{$1}"
+},
+"Set-Builder-Notation": {
+  "prefix": "set",
+  "body": "\\\\Set{$1}{$2}"
+},
+"Integral": {
+  "prefix": "inte",
+  "body": "\\\\Int{$1}{$2}{$3}{$4}"
+},
+"All-Quantor": {
+  "prefix": "fa",
+  "body": "\\\\fa{$1} $2"
+},
+"Existence-Quantor": {
+  "prefix": "ex",
+  "body": "\\\\ex{$1} $2"
+},
+"Definitions-Istgleich": {
+  "prefix": "ce",
+  "body": "\\\\coloneqq"
+},
+"Intervall": {
+  "prefix": "iv",
+  "body": "\\\\$1interval{$2}{$3}"
+},
+"Bruch": {
+  "prefix": "frac",
+  "body": "\\\\frac{$1}{$2}"
+},
+"Betrag": {
+  "prefix": "abs",
+  "body": "\\\\abs{$1}"
+},
+"Norm": {
+  "prefix": "norm",
+  "body": "\\\\norm{$1}"
+},
+"Lemma": {
+  "prefix": "lem",
+  "body": [
+    "\\\\begin{lem}",
+    "\t$1",
+    "\\\\end{lem}"
+  ]
+},
+"Definition": {
+  "prefix": "defn",
+  "body": [
+    "\\\\begin{defn}",
+    "\t$1",
+    "\\\\end{defn}"
+  ]
+},
+"Beispiel": {
+  "prefix": "bsp",
+  "body": [
+    "\\\\begin{bsp}",
+    "\t$1",
+    "\\\\end{bsp}"
+  ]
+},
+"Beispiele": {
+  "prefix": "bspe",
+  "body": [
+    "\\\\begin{bspe}",
+    "\t$1",
+    "\\\\end{bspe}"
+  ]
+},
+"Satz": {
+  "prefix": "satz",
+  "body": [
+    "\\\\begin{satz}",
+    "\t$1",
+    "\\\\end{satz}"
+  ]
+},
+"Theorem": {
+  "prefix": "thm",
+  "body": [
+    "\\\\begin{thm}",
+    "\t$1",
+    "\\\\end{thm}"
+  ]
+},
+"Korollar": {
+  "prefix": "kor",
+  "body": [
+    "\\\\begin{kor}",
+    "\t$1",
+    "\\\\end{kor}"
+  ]
+},
+"Bemerkung": {
+  "prefix": "bem",
+  "body": [
+    "\\\\begin{bem}",
+    "\t$1",
+    "\\\\end{bem}"
+  ]
+},
+"Proposition": {
+  "prefix": "prop",
+  "body": [
+    "\\\\begin{prop}",
+    "\t$1",
+    "\\\\end{prop}"
+  ]
+},
+"Konstruktion": {
+  "prefix": "konstr",
+  "body": [
+    "\\\\begin{konstr}",
+    "\t$1",
+    "\\\\end{konstr}"
+  ]
+},
+"Notation": {
+  "prefix": "nota",
+  "body": [
+    "\\\\begin{nota}",
+    "\t$1",
+    "\\\\end{nota}"
+  ]
+},
+"Problem": {
+  "prefix": "problem",
+  "body": [
+    "\\\\begin{problem}",
+    "\t$1",
+    "\\\\end{problem}"
+  ]
+},
+"Beobachtung": {
+  "prefix": "beob",
+  "body": [
+    "\\\\begin{beob}",
+    "\t$1",
+    "\\\\end{beob}"
+  ]
+}
+}

@@ -42,3 +42,11 @@ linkDotfile "Templates"
 linkDotfile ".stack/config.yaml"
 linkDotfile ".emacs.d"
 linkDotfile ".spacemacs"
+
+VSCODE_DIR="Library/Application Support/Code/User"
+if [ -d "$HOME/$VSCODE_DIR" ]; then
+  linkDotfilePrime "vscode/snippets" "$VSCODE_DIR/snippets"
+  linkDotfilePrime "vscode/settings.json" "$VSCODE_DIR/settings.json"
+else
+  echo "Not Copying VS Code settings because the directory '~/$VSCODE_DIR' does not exist"
+fi

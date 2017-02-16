@@ -1,0 +1,8 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.autoSave": "onFocusChange",
+    "editor.rulers": [
+        100
+    ],
+    "editor.tabSize": 2,
+  }
