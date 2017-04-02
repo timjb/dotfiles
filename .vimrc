@@ -5,9 +5,7 @@ execute pathogen#infect()
 syntax on
 set background=dark
 colorscheme Tomorrow-Night
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+set t_Co=256
 
 " Highlights CSS Colors (e.g. #ff8800)
 command! -nargs=* HexHighlight call HexHighlight()
