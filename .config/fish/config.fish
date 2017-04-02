@@ -37,7 +37,7 @@ add-to-path ~/.cargo/bin
 
 # Haskell
 add-to-path ~/.local/bin # stack
-add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.0.1/bin"
+add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
 set -x DOCKER_HOST tcp://127.0.0.1:4243
