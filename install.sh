@@ -31,7 +31,6 @@ linkDotfile ".vimrc"
 linkDotfilePrime ".vim" ".nvim" # Neovim
 linkDotfilePrime ".vimrc" ".nvimrc" # Neovim
 linkDotfile "bin"
-linkDotfile ".xmonad"
 mkdir -p ~/.config/fish/completions
 linkDotfile ".config/fish/config.fish"
 linkDotfile ".config/fish/nix.fish"
