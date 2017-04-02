@@ -5,4 +5,12 @@
         100
     ],
     "editor.tabSize": 2,
+    "workbench.colorTheme": "Blackboard",
+    "[cpp]": {
+      "editor.quickSuggestions": false
+    },
+    "[c]": {
+      "editor.quickSuggestions": false
+    },
+    "git.confirmSync": false,
   }

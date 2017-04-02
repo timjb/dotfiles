@@ -1,4 +1,12 @@
 {
+"LaTeX-Block": {
+  "prefix": "beg",
+  "body": [
+    "\\\\begin{$1}",
+    "\t$2",
+    "\\\\end{$1}"
+  ]
+},
 "Emphasis": {
   "prefix": "em",
   "body": "\\\\emph{$1}"
