@@ -3,7 +3,7 @@
 	email = tim@timbaumann.info
 [core]
 	editor = vim
-	excludesfile = /home/tim/.gitexcludes
+	excludesfile = ~/.gitexcludes
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 823x615+91+24
