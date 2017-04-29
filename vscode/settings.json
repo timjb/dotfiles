@@ -1,16 +1,36 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "files.autoSave": "onFocusChange",
-    "editor.rulers": [
-        100
-    ],
-    "editor.tabSize": 2,
-    "workbench.colorTheme": "Blackboard",
-    "[cpp]": {
-      "editor.quickSuggestions": false
-    },
-    "[c]": {
-      "editor.quickSuggestions": false
-    },
-    "git.confirmSync": false,
-  }
+  "files.autoSave": "onFocusChange",
+  "editor.lineNumbers": "relative",
+  "editor.rulers": [
+      100
+  ],
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
+  "workbench.colorTheme": "Blackboard",
+  "[cpp]": {
+    "editor.quickSuggestions": false
+  },
+  "[c]": {
+    "editor.quickSuggestions": false
+  },
+  "git.confirmSync": false,
+  "window.zoomLevel": 0,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.olean": true,
+    "**/.stack-work/**": true
+  },
+  "files.associations": {
+    "*.hsc": "haskell"
+  },
+  "workbench.iconTheme": "vs-minimal",
+  "lean.timeLimit": 200000,
+  "lean.memoryLimit": 1024,
+  "lean.roiModeDefault": "open",
+  "workbench.welcome.enabled": true
+}
