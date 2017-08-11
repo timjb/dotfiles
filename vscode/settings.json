@@ -1,21 +1,14 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "files.autoSave": "onFocusChange",
   "editor.lineNumbers": "relative",
   "editor.rulers": [
       100
   ],
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
-  "workbench.colorTheme": "Blackboard",
-  "[cpp]": {
-    "editor.quickSuggestions": false
-  },
-  "[c]": {
-    "editor.quickSuggestions": false
-  },
-  "git.confirmSync": false,
-  "window.zoomLevel": 0,
+  "explorer.sortOrder": "type",
+  "extensions.autoUpdate": true,
+  "files.autoSave": "onFocusChange",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -28,9 +21,23 @@
   "files.associations": {
     "*.hsc": "haskell"
   },
-  "workbench.iconTheme": "vs-minimal",
+  "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
   "lean.timeLimit": 200000,
   "lean.memoryLimit": 1024,
   "lean.roiModeDefault": "open",
-  "workbench.welcome.enabled": true
+  "terminal.integrated.scrollback": 2000,
+  "vim.disableAnnoyingNeovimMessage": true,
+  "vim.overrideCopy": false,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Monokai",
+  "[tex]": {
+    "editor.wordWrap": "on"
+  },
+  "[latex]": {
+    "editor.wordWrap": "on"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  }
 }
