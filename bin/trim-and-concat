@@ -1,0 +1,110 @@
+#!/usr/bin/env python
+
+import subprocess
+import sys
+import os.path
+from collections import namedtuple
+
+InputFile = namedtuple("InputFile", "filename start end")
+
+def help():
+  print("usage:")
+  print("  " + sys.argv[0] + " in_1.mp4 [--start time] [--end time] ... in_n.mp4 [--start time] [--end time] --out out.mp4")
+  sys.exit(0)
+
+def fail(err):
+  print("aborted: " + err)
+  sys.exit(1)
+
+def parse_args(args):
+  if "--help" in args:
+    help()
+  infiles = list()
+  outfile = None
+  i = 0
+  while i < len(args):
+    arg = args[i]
+    i += 1
+    if arg == "--out":
+      if not outfile is None:
+        fail("only one --out option possible")
+      if i >= len(args):
+        fail("expected argument to --out")
+      outfile = args[i]
+      i += 1
+    elif arg[0:2] == "--":
+      fail("expected input file, not an argument")
+    else:
+      start = end = None
+      if i < len(args) and args[i] == "--start":
+        i += 1
+        if start != None:
+          fail("--start already given!")
+        if i >= len(args):
+          fail("expected argument to --start")
+        start = args[i]
+        i += 1
+      if i < len(args) and args[i] == "--end":
+        i += 1
+        if end != None:
+          fail("--end already given!")
+        if i >= len(args):
+          fail("expected argument to --end")
+        end = args[i]
+        i += 1
+      infiles.append(InputFile(filename=arg, start=start, end=end))
+  if infiles == []:
+    fail("no input files given!")
+  if outfile is None:
+    fail("no option --out!")
+  return (infiles, outfile)
+
+def main():
+  (infiles, outfile) = parse_args(sys.argv[1:])
+
+  # trim files if needed
+  trimmed_files = list()
+  for file in infiles:
+    if file.start is None and file.end is None:
+      trimmed_files.append(file.filename)
+    else:
+      (base, ext) = os.path.splitext(file.filename)
+      filename_cut = base + "-cut" + ext
+      subprocess.run(
+        ["ffmpeg"]
+        + ["-y"] # do not ask before overwriting files
+        + ["-i", file.filename] # input file
+        + (["-ss", file.start] if file.start != None else [])
+        + (["-to", file.end] if file.end != None else [])
+        + ["-c", "copy", filename_cut]
+      ).check_returncode()
+      trimmed_files.append(file.filename)
+
+  # concat files
+  videos_filename = 'videos.txt'
+  with open(videos_filename, 'w') as videos_file:
+    for trimmed_file in trimmed_files:
+      videos_file.write("file '" + trimmed_file + "'\n")
+  subprocess.run(
+    ["ffmpeg"]
+    + ["-y"] # do not ask before overwriting files
+    + ["-f", "concat"] # concatenation demuxer
+    + ["-i", videos_filename] # input files
+    + ["-c", "copy"] # preserve codec
+    + [outfile]
+  ).check_returncode()
+
+  # extract audio
+  (base, ext) = os.path.splitext(outfile)
+  audio_filename = base + ".aac"
+  subprocess.run(
+    ["ffmpeg"]
+    + ["-y"] # do not ask before overwriting files
+    + ["-i", outfile] # use video produced before
+    + ["-vn"] # disable video recording
+    + ["-acoded", "copy"] # preserve audio codec
+    + [audio_filename]
+  ).check_returncode()
+
+if __name__ == '__main__':
+  main()
