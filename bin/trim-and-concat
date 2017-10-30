@@ -102,7 +102,7 @@ def main():
     + ["-y"] # do not ask before overwriting files
     + ["-i", outfile] # use video produced before
     + ["-vn"] # disable video recording
-    + ["-acoded", "copy"] # preserve audio codec
+    + ["-acodec", "copy"] # preserve audio codec
     + [audio_filename]
   ).check_returncode()
 
