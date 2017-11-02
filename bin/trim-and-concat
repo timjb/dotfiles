@@ -85,6 +85,8 @@ def main():
   with open(videos_filename, 'w') as videos_file:
     for trimmed_file in trimmed_files:
       videos_file.write("file '" + trimmed_file + "'\n")
+  (base, ext) = os.path.splitext(outfile)
+  audio_filename = base + ".aac"
   subprocess.run(
     ["ffmpeg"]
     + ["-y"] # do not ask before overwriting files
@@ -92,15 +94,6 @@ def main():
     + ["-i", videos_filename] # input files
     + ["-c", "copy"] # preserve codec
     + [outfile]
-  ).check_returncode()
-
-  # extract audio
-  (base, ext) = os.path.splitext(outfile)
-  audio_filename = base + ".aac"
-  subprocess.run(
-    ["ffmpeg"]
-    + ["-y"] # do not ask before overwriting files
-    + ["-i", outfile] # use video produced before
     + ["-vn"] # disable video recording
     + ["-acodec", "copy"] # preserve audio codec
     + [audio_filename]
