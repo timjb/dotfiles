@@ -78,7 +78,7 @@ def main():
         + (["-to", file.end] if file.end != None else [])
         + ["-c", "copy", filename_cut]
       ).check_returncode()
-      trimmed_files.append(file.filename)
+      trimmed_files.append(filename_cut)
 
   # concat files
   videos_filename = 'videos.txt'
