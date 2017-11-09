@@ -62,6 +62,16 @@ def parse_args(args):
 def main():
   (infiles, outfile) = parse_args(sys.argv[1:])
 
+  # check if input files exist
+  for file in infiles:
+    if not os.path.isfile(file.filename):
+      print("Input file does not exist: " + file.filename, file=sys.stderr)
+      sys.exit(1)
+
+  # make output file folder if necessary
+  if not os.path.isdir(os.path.dirname(outfile)):
+    os.makedirs(os.path.dirname(outfile))
+
   # trim files if needed
   trimmed_files = list()
   for file in infiles:
