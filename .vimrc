@@ -1,6 +1,3 @@
-" Plugin: pathogen
-execute pathogen#infect()
-
 " Syntax Highlighting
 syntax on
 set background=dark

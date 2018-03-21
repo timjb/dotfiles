@@ -1,42 +1,24 @@
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = http://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/vim-blackboard"]
-	path = .vim/bundle/vim-blackboard
-	url = http://github.com/nelstrom/vim-blackboard.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = http://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/369178"]
-	path = .vim/bundle/369178
-	url = git://gist.github.com/369178.git
-[submodule ".vim/bundle/vim-json"]
-	path = .vim/bundle/vim-json
-	url = http://github.com/leshill/vim-json.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = http://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-matchit"]
-	path = .vim/bundle/vim-matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bin/YPasswordCLI"]
 	path = bin/YPasswordCLI
 	url = git://github.com/yogsototh/YPasswordCLI.git
-[submodule ".vim/bundle/vim2hs"]
-	path = .vim/bundle/vim2hs
-	url = https://github.com/dag/vim2hs.git
-[submodule ".vim/bundle/idris-vim"]
-	path = .vim/bundle/idris-vim
-	url = https://github.com/idris-hackers/idris-vim.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule ".vim/.vim/pack/plugins/nerdtree"]
+	path = .vim/pack/plugins/start/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule ".vim/.vim/pack/plugins/nerdcommenter"]
+	path = .vim/pack/plugins/start/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/.vim/pack/plugins/vim-blackboard"]
+	path = .vim/pack/plugins/start/vim-blackboard
+	url = https://github.com/nelstrom/vim-blackboard.git
+[submodule ".vim/.vim/pack/plugins/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/pack/plugins/vim-airline"]
+	path = .vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".vim/pack/plugins/start/vim-syntastic"]
+	path = .vim/pack/plugins/start/vim-syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
