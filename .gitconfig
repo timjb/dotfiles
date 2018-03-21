@@ -1,5 +1,5 @@
 [user]
-	name = Tim Baumann
+	name = Tim J. Baumann
 	email = tim@timbaumann.info
 [core]
 	editor = vim
@@ -13,8 +13,9 @@
 [color]
 	ui = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
 [push]
 	default = simple
