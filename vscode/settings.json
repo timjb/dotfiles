@@ -16,7 +16,12 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/*.olean": true,
-    "**/.stack-work/**": true
+    "**/.stack-work/**": true,
+    // Coq files:
+    "**/*.v.d": true,
+    "**/.*.aux": true,
+    "**/*.glob": true,
+    "**/*.vo": true
   },
   "files.associations": {
     "*.hsc": "haskell"
@@ -29,7 +34,6 @@
   "lean.roiModeDefault": "open",
   "python.linting.pylintPath": "/usr/local/bin/pylint",
   "terminal.integrated.scrollback": 2000,
-  "vim.disableAnnoyingNeovimMessage": true,
   "vim.overrideCopy": false,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Monokai",
@@ -41,5 +45,7 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on"
-  }
+  },
+  "redprl.path": "/Users/tim/Software/sml-redprl/bin/redprl",
+  "editor.minimap.enabled": false
 }
