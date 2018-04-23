@@ -46,6 +46,7 @@ values."
               ;; haskell-process-type 'stack-ghci
               ;; haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero")
               )
+     agda
      markdown
      org
      ranger
@@ -60,7 +61,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(intero)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -140,8 +141,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Menlo"
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -317,6 +318,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; no autoindent on paste
+  (electric-indent-mode 0)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'agda-mode)
+
   ;; save on focus lost
   (add-hook 'focus-out-hook
             (defun save-current-buffer-if-needed ()
@@ -337,8 +342,136 @@ you should place your code here."
     "t" 'intero-type-at
     "i" 'intero-info
     "g" 'intero-goto-definition
+
     )
+
+  ;; Open .v files with Proof General's Coq mode
+  (load "~/.emacs.d/lisp/PG/generic/proof-site")
+  (define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (powerline spinner org-category-capture alert log4e markdown-mode flycheck hydra projectile epl request yasnippet gitignore-mode magit magit-popup git-commit ghub let-alist with-editor iedit anzu diminish ghc bind-key packed avy haskell-mode company highlight smartparens bind-map f s dash evil goto-chg helm helm-core popup async org-mime xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme toc-org sublime-themes spaceline smeargle shell-pop restart-emacs ranger rainbow-delimiters popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint intero info+ indent-guide hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump define-word company-ghci company-ghc column-enforce-mode cmm-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(safe-local-variable-values
+   (quote
+    ((eval let
+           ((unimath-topdir
+             (expand-file-name
+              (locate-dominating-file buffer-file-name "UniMath"))))
+           (setq fill-column 100)
+           (make-local-variable
+            (quote coq-use-project-file))
+           (setq coq-use-project-file nil)
+           (setq proof-prog-name-ask)
+           (make-local-variable
+            (quote coq-prog-args))
+           (setq coq-prog-args
+                 (\`
+                  ("-emacs" "-indices-matter" "-type-in-type" "-w" "-notation-overridden,-local-declaration,+uniform-inheritance,-deprecated-option" "-Q"
+                   (\,
+                    (concat unimath-topdir "UniMath"))
+                   "UniMath")))
+           (make-local-variable
+            (quote coq-prog-name))
+           (setq coq-prog-name
+                 (concat unimath-topdir "sub/coq/bin/coqtop"))
+           (make-local-variable
+            (quote before-save-hook))
+           (add-hook
+            (quote before-save-hook)
+            (quote delete-trailing-whitespace))
+           (modify-syntax-entry 39 "w")
+           (modify-syntax-entry 95 "w")
+           (if
+               (not
+                (memq
+                 (quote agda-input)
+                 features))
+               (load
+                (concat unimath-topdir "emacs/agda/agda-input")))
+           (if
+               (not
+                (member
+                 (quote
+                  ("chimney" "╝"))
+                 agda-input-user-translations))
+               (progn
+                 (setq agda-input-user-translations
+                       (cons
+                        (quote
+                         ("chimney" "╝"))
+                        agda-input-user-translations))
+                 (setq agda-input-user-translations
+                       (cons
+                        (quote
+                         ("==>" "⟹"))
+                        agda-input-user-translations))
+                 (agda-input-setup)))
+           (set-input-method "Agda"))
+     (eval let
+           ((unimath-topdir
+             (expand-file-name
+              (locate-dominating-file buffer-file-name "UniMath"))))
+           (setq fill-column 100)
+           (make-local-variable
+            (quote coq-use-project-file))
+           (setq coq-use-project-file nil)
+           (make-local-variable
+            (quote coq-prog-args))
+           (setq coq-prog-args
+                 (\`
+                  ("-emacs" "-indices-matter" "-type-in-type" "-w" "-notation-overridden,-local-declaration,+uniform-inheritance,-deprecated-option" "-Q"
+                   (\,
+                    (concat unimath-topdir "UniMath"))
+                   "UniMath")))
+           (make-local-variable
+            (quote coq-prog-name))
+           (setq coq-prog-name
+                 (concat unimath-topdir "sub/coq/bin/coqtop"))
+           (make-local-variable
+            (quote before-save-hook))
+           (add-hook
+            (quote before-save-hook)
+            (quote delete-trailing-whitespace))
+           (modify-syntax-entry 39 "w")
+           (modify-syntax-entry 95 "w")
+           (if
+               (not
+                (memq
+                 (quote agda-input)
+                 features))
+               (load
+                (concat unimath-topdir "emacs/agda/agda-input")))
+           (if
+               (not
+                (member
+                 (quote
+                  ("chimney" "╝"))
+                 agda-input-user-translations))
+               (progn
+                 (setq agda-input-user-translations
+                       (cons
+                        (quote
+                         ("chimney" "╝"))
+                        agda-input-user-translations))
+                 (setq agda-input-user-translations
+                       (cons
+                        (quote
+                         ("==>" "⟹"))
+                        agda-input-user-translations))
+                 (agda-input-setup)))
+           (set-input-method "Agda"))))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
