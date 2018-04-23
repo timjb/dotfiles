@@ -34,12 +34,10 @@ add-to-path /usr/texbin
 add-to-path /sbin /usr/sbin
 add-to-path ~/Software/emsdk_portable/{,clang/e1.35.0_64bit,node/4.1.1_64bit/bin,emscripten/1.35.0}
 add-to-path ~/.cargo/bin
-add-to-path ~/.aloft/cmd
 
 # Haskell
 add-to-path ~/.local/bin # stack
-#add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin"
-add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.2.1/bin"
+add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
 set -x DOCKER_HOST tcp://127.0.0.1:4243
@@ -84,7 +82,3 @@ set -x LC_ALL "en_US.UTF-8"
 
 # Nix configuration
 source ~/.config/fish/nix.fish
-
-# OPAM configuration
-. ~/.opam/opam-init/init.fish
-eval (opam config env)
