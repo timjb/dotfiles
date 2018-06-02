@@ -5,6 +5,7 @@ Installation
 
 Clone the repository:
 
+	cd ~/Projects
 	git clone https://github.com/timjb/dotfiles.git
 
 Init submodules:

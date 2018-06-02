@@ -12,7 +12,7 @@ function createLink {
 }
 
 function linkDotfilePrime {
-  createLink "$HOME/dotfiles/$1" "$HOME/$2"
+  createLink "$HOME/Projects/dotfiles/$1" "$HOME/$2"
 }
 
 function linkDotfile {
@@ -37,6 +37,7 @@ linkDotfile ".config/fish/nix.fish"
 linkDotfile ".config/fish/completions/ypassword.fish"
 linkDotfile ".stylish-haskell.yaml"
 linkDotfile "Templates"
+mkdir -p ~/.stack
 linkDotfile ".stack/config.yaml"
 linkDotfile ".emacs.d"
 linkDotfile ".spacemacs"
