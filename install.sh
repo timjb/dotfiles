@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function createLink {
   if [ -e "$2" ]; then
@@ -42,10 +42,16 @@ linkDotfile ".stack/config.yaml"
 linkDotfile ".emacs.d"
 linkDotfile ".spacemacs"
 
-VSCODE_DIR="Library/Application Support/Code/User"
-if [ -d "$HOME/$VSCODE_DIR" ]; then
+VSCODE_DIR_MACOS="Library/Application Support/Code/User"
+VSCODE_DIR_LINUX=".config/Code/User"
+if [ -d "$HOME/$VSCODE_DIR_MACOS" -o -d "$HOME/$VSCODE_DIR_LINUX" ]; then
+  if [ -d "$HOME/$VSCODE_DIR_MACOS" ]; then
+    VSCODE_DIR="$VSCODE_DIR_MACOS"
+  else
+    VSCODE_DIR="$VSCODE_DIR_LINUX"
+  fi
   linkDotfilePrime "vscode/snippets" "$VSCODE_DIR/snippets"
   linkDotfilePrime "vscode/settings.json" "$VSCODE_DIR/settings.json"
 else
-  echo "Not Copying VS Code settings because the directory '~/$VSCODE_DIR' does not exist"
+  echo "Not copying VS Code settings because neither directory '~/$VSCODE_DIR_MACOS' nor '~/$VSCODE_DIR_LINUX' exists."
 fi
