@@ -26,13 +26,8 @@ end
 
 add-to-path ~/bin ~/dotfiles/bin
 add-to-path /usr/local/share/npm/bin # npm installed by homebrew
-add-to-path /usr/local/heroku/bin
-add-to-path ~/Library/Haskell/bin /usr/local/Cellar/ruby/1.9.3-p194/bin
-add-to-path ~/.gem/ruby/*/bin
-add-to-path /usr/local/mysql/bin
-add-to-path /usr/texbin
+add-to-path ~/.gem/ruby/{1.8,2.0.0}/bin
 add-to-path /sbin /usr/sbin
-add-to-path ~/Software/emsdk_portable/{,clang/e1.35.0_64bit,node/4.1.1_64bit/bin,emscripten/1.35.0}
 add-to-path ~/.cargo/bin
 
 # Haskell
