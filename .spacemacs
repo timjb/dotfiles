@@ -345,9 +345,7 @@ you should place your code here."
 
     )
 
-  ;; Open .v files with Proof General's Coq mode
-  (load "~/.emacs.d/lisp/PG/generic/proof-site")
-  (define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
+  ;; (define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
