@@ -66,6 +66,9 @@ set ttimeoutlen=20
 " write with root privileges
 cmap w!! w !sudo tee % >/dev/null
 
+" RedPRL
+let g:redprl_path = '/Users/tim/Software/sml-redprl/bin/redprl'
+au FileType redprl nnoremap <F5> :RedPRL<CR>
 
 
 """""""""""
