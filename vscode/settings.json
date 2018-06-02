@@ -47,5 +47,7 @@
     "editor.wordWrap": "on"
   },
   "redprl.path": "/Users/tim/Software/sml-redprl/bin/redprl",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.feedback.visible": false,
+  "latex-workshop.view.pdf.viewer": "tab"
 }
