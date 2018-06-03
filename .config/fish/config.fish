@@ -75,5 +75,7 @@ function vimt; vim -c "NERDTree"; end
 # Environment
 set -x LC_ALL "en_US.UTF-8"
 
-# Nix configuration
-source ~/.config/fish/nix.fish
+# Nix configuration (if not already available)
+if test ! -n "$NIX_PATH"
+  source ~/.config/fish/nix.fish
+end
