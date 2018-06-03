@@ -8,7 +8,13 @@ set t_Co=256
 command! -nargs=* HexHighlight call HexHighlight()
 
 " Shell (syntastic doesn't work with fish)
-set shell=/bin/bash
+if filereadable("/bin/bash")
+  set shell=/bin/bash
+elseif filereadable("/run/current-system/sw/bin/bash")
+  set shell=/run/current-system/sw/bin/bash
+else
+  set shell=/bin/sh
+endif
 
 " Leader key
 let mapleader=","
