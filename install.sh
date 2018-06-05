@@ -41,6 +41,8 @@ mkdir -p ~/.stack
 linkDotfile ".stack/config.yaml"
 linkDotfile ".emacs.d"
 linkDotfile ".spacemacs"
+linkDotfile ".xbindkeysrc"
+linkDotfile ".xprofile"
 
 VSCODE_DIR_MACOS="Library/Application Support/Code/User"
 VSCODE_DIR_LINUX=".config/Code/User"

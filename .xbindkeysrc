@@ -1,0 +1,4 @@
+# open gnome shell (by emulating left super key press)
+# when mouse button 8 is pressed
+"xdotool key Super_L"
+  release + b:8
