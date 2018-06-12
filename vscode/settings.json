@@ -27,16 +27,22 @@
     "*.hsc": "haskell"
   },
   "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
   "git.confirmSync": false,
   "latex-workshop.chktex.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
   "lean.timeLimit": 200000,
   "lean.memoryLimit": 1024,
   "lean.roiModeDefault": "open",
   "python.linting.pylintPath": "/usr/local/bin/pylint",
+  "redprl.path": "/Users/tim/Software/sml-redprl/bin/redprl",
   "terminal.integrated.scrollback": 2000,
+  "update.channel": "none",
   "vim.overrideCopy": false,
+  "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Monokai",
+  "workbench.statusBar.feedback.visible": false,
   "[tex]": {
     "editor.wordWrap": "on"
   },
@@ -45,9 +51,5 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on"
-  },
-  "redprl.path": "/Users/tim/Software/sml-redprl/bin/redprl",
-  "editor.minimap.enabled": false,
-  "workbench.statusBar.feedback.visible": false,
-  "latex-workshop.view.pdf.viewer": "tab"
+  }
 }
