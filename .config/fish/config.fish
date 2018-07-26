@@ -3,14 +3,20 @@
 #
 
 function fish_greeting -d "A cow greets you with eternal wisdom"
-  set_color red
+  set_color 7FDBFF
   fortune | cowsay
   set_color normal
   echo "" # empty line
 end
 
 function fish_prompt -d "Write out the prompt"
-  printf '%s %sλ%s ' (prompt_pwd) (set_color --bold red) (set_color normal)
+  set -l last_status $status
+  if test $last_status = 0
+    set status_color "3D9970"
+  else
+    set status_color "FF4136"
+  end
+  printf '%s %sλ%s ' (prompt_pwd) (set_color --bold $status_color) (set_color normal)
 end
 
 function add-to-path -d "Add directories to \$PATH"
