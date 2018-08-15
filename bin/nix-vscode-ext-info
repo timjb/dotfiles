@@ -1,0 +1,64 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i python3 -p "python3.withPackages(ps: with ps; [beautifulsoup4 requests])"
+
+import json
+import subprocess
+import sys
+
+from bs4 import BeautifulSoup
+import requests
+
+def help(program_name):
+  print("Usage: " + program_name + " EXTENSION-PUBLISHER.EXTENSION-NAME [...]", file=sys.stderr)
+  sys.exit(0)
+
+def parse_args(argv):
+  args = argv[1:]
+  if "--help" in args or "-h" in args:
+    help(argv[0])
+  exts = []
+  for arg in args:
+    splitted = arg.split('.')
+    if len(splitted) != 2:
+      print("Could not parse argument: '" + arg + "'", file=sys.stderr)
+      help(argv[0])
+    exts.append((splitted[0], splitted[1]))
+  return exts
+
+def get_extension_info(publisher, name):
+  url = "https://marketplace.visualstudio.com/items?itemName={}.{}".format(publisher, name)
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, "html.parser")
+  json_script_element = soup.find('script', class_='vss-extension')
+  return json.loads(json_script_element.contents[0])
+
+def get_extension_sha256(publisher, name, version):
+  url_template = 'https://{publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/{publisher}/extension/{name}/{version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage'
+  url = url_template.format(publisher=publisher, name=name, version=version)
+  prefetch_process = subprocess.run(
+    ['nix-prefetch-url', url],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    encoding='ascii'
+  )
+  prefetch_process.check_returncode()
+  return prefetch_process.stdout.strip()
+
+template = '\n'.join([
+  "{{",
+  "  name = \"{name}\";",
+  "  publisher = \"{publisher}\";",
+  "  version = \"{version}\";",
+  "  sha256 = \"{hash}\";",
+  "}}"
+])
+
+def main():
+  for (publisher, name) in parse_args(sys.argv):
+    extension_info = get_extension_info(publisher, name)
+    curr_version = extension_info['versions'][0]['version']
+    sha256_hash = get_extension_sha256(publisher, name, curr_version)
+    print(template.format(name=name, publisher=publisher, version=curr_version, hash=sha256_hash))
+
+if __name__ == '__main__':
+  main()
