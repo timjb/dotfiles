@@ -4,6 +4,7 @@
 { config, pkgs, ... }:
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
 in
 
 {
@@ -98,6 +99,11 @@ in
     isabelle
     haskellPackages.Agda
 
+    # Android development
+    pkgs-unstable.android-studio
+    pkgs-unstable.androidenv.platformTools
+    gradle
+
     # Gnome 3
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
@@ -167,7 +173,7 @@ in
 
   services = {
 
-    udev.packages = [ pkgs.yubikey-personalization ];
+    udev.packages = [ pkgs.yubikey-personalization pkgs.android-udev-rules ];
 
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
