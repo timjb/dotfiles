@@ -5,13 +5,24 @@ Installation
 
 Clone the repository:
 
-	cd ~/Projects
-	git clone https://github.com/timjb/dotfiles.git
+```bash
+cd ~/Projects
+git clone https://github.com/timjb/dotfiles.git
+```
 
 Init submodules:
 
-	cd dotfiles
-	git submodule init
-	git submodule update
+```bash
+cd dotfiles
+git submodule init
+git submodule update
+```
 
 Create symlinks. `./install.sh` does that for you.
+
+On NixOS:
+
+```bash
+sudo rm /etc/nixos
+ln -s /path/to/this/repo/nixos /etc/nixos
+```
