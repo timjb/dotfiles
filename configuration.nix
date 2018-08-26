@@ -131,6 +131,33 @@ in
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.extraHosts =
+    let
+      block = host: ''
+        127.0.0.1 ${host}
+        127.0.0.1 www.${host}
+        ::1 ${host}
+        ::1 www.${host}
+      '';
+      blacklist = [
+        "zeit.de"
+        "spiegel.de"
+        "sueddeutsche.de"
+        "kicker.de"
+        "blog.fefe.de"
+        "tagesschau.de"
+        "sportschau.de"
+        "twitter.com"
+        #"reddit.com"
+        "heise.de"
+        "sportschau.de"
+        "electrek.co"
+        "nytimes.com"
+        "news.ycombinator.com"
+        "fivethirtyeight.com"
+      ];
+    in
+      pkgs.lib.concatMapStrings block blacklist;
 
   # Enable sound.
   sound.enable = true;
