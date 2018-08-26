@@ -57,7 +57,6 @@ in
     cowsay
     fortune
     pandoc
-    unstable.bazel
     (ffmpeg-full.override {
       nonfreeLicensing = true;
       nvenc = true;
@@ -65,13 +64,32 @@ in
     psmisc
     xsel # get/set contents of X clipboard
     binutils
+    ripgrep
+    tree
 
     tilix # Terminal emulator
     firefox
     chromium
-    unstable.vscode
+    (unstable.vscode-with-extensions.override {
+      vscodeExtensions =
+        with unstable.vscode-extensions; [ ms-vscode.cpptools ] ++
+        unstable.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "vim";
+            publisher = "vscodevim";
+            version = "0.16.0";
+            sha256 = "0rwipcjy8gyf98nskxg7i2hlj96h8djk0838b1fjmc31pv7kbr6x";
+          }
+          {
+            name = "latex-workshop";
+            publisher = "James-Yu";
+            version = "5.8.1";
+            sha256 = "154c44k2wrydcm8k1s141yrqlavsd4i54hiby9msbj4nx35fwcky";
+          }
+        ];
+    })
     #emacs
-    seafile-client
+    pkgs-unstable.seafile-client
     spotify
     tdesktop # Telegram Desktop
     vlc
@@ -84,13 +102,23 @@ in
     breeze-icons
     audacity
 
+    # Build tools
+    gnumake
+    cmake
+    pkgs-unstable.bazel
+
     # Haskell
     stack
     haskellPackages.intero # needed by Haskelly
     #haskellPackages.stack-run # doesn't work # needed by Haskelly
 
-    python35
+    # Python
+    (python36.withPackages (ps: with ps; [pylint virtualenvwrapper pygments]))
+
+    # C/C++
     gcc
+    clang
+    valgrind
 
     # LaTeX
     (texlive.combine { inherit (texlive) scheme-full; })
