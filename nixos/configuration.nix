@@ -83,8 +83,26 @@ in
           {
             name = "latex-workshop";
             publisher = "James-Yu";
-            version = "5.8.1";
-            sha256 = "154c44k2wrydcm8k1s141yrqlavsd4i54hiby9msbj4nx35fwcky";
+            version = "5.8.2";
+            sha256 = "1qx48g73sz1pnl74a1y64hy9pv74qbz431ghpdskcayvhjnngyak";
+          }
+          {
+            name = "fish";
+            publisher = "TeddyDD";
+            version = "0.0.4";
+            sha256 = "1wzixi5wx3dj94174fybis0180jk9mw3c7xyr0sa1awqp4xdwkx6";
+          }
+          {
+            name = "bracket-pair-colorizer";
+            publisher = "CoenraadS";
+            version = "1.0.59";
+            sha256 = "0ljnrbyigch2ih427lbgpz9rjy218nrphzmjx4l9jasc3pqkz2zm";
+          }
+          {
+            name = "agda";
+            publisher = "j-mueller";
+            version = "0.1.7";
+            sha256 = "09ix3pjaagr6aakshc8ybbipgdscr8ymdrqc4xxs6927x552yjsb";
           }
         ];
     })
@@ -205,7 +223,7 @@ in
 
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
-  
+
     # Enable CUPS to print documents.
     # printing.enable = true;
 
@@ -215,10 +233,10 @@ in
       layout = "us";
       xkbOptions = "eurosign:e";
       videoDrivers = [ "nvidia" ];
-  
+
       # Enable touchpad support.
       # libinput.enable = true;
-  
+
       displayManager.lightdm.enable = true;
       desktopManager = {
         gnome3.enable = true;
