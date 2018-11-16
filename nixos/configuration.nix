@@ -192,6 +192,8 @@ in
         ::1 www.${host}
       '';
       blacklist = [
+        "amazon.de"
+        "facebook.com"
         "zeit.de"
         "spiegel.de"
         "sueddeutsche.de"
@@ -200,9 +202,9 @@ in
         "tagesschau.de"
         "sportschau.de"
         "twitter.com"
-        #"reddit.com"
+        "reddit.com"
+        "youtube.com"
         "heise.de"
-        "sportschau.de"
         "electrek.co"
         "nytimes.com"
         "news.ycombinator.com"
