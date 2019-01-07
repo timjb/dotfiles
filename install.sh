@@ -31,10 +31,8 @@ linkDotfile ".vimrc"
 linkDotfilePrime ".vim" ".nvim" # Neovim
 linkDotfilePrime ".vimrc" ".nvimrc" # Neovim
 linkDotfile "bin"
-mkdir -p ~/.config/fish/completions
 linkDotfile ".config/fish/config.fish"
 linkDotfile ".config/fish/nix.fish"
-linkDotfile ".config/fish/completions/ypassword.fish"
 linkDotfile ".stylish-haskell.yaml"
 linkDotfile "Templates"
 mkdir -p ~/.stack
