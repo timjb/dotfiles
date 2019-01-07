@@ -77,14 +77,14 @@ in
           {
             name = "vim";
             publisher = "vscodevim";
-            version = "0.16.0";
-            sha256 = "0rwipcjy8gyf98nskxg7i2hlj96h8djk0838b1fjmc31pv7kbr6x";
+            version = "0.16.12";
+            sha256 = "07j5mm6ghrdbvwnlw3qap7276n74l41ww28xljffkiq0qmbhnr8i";
           }
           {
             name = "latex-workshop";
             publisher = "James-Yu";
-            version = "5.8.2";
-            sha256 = "1qx48g73sz1pnl74a1y64hy9pv74qbz431ghpdskcayvhjnngyak";
+            version = "5.16.0";
+            sha256 = "0cl4nl9yp54xfclm1gnkrig2i9npnf069ca91gcvy6jzbmdza6jj";
           }
           {
             name = "fish";
@@ -95,14 +95,26 @@ in
           {
             name = "bracket-pair-colorizer";
             publisher = "CoenraadS";
-            version = "1.0.59";
-            sha256 = "0ljnrbyigch2ih427lbgpz9rjy218nrphzmjx4l9jasc3pqkz2zm";
+            version = "1.0.61";
+            sha256 = "0r3bfp8kvhf9zpbiil7acx7zain26grk133f0r0syxqgml12i652";
           }
           {
             name = "agda";
             publisher = "j-mueller";
             version = "0.1.7";
             sha256 = "09ix3pjaagr6aakshc8ybbipgdscr8ymdrqc4xxs6927x552yjsb";
+          }
+          {
+            name = "language-haskell";
+            publisher = "justusadam";
+            version = "2.5.0";
+            sha256 = "10jqj8qw5x6da9l8zhjbra3xcbrwb4cpwc3ygsy29mam5pd8g6b3";
+          }
+          {
+            name = "python";
+            publisher = "ms-python";
+            version = "2018.12.1";
+            sha256 = "1cf3yll2hfililcwq6avscgi35caccv8m8fdsvzqdfrggn5h41h4";
           }
         ];
     })
