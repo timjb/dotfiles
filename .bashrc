@@ -8,6 +8,13 @@
 ls --color=auto >/dev/null 2>&1 && alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+#
+# Nix
+#
+
+if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+  . ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 #
 # Environment
