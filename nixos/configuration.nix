@@ -75,6 +75,12 @@ in
         with unstable.vscode-extensions; [ ms-vscode.cpptools ] ++
         unstable.vscode-utils.extensionsFromVscodeMarketplace [
           {
+            name = "vscode-arduino";
+            publisher = "vsciot-vscode";
+            version = "0.2.24";
+            sha256 = "15bardalmrhvly2rr5qisb9b4ay0imxrrxmp97x79lli3msqq5gl";
+          }
+          {
             name = "vim";
             publisher = "vscodevim";
             version = "0.16.12";
@@ -176,6 +182,9 @@ in
     # Config
     xbindkeys # xbindkeys-config
     xdotool
+
+    # Keyboard.io
+    arduino
   ];
 
   fonts.fonts = with pkgs; [
@@ -277,7 +286,10 @@ in
     isNormalUser = true;
     home = "/home";
     description = "Tim Baumann";
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "dialout" # http://vid.bina.me/tools/arduino/arduino-on-nixos/
+    ];
     shell = pkgs.fish;
   };
 
