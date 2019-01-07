@@ -144,12 +144,13 @@ in
     pkgs-unstable.bazel
 
     # Haskell
-    stack
-    haskellPackages.intero # needed by Haskelly
+    pkgs-unstable.stack
+    #haskellPackages.intero # needed by Haskelly
     #haskellPackages.stack-run # doesn't work # needed by Haskelly
 
     # Python
-    (python36.withPackages (ps: with ps; [pylint virtualenvwrapper pygments]))
+    (python36.withPackages (ps: with ps; [pylint]))
+    (python37.withPackages (ps: with ps; [pygments virtualenvwrapper]))
 
     # C/C++
     gcc
@@ -158,6 +159,7 @@ in
 
     # LaTeX
     (texlive.combine { inherit (texlive) scheme-full; })
+    biber
 
     # Theorem provers
     isabelle
