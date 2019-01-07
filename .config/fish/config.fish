@@ -70,13 +70,9 @@ alias q exit
 alias g git
 alias v vim
 alias l less
-alias x startx
 
 # I can't memorize this line
 alias untargz "tar xvf"
-
-# Open vim and NERDTree
-function vimt; vim -c "NERDTree"; end
 
 # Environment
 set -x LC_ALL "en_US.UTF-8"

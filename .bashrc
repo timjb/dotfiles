@@ -45,14 +45,10 @@ alias q='exit'
 alias g='git'
 alias v='vim'
 alias l='less'
-alias x='startx'
 alias ..='cd ..'
 
 # I can't memorize this line!
 alias untargz='tar xvf'
-
-# Open vim and NERDTree
-alias vimt='vim -c "NERDTree"'
 
 
 #
