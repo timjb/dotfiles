@@ -31,13 +31,13 @@ function add-to-path -d "Add directories to \$PATH"
 end
 
 add-to-path ~/bin ~/dotfiles/bin
-add-to-path /usr/local/share/npm/bin # npm installed by homebrew
-add-to-path ~/.gem/ruby/{1.8,2.0.0}/bin
 add-to-path /sbin /usr/sbin
+add-to-path ~/.local/bin
+
+# Rust
 add-to-path ~/.cargo/bin
 
 # Haskell
-add-to-path ~/.local/bin # stack
 add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin"
 
 set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
