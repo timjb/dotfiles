@@ -6,6 +6,8 @@
   ],
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
   "extensions.autoUpdate": true,
   "files.autoSave": "onFocusChange",
@@ -29,6 +31,7 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "keyboard.dispatch": "keyCode",
   "latex-workshop.chktex.enabled": true,
   "latex-workshop.view.pdf.viewer": "browser",
   "lean.timeLimit": 200000,
@@ -42,6 +45,8 @@
   "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Monokai",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.sideBar.location": "left",
   "workbench.statusBar.feedback.visible": false,
   "[tex]": {
     "editor.wordWrap": "on"
@@ -51,8 +56,5 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on"
-  },
-  "explorer.confirmDragAndDrop": false,
-  "keyboard.dispatch": "keyCode",
-  "workbench.sideBar.location": "left"
+  }
 }
