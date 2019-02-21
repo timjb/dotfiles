@@ -16,17 +16,6 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  #nixpkgs.config.packageOverrides = pkgs: {
-  #  haskellPackages = pkgs.haskellPackages.override {
-  #    overrides = self: super: {
-  #      async = super.async_2_2_1;
-  #      fsnotify = super.fsnotify_0_3_0_1;
-  #      hinotify = super.hinotify_0_3_10;
-  #      lifted-async = super.lifted-async_0_10_0_2;
-  #    };
-  #  };
-  #};
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -142,7 +131,6 @@ in
     yubikey-personalization
     yubikey-personalization-gui
     gnome3.geary
-    #qt5ct
     breeze-icons
     audacity
 
@@ -204,7 +192,6 @@ in
   programs.bash.enableCompletion = true;
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-  # programs.qt5ct.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -226,8 +213,6 @@ in
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
   services = {
 
@@ -257,18 +242,6 @@ in
     };
 
   };
-
-  # doesn't work for some reason
-  #systemd.user.services.xbindkeys = {
-  #  description = "XBindKeys";
-  #  serviceConfig = {
-  #    #Type = "simple";
-  #    ExecStart = "${pkgs.xbindkeys}/bin/xbindkeys --nodaemon --file /home/.xbindkeysrc";
-  #    ExecStop = "${pkgs.procps}/bin/pkill xbindkeys";
-  #    Restart = "on-abort";
-  #  };
-  #  wantedBy = [ "graphical.target" ];
-  #};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tim = {
