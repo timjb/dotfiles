@@ -40,9 +40,6 @@ add-to-path ~/.cargo/bin
 # Haskell
 add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin"
 
-set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/mysql/lib
-set -x DOCKER_HOST tcp://127.0.0.1:4243
-
 # Node
 set -x NODE_PATH "/usr/local/lib/node_modules"
 
