@@ -67,6 +67,7 @@ in
     binutils
     ripgrep
     tree
+    docker
 
     tilix # Terminal emulator
     firefox
@@ -196,6 +197,8 @@ in
     arduino
   ];
 
+  virtualisation.docker.enable = true;
+
   fonts.fonts = with pkgs; [
     fira-code fira-code-symbols
     ubuntu_font_family
@@ -280,6 +283,7 @@ in
     extraGroups = [
       "wheel"
       "dialout" # http://vid.bina.me/tools/arduino/arduino-on-nixos/
+      "docker"
     ];
     shell = pkgs.fish;
   };
