@@ -173,11 +173,6 @@ in
     isabelle
     old-pkgs.haskellPackages.Agda
 
-    # Android development
-    pkgs-unstable.android-studio
-    pkgs-unstable.androidenv.platformTools
-    gradle
-
     # Gnome 3
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
@@ -236,7 +231,7 @@ in
 
   services = {
 
-    udev.packages = [ pkgs.yubikey-personalization pkgs.android-udev-rules ];
+    udev.packages = [ pkgs.yubikey-personalization ];
 
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
