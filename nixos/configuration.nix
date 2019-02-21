@@ -221,25 +221,7 @@ in
         ::1 ${host}
         ::1 www.${host}
       '';
-      blacklist = [
-        "amazon.de"
-        "facebook.com"
-        "zeit.de"
-        "spiegel.de"
-        "sueddeutsche.de"
-        "kicker.de"
-        "blog.fefe.de"
-        "tagesschau.de"
-        "sportschau.de"
-        "twitter.com"
-        "reddit.com"
-        "youtube.com"
-        "heise.de"
-        "electrek.co"
-        "nytimes.com"
-        "news.ycombinator.com"
-        "fivethirtyeight.com"
-      ];
+      blacklist = import ./blacklist.nix;
     in
       pkgs.lib.concatMapStrings block blacklist;
 
