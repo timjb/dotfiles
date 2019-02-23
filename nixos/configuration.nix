@@ -103,7 +103,7 @@ in
     biber
 
     # Theorem provers
-    isabelle
+    (callPackage ./isabelle-2018.nix { java = jre; })
     old-pkgs.haskellPackages.Agda
 
     # Gnome 3
