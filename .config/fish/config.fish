@@ -67,6 +67,7 @@ alias q exit
 alias g git
 alias v vim
 alias l less
+alias e "exa --all --long"
 
 # I can't memorize this line
 alias untargz "tar xvf"

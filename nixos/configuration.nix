@@ -55,7 +55,7 @@ in
     xsel # get/set contents of X clipboard
     binutils
     ripgrep
-    tree
+    exa
     docker
 
     tilix # Terminal emulator
