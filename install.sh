@@ -20,7 +20,6 @@ function linkDotfile {
 }
 
 linkDotfile ".bashrc"
-linkDotfile "bitbar-plugins"
 linkDotfile ".gitconfig"
 linkDotfile ".gitexcludes"
 linkDotfile ".gvimrc"
