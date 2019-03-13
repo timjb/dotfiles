@@ -1,4 +1,7 @@
-# open gnome shell (by emulating left super key press)
-# when mouse button 8 is pressed
-"xdotool key Super_L"
+# Use up and down mouse buttons to switch between virtual desktops
+
+"xdotool set_desktop --relative 1"
   release + b:8
+
+"xdotool set_desktop --relative -- -1"
+  release + b:9
