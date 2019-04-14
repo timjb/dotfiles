@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
 let
   #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
@@ -9,11 +6,11 @@ let
 in
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./xps-15-hardware-configuration.nix
-      ./shared.nix
-    ];
+  imports = [
+    ./xps-15-hardware-configuration.nix
+    ./shared.nix
+    ./roles/docker.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -39,31 +36,9 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    exfat
-
-    # CLIs
-    fish
-    wget
-    vim
-    git
-    pciutils
-    cowsay
-    fortune
     pandoc
-    (ffmpeg-full.override {
-      nonfreeLicensing = true;
-      #nvenc = true;
-    })
-    psmisc
-    xsel # get/set contents of X clipboard
-    binutils
-    ripgrep
-    exa
-    #docker
 
-    tilix # Terminal emulator
-    firefox
-    chromium
+    # GUI applications
     (vscode-with-extensions.override {
       vscodeExtensions =
         with vscode-extensions; [ ms-vscode.cpptools ] ++
@@ -73,14 +48,7 @@ in
     #pkgs-unstable.seafile-client
     spotify
     tdesktop # Telegram Desktop
-    vlc
     gparted
-    #kdenlive
-    #yubikey-personalization
-    #yubikey-personalization-gui
-    gnome3.geary
-    breeze-icons
-    #audacity
 
     # Build tools
     gnumake
@@ -101,10 +69,6 @@ in
     clang
     valgrind
 
-    # LaTeX
-    #(texlive.combine { inherit (texlive) scheme-full; })
-    #biber
-
     # Theorem provers
     #(callPackage ./isabelle-2018.nix { java = jre; })
     #old-pkgs.haskellPackages.Agda
@@ -112,12 +76,7 @@ in
     # Config
     xbindkeys # xbindkeys-config
     xdotool
-
-    # Keyboard.io
-    #arduino
   ];
-
-  #virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -132,8 +91,6 @@ in
   #hardware.bumblebee.enable = true;
 
   services = {
-
-    #udev.packages = [ pkgs.yubikey-personalization ];
 
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
@@ -165,9 +122,7 @@ in
     description = "Tim Baumann";
     extraGroups = [
       "wheel"
-      "dialout" # http://vid.bina.me/tools/arduino/arduino-on-nixos/
-      "docker"
-    ];
+    ] ++ config.my-config.userExtraGroups;
     shell = pkgs.fish;
   };
 

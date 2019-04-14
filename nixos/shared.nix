@@ -1,7 +1,34 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./gnome-desktop.nix ];
+  imports = [
+    ./gnome-desktop.nix
+    ./my-config.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    exfat # support for exfat file system
+
+    # CLIs
+    fish
+    wget
+    vim
+    git
+    pciutils # lspci, setpci, update-pciids
+    cowsay
+    fortune
+    psmisc # fuser, killall, pstree, peekfd
+    xsel # get/set contents of X clipboard
+    binutils # ld, as, ...
+    ripgrep
+    exa
+
+    # GUI applications
+    tilix # Terminal emulator
+    firefox
+    chromium
+    vlc
+  ];
 
   fonts.fonts = with pkgs; [
     fira-code fira-code-symbols
