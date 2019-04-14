@@ -4,6 +4,8 @@
 
 /.vim/.netrwhist
 
+/nixos/configuration.nix
+
 /.xmonad/xmonad.errors
 /.xmonad/xmonad.hi
 /.xmonad/xmonad.o

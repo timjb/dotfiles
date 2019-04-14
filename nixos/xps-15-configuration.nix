@@ -3,15 +3,16 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-  old-pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/archive/ed111be99a470909ae83962fb213509c8feb9978.tar.gz) {}; # contains version 2.5.3 of Agda
+  #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  #pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+  #old-pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/archive/ed111be99a470909ae83962fb213509c8feb9978.tar.gz) {}; # contains version 2.5.3 of Agda
 in
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./xps-15-hardware-configuration.nix
+      ./shared.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -19,13 +20,15 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.blacklistedKernelModules = [ "nouveau" ];
 
-  networking.hostName = "timjb-nixos"; # Define your hostname.
+  networking.hostName = "baumannt-tng-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
   i18n = {
-    consoleFont = "Lat2-Terminus16";
+    consoleFont = "latarcyrheb-sun32";
+    #consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
   };
@@ -49,48 +52,48 @@ in
     pandoc
     (ffmpeg-full.override {
       nonfreeLicensing = true;
-      nvenc = true;
+      #nvenc = true;
     })
     psmisc
     xsel # get/set contents of X clipboard
     binutils
     ripgrep
     exa
-    docker
+    #docker
 
     tilix # Terminal emulator
     firefox
     chromium
-    (unstable.vscode-with-extensions.override {
+    (vscode-with-extensions.override {
       vscodeExtensions =
-        with unstable.vscode-extensions; [ ms-vscode.cpptools ] ++
-        unstable.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix);
+        with vscode-extensions; [ ms-vscode.cpptools ] ++
+        vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix);
     })
     #emacs
-    pkgs-unstable.seafile-client
+    #pkgs-unstable.seafile-client
     spotify
     tdesktop # Telegram Desktop
     vlc
     gparted
-    kdenlive
-    yubikey-personalization
-    yubikey-personalization-gui
+    #kdenlive
+    #yubikey-personalization
+    #yubikey-personalization-gui
     gnome3.geary
     breeze-icons
-    audacity
+    #audacity
 
     # Build tools
     gnumake
     cmake
-    pkgs-unstable.bazel
+    #pkgs-unstable.bazel
 
     # Haskell
-    pkgs-unstable.stack
+    #pkgs-unstable.stack
     #haskellPackages.intero # needed by Haskelly
     #haskellPackages.stack-run # doesn't work # needed by Haskelly
 
     # Python
-    (python36.withPackages (ps: with ps; [pylint]))
+    #(python36.withPackages (ps: with ps; [pylint]))
     (python37.withPackages (ps: with ps; [pygments virtualenvwrapper]))
 
     # C/C++
@@ -99,38 +102,22 @@ in
     valgrind
 
     # LaTeX
-    (texlive.combine { inherit (texlive) scheme-full; })
-    biber
+    #(texlive.combine { inherit (texlive) scheme-full; })
+    #biber
 
     # Theorem provers
-    (callPackage ./isabelle-2018.nix { java = jre; })
-    old-pkgs.haskellPackages.Agda
-
-    # Gnome 3
-    gnome3.gnome-tweak-tool
-    gnome3.dconf-editor
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.appindicator
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.remove-dropdown-arrows
-    gnomeExtensions.nohotcorner
-    #gnomeExtensions.system-monitor
-    arc-icon-theme
+    #(callPackage ./isabelle-2018.nix { java = jre; })
+    #old-pkgs.haskellPackages.Agda
 
     # Config
     xbindkeys # xbindkeys-config
     xdotool
 
     # Keyboard.io
-    arduino
+    #arduino
   ];
 
-  virtualisation.docker.enable = true;
-
-  fonts.fonts = with pkgs; [
-    fira-code fira-code-symbols
-    ubuntu_font_family
-  ];
+  #virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -138,30 +125,15 @@ in
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-  networking.extraHosts =
-    let
-      block = host: ''
-        127.0.0.1 ${host}
-        127.0.0.1 www.${host}
-        ::1 ${host}
-        ::1 www.${host}
-      '';
-      blacklist = import ./blacklist.nix;
-    in
-      pkgs.lib.concatMapStrings block blacklist;
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  #hardware.bumblebee.enable = true;
+
   services = {
 
-    udev.packages = [ pkgs.yubikey-personalization ];
+    #udev.packages = [ pkgs.yubikey-personalization ];
 
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
@@ -172,18 +144,16 @@ in
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
+      autorun = true;
       layout = "us";
-      xkbOptions = "eurosign:e";
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "modesetting" ];
 
       # Enable touchpad support.
-      # libinput.enable = true;
+      libinput.enable = true;
 
-      displayManager.lightdm.enable = true;
-      desktopManager = {
-        gnome3.enable = true;
-        default = "gnome3";
-      };
+      #monitorSection = ''
+      #  DisplaySize 406 228
+      #'';
     };
 
   };
@@ -191,7 +161,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tim = {
     isNormalUser = true;
-    home = "/home";
+    home = "/home/tim";
     description = "Tim Baumann";
     extraGroups = [
       "wheel"
@@ -201,12 +171,11 @@ in
     shell = pkgs.fish;
   };
 
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "18.03"; # Did you read the comment?
-
-  system.autoUpgrade.enable = true;
+  system.stateVersion = "19.03"; # Did you read the comment?
 
 }
