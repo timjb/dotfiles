@@ -41,21 +41,7 @@ in
 
     emacs
     pkgs-unstable.seafile-client
-
-    # Config
-    xbindkeys # xbindkeys-config
-    xdotool
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.bash.enableCompletion = true;
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   services = {
 
@@ -93,7 +79,5 @@ in
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.03"; # Did you read the comment?
-
-  system.autoUpgrade.enable = true;
 
 }

@@ -11,6 +11,10 @@
     gnomeExtensions.nohotcorner
     #gnomeExtensions.system-monitor
     arc-icon-theme
+
+    # Config
+    xbindkeys # xbindkeys-config
+    xdotool
   ];
 
   services.xserver = {

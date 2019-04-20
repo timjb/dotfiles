@@ -51,6 +51,12 @@
     ubuntu_font_family
   ];
 
+  programs.bash.enableCompletion = true;
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -67,4 +73,6 @@
       blacklist = import ./blacklist.nix;
     in
       pkgs.lib.concatMapStrings block blacklist;
+
+  system.autoUpgrade.enable = true;
 }
