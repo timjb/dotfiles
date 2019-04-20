@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
 in
 
@@ -20,8 +19,6 @@ in
     ./roles/yubikey-configuration.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -36,21 +33,13 @@ in
     defaultLocale = "en_US.UTF-8";
   };
 
-  # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # CLIs
     pandoc
 
-    (unstable.vscode-with-extensions.override {
-      vscodeExtensions =
-        with unstable.vscode-extensions; [ ms-vscode.cpptools ] ++
-        unstable.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix);
-    })
-    #emacs
+    emacs
     pkgs-unstable.seafile-client
 
     # Config

@@ -1,4 +1,12 @@
-[
+let
+  pkgs = import <nixpkgs> {};
+  inherit (builtins) listToAttrs;
+  inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
+  nameValuePair = name: value: { inherit name value; };
+  mkVscodeExtensionsAttrset = vscode-exts:
+    listToAttrs (map (ext: nameValuePair ext.name (extensionFromVscodeMarketplace ext)) vscode-exts);
+in
+mkVscodeExtensionsAttrset [
   {
     name = "agda";
     publisher = "j-mueller";

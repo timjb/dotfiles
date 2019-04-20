@@ -7,4 +7,7 @@ in
   environment.systemPackages = [
     old-pkgs.haskellPackages.Agda
   ];
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+    agda
+  ];
 }

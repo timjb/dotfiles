@@ -1,8 +1,4 @@
 { config, pkgs, ... }:
-let
-  #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  #pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
 
 {
   imports = [
@@ -12,8 +8,6 @@ in
     ./roles/haskell.nix
     ./roles/python.nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -31,19 +25,9 @@ in
     defaultLocale = "en_US.UTF-8";
   };
 
-  # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # GUI applications
-    (vscode-with-extensions.override {
-      vscodeExtensions =
-        with vscode-extensions; [ ms-vscode.cpptools ] ++
-        vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix);
-    })
-
     # Config
     xbindkeys # xbindkeys-config
     xdotool

@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, vscode-utils, ... }:
 
 {
   imports = [
     ./gnome-desktop.nix
     ./my-config.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     exfat # support for exfat file system
@@ -32,6 +34,16 @@
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
     vlc
+    (vscode-with-extensions.override {
+      vscodeExtensions = config.my-config.vscodeExtensions;
+    })
+  ];
+
+  my-config.vscodeExtensions = with (import ./vscode-extensions.nix); [
+    bracket-pair-colorizer
+    fish
+    nix
+    vim
   ];
 
   fonts.fonts = with pkgs; [

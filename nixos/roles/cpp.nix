@@ -7,4 +7,7 @@
     clang
     valgrind
   ];
+  my-config.vscodeExtensions = [
+    pkgs.vscode-extensions.ms-vscode.cpptools
+  ];
 }
