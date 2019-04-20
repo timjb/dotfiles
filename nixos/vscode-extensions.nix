@@ -38,8 +38,8 @@
   {
     name = "python";
     publisher = "ms-python";
-    version = "2019.1.0";
-    sha256 = "1jp9i0qxdbrw3jk4in9za9cmfyrd6ii1ilgyg2van3mkq6xpp92w";
+    version = "2019.3.6558";
+    sha256 = "0v7rpj9hmb4jsjydhcqxr10rjwrj571g1qyhdhmhvvs5xvbfgp0r";
   }
   {
     name = "vim";
