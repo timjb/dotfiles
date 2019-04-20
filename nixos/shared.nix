@@ -10,23 +10,27 @@
     exfat # support for exfat file system
 
     # CLIs
-    fish
-    wget
-    vim
-    git
-    pciutils # lspci, setpci, update-pciids
-    cowsay
-    fortune
-    psmisc # fuser, killall, pstree, peekfd
-    xsel # get/set contents of X clipboard
     binutils # ld, as, ...
-    ripgrep
-    exa
+    cowsay
+    exa # Rust replacement for ls
+    fish
+    fortune
+    git
+    gnumake
+    pciutils # lspci, setpci, update-pciids
+    psmisc # fuser, killall, pstree, peekfd
+    ripgrep # Rust replacement for grep
+    vim
+    wget
+    xsel # get/set contents of X clipboard
 
     # GUI applications
-    tilix # Terminal emulator
-    firefox
     chromium
+    firefox
+    gparted
+    spotify
+    tdesktop # Telegram Desktop
+    tilix # Terminal emulator
     vlc
   ];
 
