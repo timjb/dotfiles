@@ -1,0 +1,40 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p unzip p7zip
+
+# list files from nearly any archive
+# Usage: exl <archive_name>
+exl() {
+  for file in "$@"; do
+    if [ -f $file ] ; then
+      opt=$( tr '[:upper:]' '[:lower:]' <<<"$file" )
+      case $opt in
+        *.tar.bz2) tar -jdvf $file ;;
+        *.tar.gz) tar -ztvf $file ;;
+        # *.tar.xz) tar xvfJ $file ;;
+        # *.tar.lzma) tar --lzma -xvf $file;;
+        # *.bz2) bunzip2 $file ;;
+        # *.rar) unrar e $file ;;
+        *.gz) gzip -l $file ;;
+        # *.tar) tar xf $file ;;
+        # *.tbz2) tar xjf $file ;;
+        # *.tgz) tar xzf $file ;;
+        *.zip) unzip -l $file ;;
+        # *.Z) uncompress $file ;;
+        # *.7z) 7z x $file ;;
+        # *.jar) unzip $file ;;
+        # *.deb) ar xv $file ;;
+        *.jar) unzip -l $file ;;
+        *.war) unzip -l $file ;;
+        *.ear) unzip -l $file ;;
+        *)
+          echo "'$file' cannot be listed via exl(), more info:"
+          file $file
+          ;;
+      esac
+    else
+      echo "'$file' is not a valid file"
+    fi
+  done
+}
+
+exl "$@"
