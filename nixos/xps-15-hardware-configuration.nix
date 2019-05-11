@@ -10,6 +10,10 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [
+    # see https://wiki.archlinux.org/index.php?title=Dell_XPS_15_9570&oldid=572605#Power_Management
+    "mem_sleep_default=deep"
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
