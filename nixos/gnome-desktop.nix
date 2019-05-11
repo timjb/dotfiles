@@ -18,7 +18,7 @@
   ];
 
   services.xserver = {
-    displayManager.lightdm.enable = true;
+    displayManager.gdm.enable = true;
     desktopManager = {
       gnome3.enable = true;
       default = "gnome3";
