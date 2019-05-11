@@ -73,6 +73,4 @@
       blacklist = import ./blacklist.nix;
     in
       pkgs.lib.concatMapStrings block blacklist;
-
-  system.autoUpgrade.enable = true;
 }
