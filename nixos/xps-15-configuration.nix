@@ -6,6 +6,7 @@
     ./shared.nix
     ./roles/docker.nix
     ./roles/haskell.nix
+    ./roles/java.nix
     ./roles/python.nix
   ];
 
@@ -28,11 +29,17 @@
   time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
+    keepass
+    openvpn
+    thunderbird
+    veracrypt
+    zoom-us
+    gnupg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
   #hardware.bumblebee.enable = true;
 
