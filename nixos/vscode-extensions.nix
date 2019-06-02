@@ -46,8 +46,8 @@ mkVscodeExtensionsAttrset [
   {
     name = "python";
     publisher = "ms-python";
-    version = "2019.3.6558";
-    sha256 = "0v7rpj9hmb4jsjydhcqxr10rjwrj571g1qyhdhmhvvs5xvbfgp0r";
+    version = "2019.5.17517";
+    sha256 = "1zhm243ycbdpgmyb7jsayvaj7wywpqzxymrpcfvaq9xckcz3ggrs";
   }
   {
     name = "vim";
