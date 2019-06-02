@@ -1,4 +1,7 @@
 { config, lib, pkgs, vscode-utils, ... }:
+let
+  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+in
 
 {
   imports = [
@@ -34,7 +37,7 @@
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
     vlc
-    (vscode-with-extensions.override {
+    (pkgs-unstable.vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
     })
   ];

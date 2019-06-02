@@ -1,5 +1,5 @@
 let
-  pkgs = import <nixpkgs> {};
+  pkgs = import <nixpkgs-unstable> {};
   inherit (builtins) listToAttrs;
   inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
   nameValuePair = name: value: { inherit name value; };
