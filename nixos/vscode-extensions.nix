@@ -61,4 +61,10 @@ mkVscodeExtensionsAttrset [
     version = "0.2.24";
     sha256 = "15bardalmrhvly2rr5qisb9b4ay0imxrrxmp97x79lli3msqq5gl";
   }
+  {
+    name = "vscode-java-pack";
+    publisher = "vscjava";
+    version = "0.7.1";
+    sha256 = "0mrsxgaca0nlgs3j2hvpzx99qiak1dk9sz95bm6ihs0m8ba6zyd4";
+  }
 ]
