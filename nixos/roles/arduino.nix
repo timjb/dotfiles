@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./cpp.nix
+  ];
   environment.systemPackages = with pkgs; [
     arduino
   ];
