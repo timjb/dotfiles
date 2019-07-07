@@ -5,6 +5,7 @@
     ./xps-15-hardware-configuration.nix
     ./shared.nix
     ./roles/docker.nix
+    ./roles/go.nix
     ./roles/haskell.nix
     ./roles/java.nix
     ./roles/python.nix

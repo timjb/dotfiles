@@ -67,4 +67,10 @@ mkVscodeExtensionsAttrset [
     version = "0.7.1";
     sha256 = "0mrsxgaca0nlgs3j2hvpzx99qiak1dk9sz95bm6ihs0m8ba6zyd4";
   }
+  {
+    name = "go";
+    publisher = "ms-vscode";
+    version = "0.11.2";
+    sha256 = "0z4a3fvylzhgnm8sgdwr2h22sf5bjrlc646pb4yimabr828f28vx";
+  }
 ]
