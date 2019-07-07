@@ -2,16 +2,14 @@
 
 buildGoPackage rec {
   name = "rmapi-${version}";
-  version = "master-1718c6";
+  version = "config-file-env-var-c01d07";
 
   src = fetchFromGitHub {
-    owner = "juruen";
+    owner = "timjb";
     repo = "rmapi";
-    rev = "1718c624be8fc6cec01b295a8a5f2a30ec6a9107";
-    sha256 = "179qiy1vqy9kcp8jjwkzkq9pb02k97idkljqzzj78v42cj0lprlk";
+    rev = "c01d070d2c8fd438c143d3af9a2ea52c2c952a45";
+    sha256 = "0959gc284q5mm70yi0m7jd5pb1bb6hk47wija40nrqcz6gq4ll62";
   };
-
-  modSha256 = "17x9ifmfydq17m4by6sx8pp7np03vjqj7m380gv7h269crffblgd";
 
   goPackagePath = "github.com/juruen/rmapi";
   subPackages = [ "." ];

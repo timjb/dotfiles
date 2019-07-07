@@ -11,5 +11,6 @@ in
   ];
 
   services.printing.enable = true;
+  #services.printing.logLevel = "debug";
   services.printing.drivers = [ remarkable-cups ];
 }
