@@ -12,7 +12,6 @@ stdenv.mkDerivation rec {
     ppdc -I ${cups}/share/cups/ppdc $src/remarkable.drv
     mkdir -p $out/share/cups/model $out/lib/cups/backend
     cp $src/remarkable.sh $out/lib/cups/backend/remarkable
-    cp $src/rmapi-config $out/lib/cups/backend/rmapi-config
     wrapProgram $out/lib/cups/backend/remarkable \
       --prefix PATH : ${coreutils}/bin:${rmapi}/bin
     cp ppd/remarkable.ppd $out/share/cups/model

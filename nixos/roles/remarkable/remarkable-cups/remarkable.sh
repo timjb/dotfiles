@@ -15,8 +15,7 @@ jobfile=${6}
 sanitized_jobtitle="$(echo ${jobtitle} | tr [[:blank:]:/%\&=+?\\\\#\'\`\´\*] _)"
 outname="$TMPDIR/${sanitized_jobtitle}"
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-rmapi_config="${DIR}/rmapi-config"
+>&2 echo "notice: place a copy of your .rmapi config file at ${CUPS_CACHEDIR}/rmapi"
 
 if [ ! -e ${DEVICE_URI#remarkable:} ]; then
   dir_on_device="${DEVICE_URI#remarkable:}"
@@ -25,7 +24,7 @@ else
 fi
 
 upload_to_remarkable () {
-  RMAPI_CONFIG="${rmapi_config}" rmapi put ${outname} ${dir_on_device}
+  RMAPI_CONFIG="${CUPS_CACHEDIR}/rmapi" rmapi put ${outname} ${dir_on_device}
 }
 
 case ${#} in
