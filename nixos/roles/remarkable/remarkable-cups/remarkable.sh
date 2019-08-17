@@ -15,7 +15,15 @@ jobfile=${6}
 sanitized_jobtitle="$(echo ${jobtitle} | tr [[:blank:]:/%\&=+?\\\\#\'\`\´\*] _)"
 outname="$TMPDIR/${sanitized_jobtitle}"
 
->&2 echo "notice: place a copy of your .rmapi config file at ${CUPS_CACHEDIR}/rmapi"
+rmapi_config="${CUPS_CACHEDIR}/rmapi"
+if [ ! -r "$rmapi_config" ]; then
+  >&2 echo "ERROR: No rmapi config file! Place a copy of your .rmapi config file at ${rmapi_config} and make it readable and writable for all users."
+  exit 1
+fi
+if [ ! -w "$rmapi_config" ]; then
+  >&2 echo "ERROR: The config file ${rmapi_config} is not writable! Make it writable for all users."
+  exit 1
+fi
 
 if [ ! -e ${DEVICE_URI#remarkable:} ]; then
   dir_on_device="${DEVICE_URI#remarkable:}"
@@ -24,7 +32,7 @@ else
 fi
 
 upload_to_remarkable () {
-  RMAPI_CONFIG="${CUPS_CACHEDIR}/rmapi" rmapi put ${outname} ${dir_on_device}
+  RMAPI_CONFIG="${rmapi_config}" rmapi put ${outname} ${dir_on_device}
 }
 
 case ${#} in
