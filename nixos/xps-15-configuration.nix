@@ -31,7 +31,7 @@
   time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
-    keepass
+    keepassxc
     openvpn
     thunderbird
     veracrypt
