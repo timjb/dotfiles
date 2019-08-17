@@ -37,6 +37,7 @@
     veracrypt
     zoom-us
     gnupg
+    slack
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
