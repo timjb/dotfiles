@@ -1,6 +1,3 @@
-[user]
-	name = Tim J. Baumann
-	email = tim@timbaumann.info
 [core]
 	editor = vim
 	excludesfile = ~/.gitexcludes
@@ -19,3 +16,7 @@
 	required = true
 [push]
 	default = simple
+[includeIf "gitdir:~/Projects/**"]
+	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Work/**"]
+	path = ~/.gitconfig-work

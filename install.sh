@@ -21,6 +21,8 @@ function linkDotfile {
 
 linkDotfile ".bashrc"
 linkDotfile ".gitconfig"
+linkDotfile ".gitconfig-personal"
+linkDotfile ".gitconfig-work"
 linkDotfile ".gitexcludes"
 linkDotfile ".gvimrc"
 linkDotfile ".hgrc"
