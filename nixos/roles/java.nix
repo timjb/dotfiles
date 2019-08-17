@@ -4,8 +4,14 @@
 {
   environment.systemPackages = with pkgs; [
     openjdk
-    eclipses.eclipse-java
+
+    # Build tools
+    maven
     gradle
+
+    # IDEs
+    eclipses.eclipse-java
+    idea.idea-community
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
     vscode-java-pack
