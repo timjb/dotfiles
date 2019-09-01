@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     stack
+    ghc
     #haskellPackages.intero # needed by Haskelly
     #haskellPackages.stack-run # doesn't work # needed by Haskelly
   ];
