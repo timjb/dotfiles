@@ -9,7 +9,13 @@ in
     ./my-config.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+
+    chromium = {
+      enablePepperFlash = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     exfat # support for exfat file system
