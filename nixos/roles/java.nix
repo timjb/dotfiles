@@ -1,19 +1,28 @@
 # Java
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    openjdk
+  options = {
+    roles.java.haveIntelliJUltimateLicense = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
 
-    # Build tools
-    maven
-    gradle
+  config = {
+    environment.systemPackages = with pkgs; [
+      openjdk
 
-    # IDEs
-    eclipses.eclipse-java
-    idea.idea-community
-  ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
-    vscode-java-pack
-  ];
+      # Build tools
+      maven
+      gradle
+
+      # IDEs
+      eclipses.eclipse-java
+      (if config.roles.java.haveIntelliJUltimateLicense then idea.idea-ultimate else idea.idea-community)
+    ];
+    my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+      vscode-java-pack
+    ];
+  };
 }
