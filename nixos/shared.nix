@@ -34,6 +34,7 @@ in
     vim
     wget
     xsel # get/set contents of X clipboard
+    cloc # count lines of code
 
     # GUI applications
     chromium
