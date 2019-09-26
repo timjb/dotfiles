@@ -9,7 +9,7 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.remove-dropdown-arrows
     gnomeExtensions.nohotcorner
-    #gnomeExtensions.system-monitor
+    gnomeExtensions.system-monitor
     arc-icon-theme
 
     # Config
