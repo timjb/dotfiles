@@ -9,5 +9,6 @@
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
     language-haskell
+    ghcide
   ];
 }

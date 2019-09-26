@@ -26,6 +26,18 @@ mkVscodeExtensionsAttrset [
     sha256 = "1wzixi5wx3dj94174fybis0180jk9mw3c7xyr0sa1awqp4xdwkx6";
   }
   {
+    name = "ghcide";
+    publisher = "DigitalAssetHoldingsLLC";
+    version = "0.0.1";
+    sha256 = "0riqs95f9a9krbyrvh98z59z3nq39jh5jyfw9nc5kjmkzpwbr17w";
+  }
+  {
+    name = "go";
+    publisher = "ms-vscode";
+    version = "0.11.2";
+    sha256 = "0z4a3fvylzhgnm8sgdwr2h22sf5bjrlc646pb4yimabr828f28vx";
+  }
+  {
     name = "language-haskell";
     publisher = "justusadam";
     version = "2.5.0";
@@ -66,11 +78,5 @@ mkVscodeExtensionsAttrset [
     publisher = "vscjava";
     version = "0.7.1";
     sha256 = "0mrsxgaca0nlgs3j2hvpzx99qiak1dk9sz95bm6ihs0m8ba6zyd4";
-  }
-  {
-    name = "go";
-    publisher = "ms-vscode";
-    version = "0.11.2";
-    sha256 = "0z4a3fvylzhgnm8sgdwr2h22sf5bjrlc646pb4yimabr828f28vx";
   }
 ]
