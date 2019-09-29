@@ -1,6 +1,9 @@
 # Java
 { config, lib, pkgs, ... }:
 
+let
+  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+in
 {
   options = {
     roles.java.haveIntelliJUltimateLicense = lib.mkOption {
@@ -10,6 +13,12 @@
   };
 
   config = {
+    # add symlinks /etc/openjdk{8,12} to /nix/store
+    environment.etc = {
+      "openjdk8".source = "${pkgs.openjdk8}/lib/openjdk";
+      "openjdk12".source = "${pkgs-unstable.openjdk12}/lib/openjdk";
+    };
+
     environment.systemPackages = with pkgs; [
       openjdk
 
