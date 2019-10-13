@@ -40,6 +40,7 @@ in
     # GUI applications
     chromium
     firefox
+    gimp
     gparted
     spotify
     tdesktop # Telegram Desktop
