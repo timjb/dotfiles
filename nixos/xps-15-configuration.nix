@@ -48,6 +48,8 @@
 
   #hardware.bumblebee.enable = true;
 
+  virtualisation.virtualbox.host.enable = true;
+
   services = {
 
     # Enable the OpenSSH daemon.
