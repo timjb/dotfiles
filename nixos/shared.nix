@@ -24,6 +24,7 @@ in
     binutils # ld, as, ...
     cowsay
     exa # Rust replacement for ls
+    file # tells you the format/kind of some file
     fish
     fortune
     git
