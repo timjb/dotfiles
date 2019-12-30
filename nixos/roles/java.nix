@@ -28,8 +28,9 @@ in
 
       # IDEs
       eclipses.eclipse-java
-      (if config.roles.java.haveIntelliJUltimateLicense then idea.idea-ultimate else idea.idea-community)
+      (if config.roles.java.haveIntelliJUltimateLicense then pkgs-unstable.idea.idea-ultimate else pkgs-unstable.idea.idea-community)
     ];
+
     my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
       vscode-java-pack
     ];
