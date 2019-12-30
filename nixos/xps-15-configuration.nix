@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+in
 
 {
   imports = [
@@ -38,7 +41,7 @@
     veracrypt
     zoom-us
     gnupg
-    slack
+    pkgs-unstable.slack
   ];
 
   roles.java.haveIntelliJUltimateLicense = true;
