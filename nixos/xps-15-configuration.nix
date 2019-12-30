@@ -42,6 +42,7 @@ in
     zoom-us
     gnupg
     pkgs-unstable.slack
+    libreoffice
   ];
 
   roles.java.haveIntelliJUltimateLicense = true;
