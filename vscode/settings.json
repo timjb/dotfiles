@@ -56,5 +56,6 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on"
-  }
+  },
+  "rust-client.disableRustup": true
 }

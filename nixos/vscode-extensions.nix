@@ -14,6 +14,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "09ix3pjaagr6aakshc8ybbipgdscr8ymdrqc4xxs6927x552yjsb";
   }
   {
+    name = "better-toml";
+    publisher = "bungcip";
+    version = "0.3.2";
+    sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
+  }
+  {
     name = "bracket-pair-colorizer";
     publisher = "CoenraadS";
     version = "1.0.61";
@@ -60,6 +66,12 @@ mkVscodeExtensionsAttrset [
     publisher = "ms-python";
     version = "2019.5.17517";
     sha256 = "1zhm243ycbdpgmyb7jsayvaj7wywpqzxymrpcfvaq9xckcz3ggrs";
+  }
+  {
+    name = "rust";
+    publisher = "rust-lang";
+    version = "0.6.3";
+    sha256 = "1r5q1iclr64wmgglsr3na3sv0fha5di8xyccv7xwcv5jf8w5rz5y";
   }
   {
     name = "vim";

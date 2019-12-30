@@ -10,6 +10,7 @@
     ./roles/java.nix
     ./roles/python.nix
     ./roles/remarkable.nix
+    ./roles/rust.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
