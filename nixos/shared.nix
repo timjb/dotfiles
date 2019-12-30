@@ -42,6 +42,7 @@ in
     firefox
     gimp
     gparted
+    inkscape
     spotify
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
