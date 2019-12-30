@@ -40,7 +40,6 @@ in
     pandoc
 
     emacs
-    pkgs-unstable.seafile-client
   ];
 
   services = {

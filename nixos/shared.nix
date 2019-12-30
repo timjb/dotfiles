@@ -45,6 +45,7 @@ in
     spotify
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
+    seafile-client
     vlc
     (pkgs-unstable.vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
