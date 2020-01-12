@@ -70,8 +70,8 @@ mkVscodeExtensionsAttrset [
   {
     name = "python";
     publisher = "ms-python";
-    version = "2019.5.17517";
-    sha256 = "1zhm243ycbdpgmyb7jsayvaj7wywpqzxymrpcfvaq9xckcz3ggrs";
+    version = "2020.1.57204";
+    sha256 = "1c2fzgkzffvkj9mdmhx44qcxh2ih7r29zas9798nkrrmxrxkw2ld";
   }
   {
     name = "rust";
