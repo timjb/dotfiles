@@ -56,6 +56,7 @@ in
   my-config.vscodeExtensions = with (import ./vscode-extensions.nix); [
     bracket-pair-colorizer
     fish
+    gitlens
     nix
     vim
   ];

@@ -38,6 +38,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "0riqs95f9a9krbyrvh98z59z3nq39jh5jyfw9nc5kjmkzpwbr17w";
   }
   {
+    name = "gitlens";
+    publisher = "eamodio";
+    version = "10.2.0";
+    sha256 = "0qnq9lr4m0j0syaciyv0zbj8rwm45pshpkagpfbf4pqkscsf80nr";
+  }
+  {
     name = "go";
     publisher = "ms-vscode";
     version = "0.11.2";
