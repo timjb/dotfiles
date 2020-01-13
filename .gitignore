@@ -5,6 +5,7 @@
 /.vim/.netrwhist
 
 /nixos/configuration.nix
+/nixos/work-private
 
 /.xmonad/xmonad.errors
 /.xmonad/xmonad.hi

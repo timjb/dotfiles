@@ -14,7 +14,7 @@ in
     ./roles/python.nix
     ./roles/remarkable.nix
     ./roles/rust.nix
-  ];
+  ] ++ importFolder ./work-private;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
