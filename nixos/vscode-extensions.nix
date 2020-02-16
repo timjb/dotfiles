@@ -14,6 +14,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "09ix3pjaagr6aakshc8ybbipgdscr8ymdrqc4xxs6927x552yjsb";
   }
   {
+    name = "azure-account";
+    publisher = "ms-vscode";
+    version = "0.8.8";
+    sha256 = "1afz176vbbslqsk9pj4k037mcn5ac59c44c4c42vv2zcv7s880la";
+  }
+  {
     name = "better-toml";
     publisher = "bungcip";
     version = "0.3.2";
@@ -96,5 +102,17 @@ mkVscodeExtensionsAttrset [
     publisher = "vscjava";
     version = "0.7.1";
     sha256 = "0mrsxgaca0nlgs3j2hvpzx99qiak1dk9sz95bm6ihs0m8ba6zyd4";
+  }
+  {
+    name = "vscode-azurefunctions";
+    publisher = "ms-azuretools";
+    version = "0.20.2";
+    sha256 = "1kcn9g447l7bf5p8jpl8dnapch6j7jyh2c5jz32bbd58ki9lyy35";
+  }
+  {
+    name = "vscode-node-azure-pack";
+    publisher = "ms-vscode";
+    version = "0.0.10";
+    sha256 = "126anq93ycgzdn3srbs416vpiw9h9rav332aiwjl5vhq0bgax52y";
   }
 ]

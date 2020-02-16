@@ -7,6 +7,7 @@ in
   imports = [
     ./xps-15-hardware-configuration.nix
     ./shared.nix
+    #./roles/azure.nix
     ./roles/docker.nix
     ./roles/go.nix
     ./roles/haskell.nix
