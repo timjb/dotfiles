@@ -15,6 +15,7 @@ in
     ./roles/python.nix
     ./roles/remarkable.nix
     ./roles/rust.nix
+    #./roles/video-recording.nix
   ] ++ importFolder ./work-private;
 
   # Use the systemd-boot EFI boot loader.
