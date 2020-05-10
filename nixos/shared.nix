@@ -43,6 +43,7 @@ in
     gimp
     gparted
     inkscape
+    pkgs-unstable.signal-desktop
     spotify
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
