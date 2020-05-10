@@ -13,7 +13,7 @@ joboptions=${5}
 jobfile=${6}
 
 sanitized_jobtitle="$(echo ${jobtitle} | tr [[:blank:]:/%\&=+?\\\\#\'\`\´\*] _)"
-outname="$TMPDIR/${sanitized_jobtitle}"
+outname="$TMPDIR/${sanitized_jobtitle}.pdf"
 
 rmapi_config="${CUPS_CACHEDIR}/rmapi"
 if [ ! -r "$rmapi_config" ]; then
