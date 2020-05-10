@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+  importFolder = import ./util/import-folder.nix;
 in
 
 {
