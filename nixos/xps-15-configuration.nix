@@ -2,6 +2,7 @@
 let
   pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
   importFolder = import ./util/import-folder.nix;
+  freeplane = pkgs.callPackage ./freeplane.nix {};
 in
 
 {
@@ -46,6 +47,7 @@ in
     gnupg
     pkgs-unstable.slack
     libreoffice
+    freeplane
   ];
 
   roles.java.haveIntelliJUltimateLicense = true;
