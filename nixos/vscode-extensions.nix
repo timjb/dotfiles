@@ -74,6 +74,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
   }
   {
+    name = "prettier-vscode";
+    publisher = "esbenp";
+    version = "3.20.0";
+    sha256 = "09bm1h2ayx75vqwqfm43b7vq3383ph01gvs6r9zqqrzz18m5r1hi";
+  }
+  {
     name = "python";
     publisher = "ms-python";
     version = "2020.1.57204";
@@ -98,10 +104,22 @@ mkVscodeExtensionsAttrset [
     sha256 = "15bardalmrhvly2rr5qisb9b4ay0imxrrxmp97x79lli3msqq5gl";
   }
   {
+    name = "vscode-eslint";
+    publisher = "dbaeumer";
+    version = "2.1.1";
+    sha256 = "11ybn0hrarp1v06zjql9lcbvr70ryhij8v2v23q45gm0qgmpk5ib";
+  }
+  {
     name = "vscode-java-pack";
     publisher = "vscjava";
     version = "0.7.1";
     sha256 = "0mrsxgaca0nlgs3j2hvpzx99qiak1dk9sz95bm6ihs0m8ba6zyd4";
+  }
+  {
+    name = "vscode-jest";
+    publisher = "Orta";
+    version = "3.1.1";
+    sha256 = "10ninyhrkzgp4gc3v6aqx391fwhnvwj66hvb26jvchc3hb2vc90x";
   }
   {
     name = "vscode-azurefunctions";

@@ -14,6 +14,7 @@ in
     ./roles/go.nix
     ./roles/haskell.nix
     ./roles/java.nix
+    ./roles/javascript.nix
     ./roles/python.nix
     ./roles/remarkable.nix
     ./roles/rust.nix
