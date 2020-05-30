@@ -5,7 +5,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    pkgs-unstable.nodejs
+    nodejs
     pkgs-unstable.azure-cli
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
