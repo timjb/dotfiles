@@ -8,7 +8,6 @@
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.remove-dropdown-arrows
-    gnomeExtensions.nohotcorner
     gnomeExtensions.system-monitor
     arc-icon-theme
 
