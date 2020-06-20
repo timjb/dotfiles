@@ -2,18 +2,18 @@
 
 buildGoModule rec {
   name = "rmapi-${version}";
-  version = "v0.0.11";
+  version = "v0.0.12";
 
   src = fetchFromGitHub {
     owner = "juruen";
     repo = "rmapi";
-    rev = "169534cd94e435cda2d90e79f3838431197abc14";
-    sha256 = "0zks1pcj2s2pqkmw0hhm41vgdhfgj2r6dmvpsagbmf64578ww349";
+    rev = "6764c56217ef8718041de280d1b060bad73a2e60";
+    sha256 = "049m0p4wbsl822iym8xmc938d4k90iw7wjdzcxfyy8d27hv9mp45";
   };
 
   goPackagePath = "github.com/juruen/rmapi";
   subPackages = [ "." ];
-  modSha256 = "066n91h1zkfzmcz4psmc18p7j1kk64pjllv3aqxfgqlij9r8yhfx";
+  modSha256 = "0w2qiafs5gkgv00yz16bx8yis6gnpxbgqliwrhj5k6z8yy9s7b17";
 
   meta = with lib; {
     description = "Go app that allows you to access your reMarkable tablet files through the Cloud API";
