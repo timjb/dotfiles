@@ -21,7 +21,7 @@
 [includeIf "gitdir:~/Work/**"]
 	path = ~/.gitconfig-work
 [alias]
-	aa = add all
+	aa = add --all
 	co = checkout
 	fo = fetch origin
 	rom = rebase origin/master
