@@ -29,11 +29,12 @@ in
   networking.hostName = "baumannt-tng-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Select internationalisation properties.
+  console = {
+    keyMap = "us";
+    font = "latarcyrheb-sun32"; # larger console font for high DPI monitor
+  };
+
   i18n = {
-    consoleFont = "latarcyrheb-sun32";
-    #consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
   };
 
