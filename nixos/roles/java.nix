@@ -16,11 +16,11 @@ in
     # add symlinks /etc/openjdk{8,12} to /nix/store
     environment.etc = {
       "openjdk8".source = "${pkgs.openjdk8}/lib/openjdk";
-      "openjdk12".source = "${pkgs-unstable.openjdk12}/lib/openjdk";
+      "openjdk12".source = "${pkgs.openjdk12}/lib/openjdk";
     };
 
     environment.systemPackages = with pkgs; [
-      openjdk
+      openjdk8
 
       # Build tools
       maven
