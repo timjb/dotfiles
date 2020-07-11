@@ -22,6 +22,7 @@
 	path = ~/.gitconfig-work
 [alias]
 	aa = add --all
+	ane = commit --amend --no-edit
 	co = checkout
 	fo = fetch origin
 	rom = rebase origin/master
