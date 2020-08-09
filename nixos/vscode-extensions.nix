@@ -50,10 +50,10 @@ mkVscodeExtensionsAttrset [
     sha256 = "0qnq9lr4m0j0syaciyv0zbj8rwm45pshpkagpfbf4pqkscsf80nr";
   }
   {
-    name = "go";
-    publisher = "ms-vscode";
-    version = "0.11.2";
-    sha256 = "0z4a3fvylzhgnm8sgdwr2h22sf5bjrlc646pb4yimabr828f28vx";
+    name = "Go";
+    publisher = "golang";
+    version = "0.16.1";
+    sha256 = "1jqg0kq5ivkzqpbyppx48am79vkg68hm54l4ffwfm58xlak8a46y";
   }
   {
     name = "language-haskell";

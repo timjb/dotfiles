@@ -5,6 +5,6 @@
     go
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
-    go
+    Go
   ];
 }
