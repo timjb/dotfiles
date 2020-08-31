@@ -82,8 +82,8 @@ mkVscodeExtensionsAttrset [
   {
     name = "python";
     publisher = "ms-python";
-    version = "2020.1.57204";
-    sha256 = "1c2fzgkzffvkj9mdmhx44qcxh2ih7r29zas9798nkrrmxrxkw2ld";
+    version = "2020.8.105045";
+    sha256 = "0hv277y7rar47qgpj26dd46vlq4zf549lrfs6342bp1i01zqlx2r";
   }
   {
     name = "rust";
@@ -117,9 +117,9 @@ mkVscodeExtensionsAttrset [
   }
   {
     name = "vscode-jest";
-    publisher = "Orta";
-    version = "3.1.1";
-    sha256 = "10ninyhrkzgp4gc3v6aqx391fwhnvwj66hvb26jvchc3hb2vc90x";
+    publisher = "orta";
+    version = "3.2.0";
+    sha256 = "1qhhy3q5lmdmgw25vmyx69h37i2vbpjxca46jra86vm6kdwglc36";
   }
   {
     name = "vscode-azurefunctions";
