@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
   importFolder = import ./util/import-folder.nix;
@@ -43,7 +43,7 @@ in
   environment.systemPackages = with pkgs; [
     keepassxc
     openvpn
-    thunderbird
+    (assert (lib.versions.major thunderbird.version == "68"); thunderbird)
     veracrypt
     zoom-us
     gnupg
