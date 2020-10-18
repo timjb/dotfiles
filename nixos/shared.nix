@@ -29,6 +29,7 @@ in
     fortune
     git
     gnumake
+    htop
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
     ripgrep # Rust replacement for grep
