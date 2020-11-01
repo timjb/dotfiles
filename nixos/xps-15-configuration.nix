@@ -24,7 +24,9 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.blacklistedKernelModules = [ "nouveau" ];
+  # disable Nvidia to save power
+  # see https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/intel/default.nix
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
 
   networking.hostName = "baumannt-tng-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -62,7 +64,9 @@ in
   # started in user sessions.
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
-  #hardware.bumblebee.enable = true;
+  # disable Nvidia to save power
+  # see https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/intel/default.nix
+  hardware.nvidiaOptimus.disable = true;
 
   virtualisation.virtualbox.host.enable = true;
 
