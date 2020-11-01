@@ -30,27 +30,7 @@ function add-to-path -d "Add directories to \$PATH"
   end
 end
 
-add-to-path ~/bin ~/dotfiles/bin
-add-to-path /sbin /usr/sbin
-add-to-path ~/.local/bin
-
-# Rust
-add-to-path ~/.cargo/bin
-
-# Haskell
-add-to-path "$HOME/.cabal/bin" "$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin"
-
-# Node
-set -x NODE_PATH "/usr/local/lib/node_modules"
-
-# Perl
-set -x PATH /Users/tim/perl5/bin $PATH ^/dev/null;
-set -q PERL5LIB; and set -x PERL5LIB /Users/tim/perl5/lib/perl5:$PERL5LIB;
-set -q PERL5LIB; or set -x PERL5LIB /Users/tim/perl5/lib/perl5;
-set -q PERL_LOCAL_LIB_ROOT; and set -x PERL_LOCAL_LIB_ROOT /Users/tim/perl5:$PERL_LOCAL_LIB_ROOT;
-set -q PERL_LOCAL_LIB_ROOT; or set -x PERL_LOCAL_LIB_ROOT /Users/tim/perl5;
-set -x PERL_MB_OPT --install_base\ \"/Users/tim/perl5\";
-set -x PERL_MM_OPT INSTALL_BASE=/Users/tim/perl5;
+add-to-path ~/bin
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
