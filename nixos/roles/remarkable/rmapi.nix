@@ -11,6 +11,8 @@ buildGoModule rec {
     sha256 = "049m0p4wbsl822iym8xmc938d4k90iw7wjdzcxfyy8d27hv9mp45";
   };
 
+  vendorSha256 = "077s13pcql5w2m6wzls1q06r7p501kazbwzxgfh6akwza15kb4is";
+
   goPackagePath = "github.com/juruen/rmapi";
   subPackages = [ "." ];
   modSha256 = "0w2qiafs5gkgv00yz16bx8yis6gnpxbgqliwrhj5k6z8yy9s7b17";
