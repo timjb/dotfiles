@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 let
   pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
   importFolder = import ./util/import-folder.nix;
@@ -40,10 +40,14 @@ in
 
   time.timeZone = "Europe/Berlin";
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "thunderbird-68.12.0"
+  ];
+
   environment.systemPackages = with pkgs; [
     keepassxc
     openvpn
-    (assert (lib.versions.major thunderbird.version == "68"); thunderbird)
+    thunderbird-68 # TODO: update when Thunderbird 78 supports OpenPGP
     veracrypt
     zoom-us
     gnupg
