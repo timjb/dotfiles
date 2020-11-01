@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 let
-  rmapi = pkgs.callPackage ./remarkable/rmapi.nix {};
-  remarkable-cups = pkgs.callPackage ./remarkable/remarkable-cups.nix { inherit rmapi; };
+  remarkable-cups = pkgs.callPackage ./remarkable/remarkable-cups.nix { rmapi = pkgs.rmapi; };
 in
 
 {
