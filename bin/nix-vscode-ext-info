@@ -29,7 +29,7 @@ def get_extension_info(publisher, name):
   url = "https://marketplace.visualstudio.com/items?itemName={}.{}".format(publisher, name)
   response = requests.get(url)
   soup = BeautifulSoup(response.content, "html.parser")
-  json_script_element = soup.find('script', class_='vss-extension')
+  json_script_element = soup.find('script', class_='jiContent')
   return json.loads(json_script_element.contents[0])
 
 def get_extension_sha256(publisher, name, version):
@@ -56,7 +56,7 @@ template = '\n'.join([
 def main():
   for (publisher, name) in parse_args(sys.argv):
     extension_info = get_extension_info(publisher, name)
-    curr_version = extension_info['versions'][0]['version']
+    curr_version = extension_info['Versions'][0]['version']
     sha256_hash = get_extension_sha256(publisher, name, curr_version)
     print(template.format(name=name, publisher=publisher, version=curr_version, hash=sha256_hash))
 
