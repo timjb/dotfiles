@@ -93,6 +93,8 @@ in
       #'';
     };
 
+    # recommended by https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/xps-common.nix
+    thermald.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
