@@ -79,3 +79,5 @@ set -x LC_ALL "en_US.UTF-8"
 if test ! -n "$NIX_PATH"
   source ~/.config/fish/nix.fish
 end
+
+eval (direnv hook fish)

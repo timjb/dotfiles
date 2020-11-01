@@ -23,6 +23,7 @@ in
     # CLIs
     binutils # ld, as, ...
     cowsay
+    direnv
     exa # Rust replacement for ls
     file # tells you the format/kind of some file
     fish
