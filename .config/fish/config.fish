@@ -55,9 +55,4 @@ alias untargz "tar xvf"
 # Environment
 set -x LC_ALL "en_US.UTF-8"
 
-# Nix configuration (if not already available)
-if test ! -n "$NIX_PATH"
-  source ~/.config/fish/nix.fish
-end
-
 eval (direnv hook fish)
