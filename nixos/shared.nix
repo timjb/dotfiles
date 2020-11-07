@@ -29,6 +29,7 @@ in
     fish
     fortune
     git
+    gitAndTools.gh
     gnumake
     htop
     pciutils # lspci, setpci, update-pciids
