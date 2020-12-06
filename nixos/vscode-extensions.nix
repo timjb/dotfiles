@@ -38,10 +38,10 @@ mkVscodeExtensionsAttrset [
     sha256 = "1wzixi5wx3dj94174fybis0180jk9mw3c7xyr0sa1awqp4xdwkx6";
   }
   {
-    name = "ghcide";
-    publisher = "DigitalAssetHoldingsLLC";
-    version = "0.0.1";
-    sha256 = "0riqs95f9a9krbyrvh98z59z3nq39jh5jyfw9nc5kjmkzpwbr17w";
+    name = "haskell";
+    publisher = "haskell";
+    version = "1.2.0";
+    sha256 = "0vxsn4s27n1aqp5pp4cipv804c9cwd7d9677chxl0v18j8bf7zly";
   }
   {
     name = "gitlens";
