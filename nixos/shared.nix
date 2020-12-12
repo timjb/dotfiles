@@ -73,6 +73,8 @@ in
 
   programs.bash.enableCompletion = true;
 
+  services.lorri.enable = true;
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
