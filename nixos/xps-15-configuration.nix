@@ -51,7 +51,6 @@ in
     openvpn
     thunderbird-68 # TODO: update when Thunderbird 78 supports OpenPGP
     veracrypt
-    zoom-us
     gnupg
     pkgs-unstable.slack
     libreoffice
