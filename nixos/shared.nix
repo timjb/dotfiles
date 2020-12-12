@@ -32,6 +32,7 @@ in
     gitAndTools.gh
     gnumake
     htop
+    niv
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
     ripgrep # Rust replacement for grep
