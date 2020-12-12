@@ -57,6 +57,8 @@ in
     freeplane
   ];
 
+  services.flatpak.enable = true;
+
   roles.java.haveIntelliJUltimateLicense = true;
 
   # Some programs need SUID wrappers, can be configured further or are
