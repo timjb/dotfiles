@@ -56,3 +56,5 @@ alias untargz "tar xvf"
 set -x LC_ALL "en_US.UTF-8"
 
 eval (direnv hook fish)
+
+starship init fish | source

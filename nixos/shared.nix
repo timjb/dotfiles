@@ -36,6 +36,7 @@ in
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
     ripgrep # Rust replacement for grep
+    starship # shell prompt
     vim
     wget
     xsel # get/set contents of X clipboard
