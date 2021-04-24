@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    cabal2nix
     ghc
     haskellPackages.haskell-language-server
   ];
