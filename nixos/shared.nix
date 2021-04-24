@@ -65,6 +65,7 @@ in
     gitlens
     nix
     vim
+    vsliveshare
   ];
 
   fonts.fonts = with pkgs; [

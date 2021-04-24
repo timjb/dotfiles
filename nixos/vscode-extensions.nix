@@ -32,6 +32,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "0r3bfp8kvhf9zpbiil7acx7zain26grk133f0r0syxqgml12i652";
   }
   {
+    name = "vscode-firefox-debug";
+    publisher = "firefox-devtools";
+    version = "2.9.1";
+    sha256 = "1xr1z96kd2lcamklc0x4sv0if8n78cr0ara5lmc7bh5afy0h085g";
+  }
+  {
     name = "fish";
     publisher = "TeddyDD";
     version = "0.0.4";
