@@ -145,4 +145,10 @@ mkVscodeExtensionsAttrset [
     version = "0.0.10";
     sha256 = "126anq93ycgzdn3srbs416vpiw9h9rav332aiwjl5vhq0bgax52y";
   }
+  {
+    name = "vscode-wasm";
+    publisher = "dtsvet";
+    version = "1.3.1";
+    sha256 = "0ysbpibzaak9l3i09y0a3haqigb06bfih5dp7mqkih7axaazb6fi";
+  }
 ]

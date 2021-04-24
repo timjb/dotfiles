@@ -10,5 +10,6 @@
     vscode-eslint
     vscode-firefox-debug
     vscode-jest
+    vscode-wasm
   ];
 }
