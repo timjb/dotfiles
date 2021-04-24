@@ -31,6 +31,7 @@ function add-to-path -d "Add directories to \$PATH"
 end
 
 add-to-path ~/bin
+add-to-path ~/.npm-packages/bin
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
