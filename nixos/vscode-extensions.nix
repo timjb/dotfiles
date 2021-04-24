@@ -128,6 +128,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "1qhhy3q5lmdmgw25vmyx69h37i2vbpjxca46jra86vm6kdwglc36";
   }
   {
+    name = "vsliveshare";
+    publisher = "MS-vsliveshare";
+    version = "1.0.3375";
+    sha256 = "0mfjlfs24m8s2z0a80gh4j6sxwa7vwi6gqsgm0wk2wggb2bjvd0w";
+  }
+  {
     name = "vscode-azurefunctions";
     publisher = "ms-azuretools";
     version = "0.20.2";
