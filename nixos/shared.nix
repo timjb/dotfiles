@@ -44,6 +44,7 @@ in
 
     # GUI applications
     chromium
+    gnome3.evolution # used for calendar in Gnome Shell
     firefox
     gimp
     gparted
