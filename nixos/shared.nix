@@ -22,6 +22,7 @@ in
 
     # CLIs
     binutils # ld, as, ...
+    cloc # count lines of code
     cowsay
     direnv
     exa # Rust replacement for ls
@@ -40,7 +41,6 @@ in
     vim
     wget
     xsel # get/set contents of X clipboard
-    cloc # count lines of code
 
     # GUI applications
     chromium
