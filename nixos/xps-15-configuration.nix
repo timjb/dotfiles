@@ -9,6 +9,7 @@ in
   imports = [
     ./xps-15-hardware-configuration.nix
     ./shared.nix
+    #./roles/arduino.nix
     #./roles/azure.nix
     ./roles/docker.nix
     ./roles/go.nix
@@ -19,6 +20,7 @@ in
     ./roles/remarkable.nix
     ./roles/rust.nix
     #./roles/video-recording.nix
+    #./roles/video-editing.nix
   ] ++ importFolder ./work-private;
 
   # Use the systemd-boot EFI boot loader.
