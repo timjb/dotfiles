@@ -11,10 +11,6 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
-
-    chromium = {
-      enablePepperFlash = true;
-    };
   };
 
   environment.systemPackages = with pkgs; [
