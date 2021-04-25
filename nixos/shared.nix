@@ -71,6 +71,12 @@ in
     ubuntu_font_family
   ];
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 45d";
+  };
+
   programs.bash.enableCompletion = true;
 
   services.lorri.enable = true;
