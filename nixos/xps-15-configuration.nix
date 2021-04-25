@@ -56,7 +56,6 @@ in
     gnupg
     pkgs-unstable.slack
     libreoffice
-    freeplane
   ];
 
   services.flatpak.enable = true;
