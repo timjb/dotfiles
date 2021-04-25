@@ -31,6 +31,7 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
   "keyboard.dispatch": "keyCode",
   "latex-workshop.chktex.enabled": true,
   "latex-workshop.view.pdf.viewer": "browser",
@@ -39,23 +40,29 @@
   "lean.roiModeDefault": "open",
   "python.linting.pylintPath": "/run/current-system/sw/bin/pylint",
   "redprl.path": "/Users/tim/Software/sml-redprl/bin/redprl",
+  "rust-client.disableRustup": true,
   "terminal.integrated.scrollback": 2000,
   "update.channel": "none",
   "vim.overrideCopy": false,
   "vim.useSystemClipboard": true,
-  "window.zoomLevel": 0,
+  "window.openFoldersInNewWindow": "on",
   "workbench.colorTheme": "Monokai",
   "workbench.panel.defaultLocation": "right",
   "workbench.sideBar.location": "left",
   "workbench.statusBar.feedback.visible": false,
-  "[tex]": {
-    "editor.wordWrap": "on"
-  },
   "[latex]": {
     "editor.wordWrap": "on"
   },
   "[markdown]": {
     "editor.wordWrap": "on"
   },
-  "rust-client.disableRustup": true
+  "[tex]": {
+    "editor.wordWrap": "on"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
