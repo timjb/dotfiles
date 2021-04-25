@@ -71,6 +71,8 @@ in
     ubuntu_font_family
   ];
 
+  nix.autoOptimiseStore = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
