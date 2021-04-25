@@ -49,7 +49,7 @@ in
     spotify
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
-    seafile-client
+    pkgs-unstable.seafile-client # unstable needed to get version 8
     vlc
     (pkgs-unstable.vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
