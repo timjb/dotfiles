@@ -44,14 +44,10 @@ in
 
   time.timeZone = "Europe/Berlin";
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "thunderbird-68.12.0"
-  ];
-
   environment.systemPackages = with pkgs; [
     keepassxc
     openvpn
-    thunderbird-68 # TODO: update when Thunderbird 78 supports OpenPGP
+    (assert (lib.assertOneOf "thunderbird.version" thunderbird.version [ "78.9.1" "78.10.1" ]); thunderbird)
     veracrypt
     gnupg
     pkgs-unstable.slack
