@@ -47,7 +47,7 @@ in
   environment.systemPackages = with pkgs; [
     keepassxc
     openvpn
-    (assert (lib.assertOneOf "thunderbird.version" thunderbird.version [ "78.10.2" ]); thunderbird)
+    (assert (lib.assertOneOf "thunderbird.version" thunderbird.version [ "78.10.2" "78.11.0" ]); thunderbird)
     veracrypt
     gnupg
     pkgs-unstable.slack

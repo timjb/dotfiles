@@ -22,7 +22,7 @@
       wayland = false;
     };
     desktopManager = {
-      gnome3.enable = true;
+      gnome.enable = true;
     };
   };
 
