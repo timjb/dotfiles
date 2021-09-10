@@ -32,6 +32,7 @@ in
     niv
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
+    restic
     ripgrep # Rust replacement for grep
     starship # shell prompt
     vim
