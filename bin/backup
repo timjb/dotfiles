@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# Usage: backup important.cfg
-# Creates a copy with a timestamp
-# http://noqqe.de/archives/1425
-
-filename=$1
-filetime=$(date +%Y-%m-%d_%Hh%M)
-cp ${filename} ${filename}_${filetime}
