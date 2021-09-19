@@ -46,6 +46,7 @@ in
     gimp
     gparted
     inkscape
+    pkgs-unstable.joplin-desktop # pkgs-unstable to get version 2 -> necessary for sync to work with mobile app
     pkgs-unstable.signal-desktop
     spotify
     tdesktop # Telegram Desktop
