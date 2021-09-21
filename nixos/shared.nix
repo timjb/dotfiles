@@ -49,6 +49,7 @@ in
     pkgs-unstable.joplin-desktop # pkgs-unstable to get version 2 -> necessary for sync to work with mobile app
     pkgs-unstable.signal-desktop
     spotify
+    pkgs-unstable.teams
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
     pkgs-unstable.seafile-client # unstable needed to get version 8
