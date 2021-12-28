@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
   importFolder = import ./util/import-folder.nix;
   freeplane = pkgs.callPackage ./freeplane.nix {};
 in
@@ -50,7 +49,7 @@ in
     thunderbird
     veracrypt
     gnupg
-    pkgs-unstable.slack
+    slack
     libreoffice
   ];
 

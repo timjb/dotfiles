@@ -1,9 +1,6 @@
 # Java
 { config, lib, pkgs, ... }:
 
-let
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
 {
   options = {
     roles.java.haveIntelliJUltimateLicense = lib.mkOption {
@@ -27,7 +24,7 @@ in
 
       # IDEs
       eclipses.eclipse-java
-      (if config.roles.java.haveIntelliJUltimateLicense then pkgs-unstable.idea.idea-ultimate else pkgs-unstable.idea.idea-community)
+      (if config.roles.java.haveIntelliJUltimateLicense then pkgs.idea.idea-ultimate else pkgs.idea.idea-community)
     ];
 
     my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [

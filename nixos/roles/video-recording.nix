@@ -1,10 +1,6 @@
-{ ... }:
-let
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
-
+{ pkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs-unstable.obs-studio
+    obs-studio
   ];
 }

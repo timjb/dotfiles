@@ -46,18 +46,18 @@ in
     gimp
     gparted
     inkscape
-    pkgs-unstable.joplin-desktop # pkgs-unstable to get version 2 -> necessary for sync to work with mobile app
+    joplin-desktop
     postman
-    pkgs-unstable.signal-desktop
+    signal-desktop
     spotify
     pkgs-unstable.teams
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
-    pkgs-unstable.seafile-client # unstable needed to get version 8
+    seafile-client
     vlc
     (pkgs-unstable.vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
-    })
+    }) # unstable to get most recent version
   ];
 
   my-config.vscodeExtensions = with (import ./vscode-extensions.nix); [
