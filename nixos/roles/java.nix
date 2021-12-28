@@ -10,9 +10,10 @@
   };
 
   config = {
-    # add symlinks /etc/openjdk8 to /nix/store
+    # add symlinks /etc/openjdk{8,11} to /nix/store
     environment.etc = {
       "openjdk8".source = "${pkgs.openjdk8}/lib/openjdk";
+      "openjdk11".source = "${pkgs.openjdk11}/lib/openjdk";
     };
 
     environment.systemPackages = with pkgs; [
