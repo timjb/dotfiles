@@ -7,7 +7,6 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
-    gnomeExtensions.remove-dropdown-arrows
     gnomeExtensions.system-monitor
     arc-icon-theme
 
