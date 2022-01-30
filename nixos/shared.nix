@@ -19,6 +19,7 @@ in
     # CLIs
     binutils # ld, as, ...
     cloc # count lines of code
+    pkgs-unstable.comma # unstable because not yet available in stable
     cowsay
     direnv
     exa # Rust replacement for ls
