@@ -1,6 +1,9 @@
 { config, lib, pkgs, vscode-utils, ... }:
 let
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+  unstable-channel = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+  unstable-git = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixos-unstable)
+    { config = config.nixpkgs.config; };
 in
 
 {
@@ -19,7 +22,7 @@ in
     # CLIs
     binutils # ld, as, ...
     cloc # count lines of code
-    pkgs-unstable.comma # unstable because not yet available in stable
+    unstable-channel.comma # unstable because not yet available in stable
     cowsay
     direnv
     exa # Rust replacement for ls
@@ -43,7 +46,7 @@ in
     # GUI applications
     chromium
     evolution # used for calendar in Gnome Shell
-    firefox
+    unstable-git.firefox # need v99 for security reasons
     gimp
     gparted
     inkscape
@@ -51,12 +54,12 @@ in
     postman
     signal-desktop
     spotify
-    pkgs-unstable.teams
+    unstable-channel.teams
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
     seafile-client
     vlc
-    (pkgs-unstable.vscode-with-extensions.override {
+    (unstable-channel.vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
     }) # unstable to get most recent version
   ];
