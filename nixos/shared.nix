@@ -69,6 +69,7 @@ in
     fish
     gitlens
     nix
+    terraform
     vim
     vsliveshare
   ];

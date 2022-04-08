@@ -98,6 +98,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "1r5q1iclr64wmgglsr3na3sv0fha5di8xyccv7xwcv5jf8w5rz5y";
   }
   {
+    name = "terraform";
+    publisher = "hashicorp";
+    version = "2.19.0";
+    sha256 = "0imyddsk2hv68xqasbj1mprp66rpzarlmbq8jcqksbw4kc8drxwk";
+  }
+  {
     name = "vim";
     publisher = "vscodevim";
     version = "0.16.12";
