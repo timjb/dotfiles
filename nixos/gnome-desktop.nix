@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gnome3.gnome-tweak-tool
+    gnome3.gnome-tweaks
     gnome3.dconf-editor
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator

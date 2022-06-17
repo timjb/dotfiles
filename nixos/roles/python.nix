@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (python38.withPackages (ps: with ps; [
+    (python39.withPackages (ps: with ps; [
       pygments
       pylint # used by the Python VSCode extension
       virtualenvwrapper
