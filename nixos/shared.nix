@@ -39,6 +39,7 @@ in
     restic
     ripgrep # Rust replacement for grep
     starship # shell prompt
+    tldr # better man
     vim
     wget
     xsel # get/set contents of X clipboard
