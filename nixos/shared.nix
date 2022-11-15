@@ -33,6 +33,7 @@ in
     gitAndTools.gh
     gnumake
     htop
+    jq
     niv
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
