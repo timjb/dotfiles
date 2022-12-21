@@ -96,7 +96,6 @@ in
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
