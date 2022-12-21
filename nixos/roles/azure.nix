@@ -1,12 +1,9 @@
 { pkgs, ... }:
 
-let
-  pkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
 {
   environment.systemPackages = with pkgs; [
-    nodejs
-    pkgs-unstable.azure-cli
+    nodejs-16_x
+    azure-cli
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     azure-account
