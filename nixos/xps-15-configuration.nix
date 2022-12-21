@@ -11,6 +11,7 @@ in
     #./roles/arduino.nix
     #./roles/azure.nix
     ./roles/docker.nix
+    ./roles/dotnet.nix
     ./roles/go.nix
     ./roles/haskell.nix
     ./roles/java.nix

@@ -32,6 +32,7 @@ end
 
 add-to-path ~/bin
 add-to-path ~/.npm-packages/bin
+add-to-path ~/.dotnet/tools
 
 function reload-config -d "Reload fish config file (this file)"
   . (status --current-filename)
