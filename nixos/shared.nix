@@ -73,7 +73,6 @@ in
     nix
     terraform
     vim
-    vsliveshare
   ];
 
   fonts.fonts = with pkgs; [
