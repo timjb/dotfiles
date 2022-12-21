@@ -8,7 +8,7 @@
       virtualenvwrapper
     ]))
   ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     python
   ];
 }

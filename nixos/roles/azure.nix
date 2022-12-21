@@ -8,7 +8,7 @@ in
     nodejs
     pkgs-unstable.azure-cli
   ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     azure-account
     vscode-azurefunctions
     vscode-node-azure-pack

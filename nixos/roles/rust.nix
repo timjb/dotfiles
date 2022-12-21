@@ -6,7 +6,7 @@
     rustc
     rls
   ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     rust
     better-toml
   ];

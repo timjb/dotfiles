@@ -61,12 +61,12 @@ in
     tilix # Terminal emulator
     seafile-client
     vlc
-    (unstable-channel.vscode-with-extensions.override {
+    (vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
-    }) # unstable to get most recent version
+    })
   ];
 
-  my-config.vscodeExtensions = with (import ./vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ./vscode-extensions.nix pkgs); [
     bracket-pair-colorizer
     fish
     gitlens
@@ -82,7 +82,7 @@ in
     ubuntu_font_family
   ];
 
-  nix.autoOptimiseStore = true;
+  nix.settings.auto-optimise-store = true;
 
   nix.gc = {
     automatic = true;

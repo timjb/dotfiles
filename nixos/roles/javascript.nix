@@ -5,7 +5,7 @@
     nodejs-16_x
     yarn
   ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     prettier-vscode
     vscode-eslint
     vscode-firefox-debug

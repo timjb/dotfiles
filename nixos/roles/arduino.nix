@@ -9,7 +9,7 @@
   ];
   # http://vid.bina.me/tools/arduino/arduino-on-nixos/
   my-config.userExtraGroups = [ "dialout" ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     vscode-arduino
   ];
 }

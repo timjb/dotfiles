@@ -28,7 +28,7 @@
       (if config.roles.java.haveIntelliJUltimateLicense then pkgs.jetbrains.idea-ultimate else pkgs.jetbrains.idea-community)
     ];
 
-    my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+    my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
       vscode-java-pack
     ];
   };

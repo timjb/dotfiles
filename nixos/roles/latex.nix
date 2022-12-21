@@ -5,7 +5,7 @@
     (texlive.combine { inherit (texlive) scheme-full; })
     biber
   ];
-  my-config.vscodeExtensions = with (import ../vscode-extensions.nix); [
+  my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     latex-workshop
   ];
 }
