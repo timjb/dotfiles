@@ -119,8 +119,8 @@ mkVscodeExtensionsAttrset [
   {
     name = "vscode-eslint";
     publisher = "dbaeumer";
-    version = "2.1.1";
-    sha256 = "11ybn0hrarp1v06zjql9lcbvr70ryhij8v2v23q45gm0qgmpk5ib";
+    version = "2.2.6";
+    sha256 = "0m16wi8slyj09r1y5qin9xsw4pyhfk3mj6rs5ghydfnppb45w9np";
   }
   {
     name = "vscode-java-pack";
@@ -131,8 +131,8 @@ mkVscodeExtensionsAttrset [
   {
     name = "vscode-jest";
     publisher = "orta";
-    version = "3.2.0";
-    sha256 = "1qhhy3q5lmdmgw25vmyx69h37i2vbpjxca46jra86vm6kdwglc36";
+    version = "5.0.0";
+    sha256 = "0qwivdhjx8y8rx7s0dssqzqcgrgd9qmdjc00fihkfjbgrxn6zb9s";
   }
   {
     name = "vscode-azurefunctions";
