@@ -32,6 +32,7 @@ in
     git
     gitAndTools.gh
     gnumake
+    graphviz
     htop
     jq
     niv
