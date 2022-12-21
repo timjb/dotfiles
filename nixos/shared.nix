@@ -35,6 +35,7 @@ in
     htop
     jq
     niv
+    nix-du
     pciutils # lspci, setpci, update-pciids
     psmisc # fuser, killall, pstree, peekfd
     restic
