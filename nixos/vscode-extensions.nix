@@ -27,12 +27,6 @@ mkVscodeExtensionsAttrset [
     sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
   }
   {
-    name = "bracket-pair-colorizer";
-    publisher = "CoenraadS";
-    version = "1.0.61";
-    sha256 = "0r3bfp8kvhf9zpbiil7acx7zain26grk133f0r0syxqgml12i652";
-  }
-  {
     name = "vscode-firefox-debug";
     publisher = "firefox-devtools";
     version = "2.9.1";
