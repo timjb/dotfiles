@@ -99,6 +99,12 @@ mkVscodeExtensionsAttrset [
     sha256 = "1r5q1iclr64wmgglsr3na3sv0fha5di8xyccv7xwcv5jf8w5rz5y";
   }
   {
+    name = "svelte-vscode";
+    publisher = "svelte";
+    version = "106.4.1";
+    sha256 = "1sraybjib6yrmsyxwk1n4f2j96m98j694k96ni3gs04ysz738cgm";
+  }
+  {
     name = "terraform";
     publisher = "hashicorp";
     version = "2.19.0";
