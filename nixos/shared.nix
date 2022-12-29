@@ -1,9 +1,6 @@
 { config, lib, pkgs, vscode-utils, ... }:
 let
   unstable-channel = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-  unstable-git = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixos-unstable)
-    { config = config.nixpkgs.config; };
 in
 
 {
@@ -50,7 +47,7 @@ in
     # GUI applications
     chromium
     evolution # used for calendar in Gnome Shell
-    unstable-git.firefox # need v99 for security reasons
+    firefox
     gimp
     gparted
     inkscape
