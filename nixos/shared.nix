@@ -19,7 +19,7 @@ in
     # CLIs
     binutils # ld, as, ...
     cloc # count lines of code
-    unstable-channel.comma # unstable because not yet available in stable
+    comma
     cowsay
     direnv
     exa # Rust replacement for ls
