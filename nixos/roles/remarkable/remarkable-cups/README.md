@@ -1,6 +1,6 @@
 # Usage
 
-The first time `rmapi` is run, it asks you for a registration code, which it then uses to obtain authentication information from reMarkable cloud and stores that in `$HOME/.rmapi`. Copy that file to `/var/cache/cups/rmapi`.
+The first time `rmapi` is run, it asks you for a registration code, which it then uses to obtain authentication information from reMarkable cloud and stores that in `$HOME/.config/rmapi/rmapi.conf`. Copy that file to `/var/cache/cups/rmapi`.
 
 Then add the printer (after rebuilding NixOS) using
 
