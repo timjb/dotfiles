@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    nodejs-16_x
+    nodejs
     azure-cli
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [

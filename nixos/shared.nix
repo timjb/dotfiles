@@ -13,6 +13,8 @@ in
     allowUnfree = true;
   };
 
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     exfat # support for exfat file system
 
@@ -24,7 +26,6 @@ in
     direnv
     exa # Rust replacement for ls
     file # tells you the format/kind of some file
-    fish
     fortune
     git
     gitAndTools.gh
