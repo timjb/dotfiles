@@ -60,6 +60,7 @@
     (vscode-with-extensions.override {
       vscodeExtensions = config.my-config.vscodeExtensions;
     })
+    zoom-us
   ];
 
   my-config.vscodeExtensions = with (import ./vscode-extensions.nix pkgs); [
