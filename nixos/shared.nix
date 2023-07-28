@@ -67,6 +67,10 @@ in
   ];
 
   my-config.vscodeExtensions = with (import ./vscode-extensions.nix pkgs); [
+    dendron
+    dendron-markdown-shortcuts
+    dendron-paste-image
+    vscode-yaml
     fish
     gitlens
     nix

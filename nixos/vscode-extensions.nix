@@ -27,6 +27,24 @@ mkVscodeExtensionsAttrset [
     sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
   }
   {
+    name = "dendron";
+    publisher = "dendron";
+    version = "0.123.0";
+    sha256 = "1w7nwnpj3k15fxygzqv0xy1p2n79vnhi1sh0iagnw7w5ixbzb73d";
+  }
+  {
+    name = "dendron-markdown-shortcuts";
+    publisher = "dendron";
+    version = "0.12.1";
+    sha256 = "0xnw44xwxy1fhq4wpqcwwzf2x9mvsi14clkky6vdvbig2kbycs1a";
+  }
+  {
+    name = "dendron-paste-image";
+    publisher = "dendron";
+    version = "1.1.1";
+    sha256 = "0qdby08pcjdjprpbr7p59fa81y58l3kwsln74qfgz0c18lqbqmaa";
+  }
+  {
     name = "vscode-firefox-debug";
     publisher = "firefox-devtools";
     version = "2.9.8";
@@ -151,5 +169,11 @@ mkVscodeExtensionsAttrset [
     publisher = "dtsvet";
     version = "1.4.0";
     sha256 = "0p3a8brwpbg3fkhpq257jp7dnydk5b89ramb5yqpdp4yaksvfry5";
+  }
+  {
+    name = "vscode-yaml";
+    publisher = "redhat";
+    version = "1.13.0";
+    sha256 = "07ayfsxsgb4i2bp3g1wf4chgx09468gy4gj70nlj1198fld1amgh";
   }
 ]
