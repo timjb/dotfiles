@@ -18,8 +18,6 @@
 /.emacs.d/.smex-items
 /.emacs.d/places
 
-/.atom/compile-cache
-/.atom/packages
-/.atom/storage
-/.atom/.apm
-/.atom/.gitignore
+/vscode/History
+/vscode/globalStorage
+/vscode/workspaceStorage
