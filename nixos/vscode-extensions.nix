@@ -41,14 +41,14 @@ mkVscodeExtensionsAttrset [
   {
     name = "haskell";
     publisher = "haskell";
-    version = "2.2.2";
-    sha256 = "1d5b0p6r9ipwb7j4cx9w13vq31h78bh2sfwl54xri4gyvialhryd";
+    version = "2.2.4";
+    sha256 = "1qsvfb2a2k48gndda92w91z9acis43a151cdwmkmb8qprl311768";
   }
   {
     name = "gitlens";
     publisher = "eamodio";
-    version = "2022.12.2304";
-    sha256 = "17zzx86k767d0hp6yidxq41mfvqvm8588kxdk1zkr8rlqsxjadz0";
+    version = "2023.7.1805";
+    sha256 = "0qjwg52y5ndpdzpnhi1syj2gk73spl7i2il5isgj6ydy7bs04zij";
   }
   {
     name = "Go";

@@ -2,9 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    cabal2nix
-    ghc
-    haskellPackages.haskell-language-server
+    haskell-language-server
+    (haskellPackages.ghcWithPackages (haskellPackages: with haskellPackages; [ stack ]))
   ];
   my-config.vscodeExtensions = with (import ../vscode-extensions.nix pkgs); [
     haskell
