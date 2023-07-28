@@ -17,7 +17,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      openjdk8
+      openjdk11
 
       # Build tools
       maven
