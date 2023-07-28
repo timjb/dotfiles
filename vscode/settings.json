@@ -4,11 +4,11 @@
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "relative",
   "editor.rulers": [
-      100
+    100
   ],
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
@@ -56,16 +56,8 @@
     "editor.wordWrap": "on"
   },
   "[markdown]": {
-    "editor.wordWrap": "on"
-  },
-  "[tex]": {
-    "editor.wordWrap": "on"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -73,7 +65,23 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[tex]": {
+    "editor.wordWrap": "on"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "jest.autoRun": "off"
+  "jest.autoRun": "off",
+  "git.openRepositoryInParentFolders": "always",
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }
