@@ -1,4 +1,4 @@
-{ config, lib, pkgs, vscode-utils, ... }:
+{ config, lib, pkgs, vscode-utils, inputs, ... }:
 
 {
   imports = [
@@ -33,6 +33,7 @@
     niv
     nix-du
     pciutils # lspci, setpci, update-pciids
+    inputs.please.packages."${pkgs.system}".please
     psmisc # fuser, killall, pstree, peekfd
     restic
     ripgrep # Rust replacement for grep
