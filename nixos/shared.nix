@@ -1,7 +1,4 @@
 { config, lib, pkgs, vscode-utils, ... }:
-let
-  unstable-channel = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
 
 {
   imports = [
@@ -56,7 +53,6 @@ in
     postman
     signal-desktop
     spotify
-    unstable-channel.teams
     tdesktop # Telegram Desktop
     tilix # Terminal emulator
     seafile-client
