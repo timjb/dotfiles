@@ -82,12 +82,17 @@
     ubuntu_font_family
   ];
 
-  nix.settings.auto-optimise-store = true;
-
-  nix.gc = {
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    settings.auto-optimise-store = true;
+    gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 45d";
+    };
   };
 
   programs.bash.enableCompletion = true;
