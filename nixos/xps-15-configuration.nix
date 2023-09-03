@@ -26,9 +26,6 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # disable Nvidia to save power
-  # see https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/intel/default.nix
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
 
   networking.hostName = "baumannt-tng-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -62,10 +59,6 @@ in
   # started in user sessions.
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
-  # disable Nvidia to save power
-  # see https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/intel/default.nix
-  hardware.nvidiaOptimus.disable = true;
-
   virtualisation.virtualbox.host.enable = true;
 
   services = {
@@ -81,14 +74,6 @@ in
       enable = true;
       autorun = true;
       layout = "us";
-      videoDrivers = [ "modesetting" ];
-
-      # Enable touchpad support.
-      libinput.enable = true;
-
-      #monitorSection = ''
-      #  DisplaySize 406 228
-      #'';
     };
 
     # recommended by https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/15-9560/xps-common.nix
