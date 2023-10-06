@@ -32,6 +32,7 @@
     jq
     niv
     nix-du
+    nix-index
     pciutils # lspci, setpci, update-pciids
     inputs.please.packages."${pkgs.system}".please
     psmisc # fuser, killall, pstree, peekfd
