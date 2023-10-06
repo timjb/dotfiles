@@ -4,14 +4,17 @@
   config = {
 
     environment.etc = {
-      "dotnet/install_location_x64".text = "${pkgs.dotnet-sdk_7}";
+      "dotnet/install_location_x64".text = "${pkgs.dotnet-sdk}";
       # stable locations for configuring SDK in IDE
       "dotnet6".source = "${pkgs.dotnet-sdk}";
       "dotnet7".source = "${pkgs.dotnet-sdk_7}";
     };
 
     environment.systemPackages = with pkgs; [
-      dotnet-sdk_7
+      (with dotnetCorePackages; combinePackages [
+        sdk_6_0
+        sdk_7_0
+      ])
       jetbrains.rider
       msbuild
     ];
