@@ -46,6 +46,7 @@
 
     # GUI applications
     chromium
+    cypress
     evolution # used for calendar in Gnome Shell
     firefox
     gimp
