@@ -39,6 +39,7 @@
     restic
     ripgrep # Rust replacement for grep
     starship # shell prompt
+    terraform
     tldr # better man
     vim
     wget
