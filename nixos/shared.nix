@@ -53,6 +53,7 @@
     gparted
     inkscape
     joplin-desktop
+    microsoft-edge # for webdev
     postman
     signal-desktop
     spotify
