@@ -1,3 +1,5 @@
 [user]
 	name = Tim J. Baumann
 	email = tim@timbaumann.info
+[core]
+	sshCommand = ssh -i ~/.ssh/id_timbaumann -F /dev/null

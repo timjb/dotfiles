@@ -16,6 +16,9 @@
 	required = true
 [push]
 	default = simple
+	autoSetupRemote = true
+[rebase]
+	autoSquash = true
 [includeIf "gitdir:~/Projects/**"]
 	path = ~/.gitconfig-personal
 [includeIf "gitdir:~/Work/**"]
@@ -26,3 +29,7 @@
 	co = checkout
 	fo = fetch origin
 	rom = rebase origin/master
+	fomo = !git fetch origin main && git rebase origin/main
+
+[init]
+	defaultBranch = main
