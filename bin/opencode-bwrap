@@ -1,0 +1,160 @@
+#!/bin/bash
+
+set -euo pipefail
+
+ORIGINAL_PWD="$(realpath "${PWD}")"
+
+OPENCODE_BWRAP_CONFIG_DIR="$HOME/.config/opencode-bwrap"
+
+# Function to find .opencode-bwrap-root file by traversing up the directory tree
+find_bwrap_root() {
+    local current_dir="$1"
+    while [[ "$current_dir" != "/" ]]; do
+        if [[ -f "$current_dir/.opencode-bwrap-root" ]]; then
+            echo "$current_dir"
+            return 0
+        fi
+        current_dir="$(dirname "$current_dir")"
+    done
+    return 1
+}
+
+# Find .opencode-bwrap-root or use current directory as fallback
+WORKSPACE_DIR="$ORIGINAL_PWD"
+if BWRAP_ROOT="$(find_bwrap_root "$ORIGINAL_PWD")"; then
+    WORKSPACE_DIR="$BWRAP_ROOT"
+fi
+
+# Calculate the relative path from WORKSPACE_DIR to ORIGINAL_PWD for chdir
+if [[ "$WORKSPACE_DIR" == "$ORIGINAL_PWD" ]]; then
+    CHDIR_PATH="$HOME/workspace"
+elif [[ "$WORKSPACE_DIR" == "/" ]]; then
+    CHDIR_PATH="$HOME/workspace${ORIGINAL_PWD}"
+else
+    RELATIVE_PATH="${ORIGINAL_PWD#$WORKSPACE_DIR/}"
+    CHDIR_PATH="$HOME/workspace/$RELATIVE_PATH"
+fi
+
+EXTRA_BINDS=()
+SANDBOX_PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+
+
+if [[ -d "$HOME/.local/bin" ]]; then
+    EXTRA_BINDS+=(--ro-bind "$HOME/.local/bin" "$HOME/.local/bin")
+    SANDBOX_PATH="${SANDBOX_PATH}:$HOME/.local/bin"
+fi
+
+# access to node as installed by nvm. Needed because opencode is installed via npm
+if [[ -n "$(which node)" ]]; then
+    NODE_DIR="$(dirname "$(dirname "$(which node)")")"
+    EXTRA_BINDS+=(--ro-bind "$NODE_DIR" "$NODE_DIR")
+    SANDBOX_PATH="${SANDBOX_PATH}:$NODE_DIR/bin"
+fi
+
+OPENCODE_CACHE_DIR="$WORKSPACE_DIR/.opencode-bwrap/cache"
+OPENCODE_SHARE_DIR="$WORKSPACE_DIR/.opencode-bwrap/local/share"
+OPENCODE_STATE_DIR="$WORKSPACE_DIR/.opencode-bwrap/local/state"
+OPENCODE_CONFIG_DIR="$WORKSPACE_DIR/.opencode-bwrap/config"
+
+# Add directories for keeping opencode workspace-global configuration and state
+mkdir -p "$OPENCODE_CACHE_DIR" "$OPENCODE_SHARE_DIR" "$OPENCODE_STATE_DIR" "$OPENCODE_CONFIG_DIR"
+
+CONFIG_TEMPLATE="$OPENCODE_BWRAP_CONFIG_DIR/opencode.jsonc"
+if [[ ! -f "$OPENCODE_CONFIG_DIR/opencode.json" && ! -f "$OPENCODE_CONFIG_DIR/opencode.jsonc" && -f "$CONFIG_TEMPLATE" ]]; then
+  echo "Copying opencode.jsonc"
+  cp "$CONFIG_TEMPLATE" "$OPENCODE_CONFIG_DIR/opencode.jsonc"
+fi
+
+if [[ ! -f "$OPENCODE_SHARE_DIR/auth.json" && -f "$HOME/.local/share/opencode/auth.json" ]]; then
+  echo "Copying $HOME/.local/share/opencode/auth.json"
+  cp "$HOME/.local/share/opencode/auth.json" "$OPENCODE_SHARE_DIR/auth.json"
+fi
+
+# Dotfiles
+for file in $(ls -A "$OPENCODE_BWRAP_CONFIG_DIR/dotfiles"); do
+  EXTRA_BINDS+=(--ro-bind "$OPENCODE_BWRAP_CONFIG_DIR/dotfiles/$file" "$HOME/$file")
+done
+
+# Start the proxy (allowing only notifications)
+xdg-dbus-proxy $DBUS_SESSION_BUS_ADDRESS /tmp/sandbox-bus \
+  --filter \
+  --talk=org.freedesktop.Notifications &
+
+BASE_CMD="opencode"
+if [[ "${1-}" = "--" ]]; then
+  shift
+  BASE_CMD=""
+fi
+
+# Execute OpenCode in sandbox
+bwrap \
+    --clearenv \
+    --unshare-all \
+    --share-net \
+    --die-with-parent \
+    --new-session \
+    --cap-drop ALL \
+    --hostname opencode-sandbox \
+    \
+    `# Basic filesystem structure` \
+    --ro-bind /usr /usr \
+    --symlink usr/lib /lib \
+    --symlink usr/lib64 /lib64 \
+    --symlink usr/lib32 /lib32 \
+    --symlink usr/bin /bin \
+    --symlink usr/sbin /sbin \
+    --ro-bind /sys /sys \
+    --proc /proc \
+    --tmpfs /tmp \
+    --tmpfs /run \
+    --tmpfs /var \
+	  --tmpfs /etc \
+    --dev /dev \
+    \
+    `# /etc files needed` \
+    --ro-bind-try /etc/resolv.conf /etc/resolv.conf \
+    --ro-bind-try /etc/hosts /etc/hosts \
+    --ro-bind-try /etc/nsswitch.conf /etc/nsswitch.conf \
+    --ro-bind-try /etc/passwd /etc/passwd \
+    --ro-bind-try /etc/group /etc/group \
+    --ro-bind-try /etc/localtime /etc/localtime \
+    --ro-bind-try /etc/alternatives /etc/alternatives \
+    \
+    `# SSL certificates for API access` \
+    --ro-bind /etc/ssl /etc/ssl \
+    --ro-bind-try /etc/ca-certificates /etc/ca-certificates \
+    \
+    `# audio` \
+    --ro-bind-try /etc/alsa /etc/alsa \
+    --bind-try "${XDG_RUNTIME_DIR}/pulse" "${XDG_RUNTIME_DIR}/pulse" \
+    --bind-try "${XDG_RUNTIME_DIR}/pipewire-0" "${XDG_RUNTIME_DIR}/pipewire-0" \
+    --setenv XDG_RUNTIME_DIR "${XDG_RUNTIME_DIR}" \
+    \
+    `# Bind DBus` \
+    --bind /tmp/sandbox-bus /run/user/$(id -u)/bus \
+    --setenv DBUS_SESSION_BUS_ADDRESS "unix:path=/run/user/$(id -u)/bus" \
+    \
+    `# Home directory structure` \
+    --dir "$HOME" \
+    --setenv HOME "$HOME" \
+    --ro-bind-try "$HOME/.npmrc" "$HOME/.npmrc" \
+    \
+    `# OpenCode config and cache directories (read-write)` \
+    --bind "$OPENCODE_CACHE_DIR" "$HOME/.cache/opencode" \
+    --bind "$OPENCODE_SHARE_DIR" "$HOME/.local/share/opencode" \
+    --bind "$OPENCODE_STATE_DIR" "$HOME/.local/state/opencode" \
+    --bind "$OPENCODE_CONFIG_DIR" "$HOME/.config/opencode" \
+    \
+    `# Config and binaries` \
+    ${EXTRA_BINDS[@]+"${EXTRA_BINDS[@]}"} \
+    \
+    `# Workspace directories (read-write)` \
+    --bind "$WORKSPACE_DIR" "$HOME/workspace"\
+    --chdir "$CHDIR_PATH" \
+    \
+    `# Terminal and environment` \
+    --setenv TMPDIR /tmp \
+    --setenv PATH "$SANDBOX_PATH" \
+    \
+    `# Run OpenCode (or other command)` \
+    -- $BASE_CMD "$@"

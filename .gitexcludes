@@ -4,3 +4,6 @@
 # IntelliJ
 .idea
 /*.iml
+
+# OpenCode Bwrap
+.opencode-bwrap
